@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-18",
+  "boundary_return": "REFUTED",
+  "first_defect_return": "REFUTED",
+  "second_defect_return": "REFUTED",
+  "unrestricted_residual_progress": "REFUTED",
+  "terminal_residual_families": "PROVED for both markers, arbitrary k, n=0 and empty suffix",
+  "any_extension_of_full_boundary_macro_closed": "REFUTED",
+  "blank_defined_prefix": 1141823725445,
+  "blank_global_nonhalting": "OPEN",
+  "next_obligations": [
+    "Define a restricted blank-admissible boundary language excluding the halting witnesses.",
+    "Correlate residual left marker/block count with right-run structure and history.",
+    "Prove blank entry and positive-time closure for the restricted phase domain."
+  ],
+  "failed_guard_probe": "Strictly descending inactive tails congruent to 2 mod 3 are not preserved by the tested return; finite independent evidence only.",
+  "scope": "Counterexamples are nonblank; no claim that they are reachable from blank."
+}

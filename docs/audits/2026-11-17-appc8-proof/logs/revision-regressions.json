@@ -1,0 +1,83 @@
+{
+  "T315": {
+    "power_cases": 90,
+    "initial_interval": [
+      1,
+      500
+    ],
+    "later_branch_witnesses": {
+      "14": {
+        "defined_steps": 7,
+        "halt_state": [
+          0,
+          30
+        ]
+      },
+      "20": {
+        "defined_steps": 5,
+        "halt_state": [
+          0,
+          30
+        ]
+      }
+    }
+  },
+  "nullspace": {
+    "ambient_dimension": 2,
+    "nullity": 2,
+    "return_dimension": null,
+    "normalized_successors": [
+      "2/3",
+      "3/5"
+    ]
+  },
+  "A11": {
+    "Z3": "308839082650318263084746811144577298419438349956846904254255829450012113426945746099328526614386747919",
+    "c4": "231629311987738697313560108358432973814578762467635178190691872087509085070209309574496394960790060929",
+    "Z3_mod8": 7,
+    "c4_mod16": 1,
+    "decreasing_c_witness": [
+      [
+        20,
+        5,
+        6
+      ],
+      [
+        65,
+        3,
+        3
+      ]
+    ],
+    "epoch4_completion": "not established"
+  },
+  "BMO8": {
+    "domain_cases": 22296,
+    "omitted_domain_counterexample": [
+      3,
+      4
+    ]
+  },
+  "translated_sequences": {
+    "minimality_counterexample": "u(n)=n",
+    "general_annihilator": "(S-1)(S^3-1)"
+  },
+  "source_theorems": {
+    "lean": 103,
+    "lean_phase4": 140
+  },
+  "missing_source_negative_tests": 4,
+  "phase3_manifest_verified": {
+    "suite": "phase3",
+    "unit": "raw-TM test invocations (not globally deduplicated)",
+    "counts": {
+      "verify_t3_15": 1375,
+      "verify_t3_14": 670,
+      "verify_appc1": 1085,
+      "verify_appc7": 42,
+      "verify_appc6_appc5_bmo7": 118,
+      "verify_t3_12": 961,
+      "verify_bmo1_bmo5_t33": 1020
+    },
+    "total": 5271
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "defects": [
+    {
+      "time": 15,
+      "k": 1,
+      "marker": [
+        1,
+        0
+      ],
+      "word": "111110111101101101111101",
+      "run_lengths": [
+        5,
+        4,
+        2,
+        2,
+        5,
+        1
+      ],
+      "remaining_defined": 1184
+    }
+  ],
+  "residual": [
+    {
+      "time": 46,
+      "k": 0,
+      "marker": [
+        1,
+        0
+      ],
+      "word": "11011010111101101101111101",
+      "remaining_defined": 1153
+    }
+  ]
+}

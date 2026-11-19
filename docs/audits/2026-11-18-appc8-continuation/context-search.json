@@ -1,0 +1,80 @@
+{
+  "contexts": [
+    {
+      "width": 2,
+      "status": "abstract_halt_inconclusive",
+      "centers": 58,
+      "rounds": 16,
+      "seconds": 0.00047206878662109375
+    },
+    {
+      "width": 3,
+      "status": "abstract_halt_inconclusive",
+      "centers": 153,
+      "rounds": 32,
+      "seconds": 0.002406597137451172
+    },
+    {
+      "width": 4,
+      "status": "abstract_halt_inconclusive",
+      "centers": 353,
+      "rounds": 53,
+      "seconds": 0.009285688400268555
+    },
+    {
+      "width": 5,
+      "status": "abstract_halt_inconclusive",
+      "centers": 1033,
+      "rounds": 77,
+      "seconds": 0.03903365135192871
+    },
+    {
+      "width": 6,
+      "status": "abstract_halt_inconclusive",
+      "centers": 2638,
+      "rounds": 138,
+      "seconds": 0.13016200065612793
+    },
+    {
+      "width": 7,
+      "status": "abstract_halt_inconclusive",
+      "centers": 5413,
+      "rounds": 168,
+      "seconds": 0.3070065975189209
+    },
+    {
+      "width": 8,
+      "status": "abstract_halt_inconclusive",
+      "centers": 13107,
+      "rounds": 212,
+      "seconds": 0.8431098461151123
+    },
+    {
+      "width": 9,
+      "status": "abstract_halt_inconclusive",
+      "centers": 23936,
+      "rounds": 270,
+      "seconds": 1.6120314598083496
+    },
+    {
+      "width": 10,
+      "status": "abstract_halt_inconclusive",
+      "centers": 33656,
+      "rounds": 326,
+      "seconds": 3.6046643257141113
+    }
+  ],
+  "language_probes": {
+    "counts": {
+      "exhaustive": 986,
+      "random": 180
+    },
+    "exhaustive_max_length": 14,
+    "exhaustive_step_cap": 3000,
+    "random_seed": 20261118,
+    "random_step_cap": 120000,
+    "halts": [],
+    "boundary_escapes": [],
+    "scope": "No counterexample in bounded probes does not establish BoundaryReturn."
+  }
+}

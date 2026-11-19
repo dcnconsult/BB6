@@ -1,0 +1,187 @@
+{
+  "machine": "1RB1RC_1LC0LE_0RA1RD_1RF1LB_1LD0LA_---0RC",
+  "table_entries_matched": 12,
+  "general_gate_cases": 117,
+  "gate_ranges": {
+    "a": [
+      0,
+      12
+    ],
+    "r": [
+      0,
+      8
+    ]
+  },
+  "prefixed_family_cases": 33,
+  "phase_with_arbitrary_tail_cases": 403,
+  "prefixed_samples": [
+    {
+      "b": 0,
+      "halting_attempt": 15,
+      "defined_transitions": 14
+    },
+    {
+      "b": 1,
+      "halting_attempt": 59,
+      "defined_transitions": 58
+    },
+    {
+      "b": 2,
+      "halting_attempt": 135,
+      "defined_transitions": 134
+    },
+    {
+      "b": 3,
+      "halting_attempt": 243,
+      "defined_transitions": 242
+    },
+    {
+      "b": 4,
+      "halting_attempt": 383,
+      "defined_transitions": 382
+    },
+    {
+      "b": 5,
+      "halting_attempt": 555,
+      "defined_transitions": 554
+    },
+    {
+      "b": 6,
+      "halting_attempt": 759,
+      "defined_transitions": 758
+    },
+    {
+      "b": 7,
+      "halting_attempt": 995,
+      "defined_transitions": 994
+    },
+    {
+      "b": 8,
+      "halting_attempt": 1263,
+      "defined_transitions": 1262
+    },
+    {
+      "b": 9,
+      "halting_attempt": 1563,
+      "defined_transitions": 1562
+    },
+    {
+      "b": 10,
+      "halting_attempt": 1895,
+      "defined_transitions": 1894
+    },
+    {
+      "b": 11,
+      "halting_attempt": 2259,
+      "defined_transitions": 2258
+    },
+    {
+      "b": 12,
+      "halting_attempt": 2655,
+      "defined_transitions": 2654
+    },
+    {
+      "b": 13,
+      "halting_attempt": 3083,
+      "defined_transitions": 3082
+    },
+    {
+      "b": 14,
+      "halting_attempt": 3543,
+      "defined_transitions": 3542
+    },
+    {
+      "b": 15,
+      "halting_attempt": 4035,
+      "defined_transitions": 4034
+    },
+    {
+      "b": 16,
+      "halting_attempt": 4559,
+      "defined_transitions": 4558
+    },
+    {
+      "b": 17,
+      "halting_attempt": 5115,
+      "defined_transitions": 5114
+    },
+    {
+      "b": 18,
+      "halting_attempt": 5703,
+      "defined_transitions": 5702
+    },
+    {
+      "b": 19,
+      "halting_attempt": 6323,
+      "defined_transitions": 6322
+    },
+    {
+      "b": 20,
+      "halting_attempt": 6975,
+      "defined_transitions": 6974
+    },
+    {
+      "b": 21,
+      "halting_attempt": 7659,
+      "defined_transitions": 7658
+    },
+    {
+      "b": 22,
+      "halting_attempt": 8375,
+      "defined_transitions": 8374
+    },
+    {
+      "b": 23,
+      "halting_attempt": 9123,
+      "defined_transitions": 9122
+    },
+    {
+      "b": 24,
+      "halting_attempt": 9903,
+      "defined_transitions": 9902
+    },
+    {
+      "b": 25,
+      "halting_attempt": 10715,
+      "defined_transitions": 10714
+    },
+    {
+      "b": 26,
+      "halting_attempt": 11559,
+      "defined_transitions": 11558
+    },
+    {
+      "b": 27,
+      "halting_attempt": 12435,
+      "defined_transitions": 12434
+    },
+    {
+      "b": 28,
+      "halting_attempt": 13343,
+      "defined_transitions": 13342
+    },
+    {
+      "b": 29,
+      "halting_attempt": 14283,
+      "defined_transitions": 14282
+    },
+    {
+      "b": 30,
+      "halting_attempt": 15255,
+      "defined_transitions": 15254
+    },
+    {
+      "b": 31,
+      "halting_attempt": 16259,
+      "defined_transitions": 16258
+    },
+    {
+      "b": 32,
+      "halting_attempt": 17295,
+      "defined_transitions": 17294
+    }
+  ],
+  "universal_proof": "CryptidSolvePhase4.AppC7Raw.gate_sweep_exact_time and appC7_raw_gate_exact_time",
+  "scope": "Blank left half-tape and the displayed finite gate input; not blank-tape reachability.",
+  "generated_differential_fixtures": 192
+}

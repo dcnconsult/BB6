@@ -1,0 +1,1112 @@
+[
+  {
+    "name": "iterStep_invariant",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 32
+  },
+  {
+    "name": "iterStep_strict_lyapunov_drift",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 49
+  },
+  {
+    "name": "no_periodic_of_strict_lyapunov",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 74
+  },
+  {
+    "name": "lexProgress_trans",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 98
+  },
+  {
+    "name": "iterStep_lex_lyapunov_drift",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 104
+  },
+  {
+    "name": "no_periodic_of_lex_lyapunov",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 132
+  },
+  {
+    "name": "cl20_fundamental_split",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 106
+  },
+  {
+    "name": "cl20_gradeInvol_involutive",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 114
+  },
+  {
+    "name": "cl20_cartan_dieudonne_swap",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 124
+  },
+  {
+    "name": "a3_pin2_reflection_factorization",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 145
+  },
+  {
+    "name": "a8_a9_pin2_reflection_factorization",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 156
+  },
+  {
+    "name": "bmo1_dual_stage3a_cones",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 166
+  },
+  {
+    "name": "pga1_ghost_bivector_eigenblade",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 202
+  },
+  {
+    "name": "pga1_antihydra_bridge_bivectors",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 219
+  },
+  {
+    "name": "appC1_bridge_B_to_E2_jump",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 232
+  },
+  {
+    "name": "appC1_bridge_E2_to_E1_zero_loss",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 248
+  },
+  {
+    "name": "appC1_bridge_E1_to_B_even_zero_loss",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 261
+  },
+  {
+    "name": "t314_bridge_LCLE_to_AB_intertwining",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 281
+  },
+  {
+    "name": "t314_zero_drift_iff_sheet_flip",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 298
+  },
+  {
+    "name": "t312_bridge_R_to_C_zero_loss",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 327
+  },
+  {
+    "name": "a5_bridge_D_to_C_da0_jump",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 340
+  },
+  {
+    "name": "a1_plucker_blade_and_swap_bridge",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 357
+  },
+  {
+    "name": "a1_blade_swap_reflection_step",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 365
+  },
+  {
+    "name": "fIter_ge_self",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 60
+  },
+  {
+    "name": "a11_homogenize_two_step",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 73
+  },
+  {
+    "name": "a11_epochs_0_to_3",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 114
+  },
+  {
+    "name": "a11_Z3_eval_and_residues",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 128
+  },
+  {
+    "name": "a11_epoch3_survives_with_odd_c4",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 136
+  },
+  {
+    "name": "a11_odd_c_activates_d6",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 145
+  },
+  {
+    "name": "invT315_preserved",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 58
+  },
+  {
+    "name": "t315_strict_drift",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 66
+  },
+  {
+    "name": "t315_no_periodic_orbits",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 76
+  },
+  {
+    "name": "t315_3adic_step_identity",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 84
+  },
+  {
+    "name": "invT314_preserved",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 162
+  },
+  {
+    "name": "t314_lex_drift",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 167
+  },
+  {
+    "name": "t314_no_periodic_orbits",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 175
+  },
+  {
+    "name": "invAppC1_preserved",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 235
+  },
+  {
+    "name": "appC1_lex_drift",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 240
+  },
+  {
+    "name": "appC1_no_periodic_orbits",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 248
+  },
+  {
+    "name": "appC1_ghost_shift_step",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 256
+  },
+  {
+    "name": "appC1_even_sector_return",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 262
+  },
+  {
+    "name": "invT312_preserved",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 311
+  },
+  {
+    "name": "t312_lex_drift",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 316
+  },
+  {
+    "name": "t312_no_periodic_orbits",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 324
+  },
+  {
+    "name": "invBMO1_preserved",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 345
+  },
+  {
+    "name": "bmo1_strict_drift",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 353
+  },
+  {
+    "name": "bmo1_no_periodic_orbits",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 363
+  },
+  {
+    "name": "bmo5_band_strict_drift",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 383
+  },
+  {
+    "name": "appC7_E0_D0_never_halts",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 399
+  },
+  {
+    "name": "invA1_init",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 57
+  },
+  {
+    "name": "invA1_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 60
+  },
+  {
+    "name": "a1_mixed_bc_unreachable",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 69
+  },
+  {
+    "name": "a4_collatz_sweep_avoids_gate2",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 90
+  },
+  {
+    "name": "invA5_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 125
+  },
+  {
+    "name": "safeOddA5_non_portal_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 137
+  },
+  {
+    "name": "invA6_init",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 194
+  },
+  {
+    "name": "invA6_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 197
+  },
+  {
+    "name": "a6_boundary_halts_unreachable",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 206
+  },
+  {
+    "name": "invA7_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 247
+  },
+  {
+    "name": "invA8_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 285
+  },
+  {
+    "name": "invA9_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 308
+  },
+  {
+    "name": "invBMO8_init",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 327
+  },
+  {
+    "name": "invBMO8_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 330
+  },
+  {
+    "name": "bmo8_three_gates_iff",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 340
+  },
+  {
+    "name": "bmo8_I9_card_eq_33",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 399
+  },
+  {
+    "name": "a1_lex_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 27
+  },
+  {
+    "name": "a1_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 36
+  },
+  {
+    "name": "a2_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 67
+  },
+  {
+    "name": "a2_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 75
+  },
+  {
+    "name": "a10_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 80
+  },
+  {
+    "name": "a10_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 88
+  },
+  {
+    "name": "invA3_preserved",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 126
+  },
+  {
+    "name": "a3_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 132
+  },
+  {
+    "name": "a3_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 143
+  },
+  {
+    "name": "a4_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 152
+  },
+  {
+    "name": "a4_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 160
+  },
+  {
+    "name": "a5_lex_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 175
+  },
+  {
+    "name": "a5_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 181
+  },
+  {
+    "name": "a6_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 191
+  },
+  {
+    "name": "a6_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 197
+  },
+  {
+    "name": "a7_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 206
+  },
+  {
+    "name": "a7_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 230
+  },
+  {
+    "name": "a8_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 239
+  },
+  {
+    "name": "a8_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 248
+  },
+  {
+    "name": "a9_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 257
+  },
+  {
+    "name": "a9_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 266
+  },
+  {
+    "name": "b9_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 290
+  },
+  {
+    "name": "b9_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 313
+  },
+  {
+    "name": "bmo8_drift_3_or_5",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 322
+  },
+  {
+    "name": "bmo8_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 332
+  },
+  {
+    "name": "bmo8_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 338
+  },
+  {
+    "name": "pow2_ge_succ",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 24
+  },
+  {
+    "name": "pow2_mono",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 33
+  },
+  {
+    "name": "pow2_diff_lower_bound",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 47
+  },
+  {
+    "name": "antihydra_Tneg1_ghost_step",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 63
+  },
+  {
+    "name": "antihydra_Tneg1_ghost_iter",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 69
+  },
+  {
+    "name": "antihydra_mod32_bulk_clamping",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 91
+  },
+  {
+    "name": "antihydra_periodic_burst_bound",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 100
+  },
+  {
+    "name": "a5_doubling_ghost_shift",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 118
+  },
+  {
+    "name": "a6_sawtooth_ghost_shift",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 140
+  },
+  {
+    "name": "a10_secondary_cascade_sealed",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 162
+  },
+  {
+    "name": "a2_secondary_cascade_sealed",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 178
+  },
+  {
+    "name": "a5_secondary_cascade_sealed",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 194
+  },
+  {
+    "name": "run_add",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 49
+  },
+  {
+    "name": "run_comp",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 57
+  },
+  {
+    "name": "halts_comp",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 68
+  },
+  {
+    "name": "back_push",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 86
+  },
+  {
+    "name": "pair_push",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 92
+  },
+  {
+    "name": "back_to_pairs",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 98
+  },
+  {
+    "name": "scan_right",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 106
+  },
+  {
+    "name": "turn_block",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 119
+  },
+  {
+    "name": "return_pair",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 125
+  },
+  {
+    "name": "return_sweep",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 129
+  },
+  {
+    "name": "turn_and_return",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 141
+  },
+  {
+    "name": "left_boundary",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 154
+  },
+  {
+    "name": "phase_word",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 158
+  },
+  {
+    "name": "gate_phase",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 169
+  },
+  {
+    "name": "gate_terminal",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 182
+  },
+  {
+    "name": "gate_phase_zero",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 194
+  },
+  {
+    "name": "gate_phase_all",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 199
+  },
+  {
+    "name": "gate_terminal_all",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 206
+  },
+  {
+    "name": "gate_sweep",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 217
+  },
+  {
+    "name": "initial_prefix",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 239
+  },
+  {
+    "name": "appC7_raw_gate_halts",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 246
+  },
+  {
+    "name": "halts_prefix_defined",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 258
+  },
+  {
+    "name": "halts_next_none",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 266
+  },
+  {
+    "name": "gate_sweep_exact_time",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 275
+  },
+  {
+    "name": "appC7_raw_gate_exact_time",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 291
+  },
+  {
+    "name": "iterStep_add_of_some",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 47
+  },
+  {
+    "name": "iterStep_invariant",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 65
+  },
+  {
+    "name": "iterStep_exists_of_safe_invariant",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 83
+  },
+  {
+    "name": "nonHalting_of_safe_invariant",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 95
+  },
+  {
+    "name": "nonHalting_of_barrier_cert",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 113
+  },
+  {
+    "name": "iterStep_strict_int_drift",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 134
+  },
+  {
+    "name": "no_periodic_of_strict_int_drift",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 158
+  },
+  {
+    "name": "immortal_of_safe_invariant_and_drift",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 176
+  },
+  {
+    "name": "id_mul",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 58
+  },
+  {
+    "name": "mul_id",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 63
+  },
+  {
+    "name": "mul_assoc",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 68
+  },
+  {
+    "name": "wordLift_append",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 107
+  },
+  {
+    "name": "matT_matD_noncommuting",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 116
+  },
+  {
+    "name": "abelian_parikh_blind_but_matrix_separates",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 127
+  },
+  {
+    "name": "upperPosCone_id",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 145
+  },
+  {
+    "name": "upperPosCone_mul",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 150
+  },
+  {
+    "name": "wordLift_in_upperPosCone",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 175
+  },
+  {
+    "name": "wordLift_context_rewrite_monotone",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 190
+  },
+  {
+    "name": "stepMultiDefect_strict_matrix_drift",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 273
+  },
+  {
+    "name": "invMultiDefect_preserved",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 325
+  },
+  {
+    "name": "invMultiDefect_safe",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 331
+  },
+  {
+    "name": "multiDefect_cascade_immortal",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 354
+  },
+  {
+    "name": "sq_nonneg_int",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 42
+  },
+  {
+    "name": "weighted_sos2_nonneg",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 52
+  },
+  {
+    "name": "putinar_cleared_nonneg_of_guard",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 61
+  },
+  {
+    "name": "putinar_sos_barrier_nonHalting",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 79
+  },
+  {
+    "name": "parabolic_no_affine_barrier",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 112
+  },
+  {
+    "name": "parabolic_putinar_sos_identity",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 137
+  },
+  {
+    "name": "parabolic_barrier_conserved",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 149
+  },
+  {
+    "name": "domParabolic_preserved",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 166
+  },
+  {
+    "name": "parabolic_counter_nonHalting",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 182
+  },
+  {
+    "name": "parabolic_counter_immortal",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 198
+  },
+  {
+    "name": "coupled_bouncer_2pivot_ldlt_identity",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 244
+  },
+  {
+    "name": "coupled_bouncer_nonHalting",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 255
+  },
+  {
+    "name": "appC7GateSweep_closed_form",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 298
+  },
+  {
+    "name": "appC7_parabolic_gate_step_law",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 323
+  },
+  {
+    "name": "mul_comm",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 61
+  },
+  {
+    "name": "mul_assoc",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 70
+  },
+  {
+    "name": "conj_mul",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 75
+  },
+  {
+    "name": "mul_conj_eq_ofInt_norm",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 80
+  },
+  {
+    "name": "ofInt_mul_ofInt",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 86
+  },
+  {
+    "name": "norm_mul",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 93
+  },
+  {
+    "name": "phi_sq_eq_phi_add_one",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 103
+  },
+  {
+    "name": "norm_phiBar_eq_neg_one",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 106
+  },
+  {
+    "name": "fibModStep_left_inv",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 125
+  },
+  {
+    "name": "fib_modular_sieve_fails_every_modulus",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 159
+  },
+  {
+    "name": "fib_pisot_eigen_step",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 231
+  },
+  {
+    "name": "fib_pisot_norm_flip",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 238
+  },
+  {
+    "name": "fib_pisot_halt_ray_norm_ge_four",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 244
+  },
+  {
+    "name": "invFibPisot_preserved",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 267
+  },
+  {
+    "name": "invFibPisot_safe",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 284
+  },
+  {
+    "name": "fib_pisot_counter_immortal",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 307
+  },
+  {
+    "name": "pellNorm_step_flip",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 347
+  },
+  {
+    "name": "pell_pisot_counter_nonHalting",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 374
+  },
+  {
+    "name": "walkParity_gauge_telescope",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 50
+  },
+  {
+    "name": "coboundary_closed_walk_invariant",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 66
+  },
+  {
+    "name": "hamming743_gauge_coset_verified",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 102
+  },
+  {
+    "name": "invWreathOdometer3_preserved",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 140
+  },
+  {
+    "name": "stepWreathOdometer3_total",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 165
+  },
+  {
+    "name": "stepWreathOdometer3_strict_drift",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 184
+  },
+  {
+    "name": "stepWreathOdometer3_safe",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 211
+  },
+  {
+    "name": "wreath_width3_odometer_immortal",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 222
+  },
+  {
+    "name": "appC8_shuttle_conserves_2k_plus_m",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 239
+  },
+  {
+    "name": "appC8ShuttleRoundsSteps_closed_form",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 249
+  },
+  {
+    "name": "appC8_clean_macro_law",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 290
+  },
+  {
+    "name": "coboundary_d1_d0_zero",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 43
+  },
+  {
+    "name": "discrete_stokes_row",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 72
+  },
+  {
+    "name": "discrete_stokes_rectangle",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 87
+  },
+  {
+    "name": "sumPlaquetteRow_nonneg_of_pointwise",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 97
+  },
+  {
+    "name": "sumPlaquetteRect_nonneg_of_pointwise",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 109
+  },
+  {
+    "name": "sumVert_zero_of_pointwise",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 123
+  },
+  {
+    "name": "stokes_cohomological_halting_obstruction",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 142
+  },
+  {
+    "name": "bouncer_3cell_nfa_reaches_halt_in_3_steps",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 202
+  },
+  {
+    "name": "oddSublatticeCocycle_init",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 245
+  },
+  {
+    "name": "oddSublatticeCocycle_preserved",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 249
+  },
+  {
+    "name": "oddSublatticeCocycle_total",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 318
+  },
+  {
+    "name": "oddSublatticeCocycle_safe",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 332
+  },
+  {
+    "name": "bipartite_parabolic_bouncer_tm_never_halts",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 344
+  },
+  {
+    "name": "reynolds_pin2_swap_linear",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 30
+  },
+  {
+    "name": "reynolds_inversion_kills_all_linear",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 40
+  },
+  {
+    "name": "reynolds_inversion_preserves_quadratic",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 48
+  },
+  {
+    "name": "reynolds_d4_degree2_routing",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 61
+  },
+  {
+    "name": "walk_denom_translated_cycler_period3",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 72
+  },
+  {
+    "name": "quadratic_walk_denom_cube",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 90
+  },
+  {
+    "name": "walk_denom_parabolic_appC7_and_appC8",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 140
+  },
+  {
+    "name": "walk_denom_pisot_fibonacci",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 157
+  },
+  {
+    "name": "walk_denom_mixed_portal_a5_bmo5",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 172
+  },
+  {
+    "name": "pow2_mod3_cycle",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 29
+  },
+  {
+    "name": "pow2_mod7_cycle",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 38
+  },
+  {
+    "name": "pow3_mod7_cycle",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 49
+  },
+  {
+    "name": "multiprime_2_3_eliminates_portal_2j_3j_1",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 70
+  },
+  {
+    "name": "multiprime_3_7_eliminates_portal_2j_7j_15",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 92
+  },
+  {
+    "name": "multiprime_3_7_eliminates_dual_exp_2j_3j",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 109
+  },
+  {
+    "name": "antihydra_mod8_kirchhoff_pseudoinverse_verified",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 189
+  }
+]

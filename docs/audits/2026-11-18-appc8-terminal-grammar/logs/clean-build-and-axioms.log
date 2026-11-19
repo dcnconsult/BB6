@@ -1,0 +1,406 @@
+✔ [2011/2276] Built CryptidSolvePhase4.Basic (479ms)
+✔ [3253/3293] Built CryptidSolvePhase4.Transfer2PutinarSOS (606ms)
+⚠ [3254/3293] Built CryptidSolvePhase4.AppC7RawGate (679ms)
+warning: CryptidSolvePhase4/AppC7RawGate.lean:56:33: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3255/3293] Built CryptidSolvePhase4.Transfer4WreathBlockGauge (890ms)
+✔ [3256/3293] Built BusyBeaver.Defs.Core (1.0s)
+⚠ [3257/3293] Built CryptidSolvePhase4.AppC8RawShuttle (574ms)
+warning: CryptidSolvePhase4/AppC8RawShuttle.lean:56:33: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3258/3293] Built CryptidSolvePhase4.AppC8RawCleanMacro (393ms)
+✔ [3259/3293] Built BusyBeaver.Defs.Patterns (1.0s)
+✔ [3260/3293] Built BusyBeaver.Defs.Odometer (1.2s)
+✔ [3261/3293] Built BusyBeaver.Defs.Stack (1.4s)
+✔ [3262/3293] Built CryptidSolvePhase4.AppC8RawBlankReachability (2.0s)
+⚠ [3263/3293] Built CryptidSolvePhase4.AppC8RawOddSector (567ms)
+warning: CryptidSolvePhase4/AppC8RawOddSector.lean:103:27: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.mul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3264/3293] Built BusyBeaver.Defs.Transducer (1.2s)
+✔ [3265/3293] Built BusyBeaver.Defs.WordRun (1.4s)
+⚠ [3266/3293] Built CryptidSolvePhase4.AppC8RawMod2Sector (1.3s)
+warning: CryptidSolvePhase4/AppC8RawMod2Sector.lean:154:27: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.mul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CryptidSolvePhase4/AppC8RawMod2Sector.lean:217:27: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.mul_zero, Nat.mul_add, Nat.add_mul, Nat.mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3267/3293] Built BusyBeaver.Defs.Segmented (986ms)
+✔ [3268/3293] Built BusyBeaver.Defs (745ms)
+✔ [3269/3293] Built BusyBeaver.Basic (2.4s)
+⚠ [3270/3293] Built BB6Interop.Zipper (1.5s)
+warning: BB6Interop/Zipper.lean:19:37: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3271/3293] Built Cryptids.Machines (14s)
+✔ [3272/3293] Built BusyBeaver.Calculi.Counter (6.1s)
+✔ [3273/3293] Built BusyBeaver.Bridge (2.4s)
+✔ [3274/3293] Built BusyBeaver.Calculi.Excursion (2.1s)
+⚠ [3275/3293] Built BB6Interop.AppC8 (2.3s)
+warning: BB6Interop/AppC8.lean:64:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: BB6Interop/AppC8.lean:61:51: missing space in the source
+
+This part of the code
+  '4*r+1) :'
+should be written as
+  '4 * r'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+✔ [3276/3293] Built BB6Interop.AppC8Continuation (2.5s)
+✔ [3277/3293] Built BB6Interop.AppC8ContinuationCheckpoints (2.5s)
+✔ [3278/3293] Built BB6Interop.AppC8RunLists (2.5s)
+⚠ [3279/3293] Built BB6Interop.AppC8ResidualCertificate (2.1s)
+warning: BB6Interop/AppC8ResidualCertificate.lean:41:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+✔ [3280/3293] Built BB6Interop.AppC8ResidualTraceData (4.7s)
+⚠ [3281/3293] Built BB6Interop.AppC8ResidualTape (15s)
+warning: BB6Interop/AppC8ResidualTape.lean:96:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [3282/3293] Built BB6Interop.AppC8Restricted (3.7s)
+warning: BB6Interop/AppC8Restricted.lean:52:33: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BB6Interop/AppC8Restricted.lean:179:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [3283/3293] Built BB6Interop.AppC8RestrictedBoundary (3.9s)
+warning: BB6Interop/AppC8RestrictedBoundary.lean:166:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: BB6Interop/AppC8RestrictedBoundary.lean:197:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: BB6Interop/AppC8RestrictedBoundary.lean:223:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: BB6Interop/AppC8RestrictedBoundary.lean:239:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+✔ [3284/3293] Built BB6Interop.AppC8RestrictedCheckpoints (2.7s)
+✔ [3285/3293] Built BB6Interop.AppC8TerminalGrammar (2.8s)
+⚠ [3286/3293] Built BB6Interop.AppC8GeneratedSuffix (2.7s)
+warning: BB6Interop/AppC8GeneratedSuffix.lean:29:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: BB6Interop/AppC8GeneratedSuffix.lean:144:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: BB6Interop/AppC8GeneratedSuffix.lean:247:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: BB6Interop/AppC8GeneratedSuffix.lean:249:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: BB6Interop/AppC8GeneratedSuffix.lean:299:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+✔ [3287/3293] Built BB6Interop.AppC8TerminalCheckpoints (2.2s)
+✔ [3288/3293] Built BusyBeaver.Calculi.SharedDonorsA (136s)
+✔ [3289/3293] Built BusyBeaver.BB6.NonHalt.M_1RB1RC_1LC0LE_0RA1RD_1RF1LB_1LD0LA_HHH0RC (1.7s)
+✔ [3290/3293] Built BB6Interop.AppC7 (2.3s)
+✔ [3291/3293] Built BB6Interop (1.8s)
+⚠ [3293/3293] Built BB6Interop.KernelAudit (4.1s)
+info: BB6Interop/KernelAudit.lean:6:0: AXIOMS BB6Interop.AppC8ResidualTape.reject_trace_steps: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.bad_residual_not_generated_candidate: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.zero_block_defect_param: [propext]
+AXIOMS BB6Interop.AppC8TerminalGrammar.old_boundary_generated: []
+AXIOMS BB6Interop.AppC8ResidualTape.first_bad_positive: []
+AXIOMS BB6Interop.AppC8RunLists.blank_prefix: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.run_list_four_long: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.run_list_absorb_many: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.second_defect_two: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.residual_terminal_local: []
+AXIOMS BB6Interop.AppC8Continuation.four_collapse: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.five_zero: []
+AXIOMS BB6Interop.AppC8ResidualTape.second_bad_avoids: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.second_even_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.three_with_tail: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.suffix_good: []
+AXIOMS BB6Interop.AppC8.exit_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.entry_left: []
+AXIOMS BB6Interop.AppC8.mod16_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.second_sweep_progress: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.first_one: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.bad_residual_not_restricted_fuel: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.second_trace_enters_residual: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8.blank_prefix_defined: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.blank_generated_frontier: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.not_first_defect_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.short_emitted_local: []
+AXIOMS BB6Interop.AppC8RunLists.run_list_one_long_local: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.generated_length: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.first_odd_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.boundary_iff_run_list: []
+AXIOMS BB6Interop.AppC8RunLists.defect_strip_block: []
+AXIOMS BB6Interop.AppC8RunLists.first_zero_long: []
+AXIOMS BB6Interop.AppC8Restricted.restricted_fuel_cycle: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8.clean_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.blank_extended_prefix: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.terminal_double_even: [propext, Quot.sound]
+AXIOMS BB6Interop.Zipper.mk.sizeOf_spec: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.blank_emitted_359: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.odd_terminal_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.run_list_zero_count: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.boundary_good_tail: []
+AXIOMS BB6Interop.AppC8.reaches_in: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.actual_restricted_fuel: []
+AXIOMS BB6Interop.AppC8Restricted.bad_residual_not_candidate: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.upstream_restricted_frontier: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.suffix.eq_def: []
+AXIOMS BB6Interop.AppC8ResidualTape.not_both_defect_returns: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8.step_commutes: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.reset_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.no_progress_of_trace: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.short_bad_prefix: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.runListCfg.eq_1: []
+AXIOMS BB6Interop.instruction.eq_1: [propext]
+AXIOMS BB6Interop.AppC8Restricted.residual_drain: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.generated_closure_of_paired: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC7.step_commutes: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.shuttle_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC7.gate_halts_after: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.terminal_even_odd: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.generated_entry: []
+AXIOMS BB6Interop.AppC8ResidualTape.residual_bad_avoids: []
+AXIOMS BB6Interop.AppC8RunLists.first_two: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC7.blank_nonhalting: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.short_bad_not_generated: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.five_turn: []
+AXIOMS BB6Interop.AppC7.table_agrees: [propext]
+AXIOMS BB6Interop.zipperStep.eq_1: []
+AXIOMS BB6Interop.half_head: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.terminal_boundary_generated: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.second_bad_excluded: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.first_bad_avoids: []
+AXIOMS BB6Interop.AppC8Restricted.blank_candidate_entry: []
+AXIOMS BB6Interop.AppC8ResidualTape.second_bad_steps: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.one_left_boundary: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.terminal_104_to_239: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.not_second_defect_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC7.blank_agrees: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.run_list_zero_long: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.seventeen_collapse: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.run_list_absorb: [propext]
+AXIOMS BB6Interop.AppC8RunLists.upstream_prefix: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.head_false: [propext]
+AXIOMS BB6Interop.AppC8ResidualTape.residual_phase_progress: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.survives_of_boundary_return: [propext, Quot.sound]
+AXIOMS BB6Interop.unreachable_of_halts: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.PositiveWord.brecOn: []
+AXIOMS BB6Interop.AppC8ResidualTape.boundary_head_true: []
+AXIOMS BB6Interop.AppC8RunLists.second_zero_long: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.upstream_generated_frontier: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.first_sweep_progress: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.generated_frontier_member: []
+AXIOMS BB6Interop.AppC8Continuation.boundary_tail: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.second_five_progress: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.blank_fueled_member: []
+AXIOMS BB6Interop.AppC8Continuation.boundary_pure: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.first_five_progress: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.upstream_nonhalting_of_paired: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.upstream_extended_prefix: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.even_carry_to_four: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.defect_strip_block_param: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.blank_terminal_239: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.zero_turn: []
+AXIOMS BB6Interop.AppC7.gate_unreachable: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.encode.eq_1: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.first_long: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.pure_generated: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.second_two: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.back_marker_nonempty: [propext]
+AXIOMS BB6Interop.AppC8Restricted.blank_fueled_boundary: []
+AXIOMS BB6Interop.half.eq_1: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.five_boundary_progress: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.second_terminal_generated: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.fueled_return_candidate: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.first_bad_excluded: [propext, Quot.sound]
+AXIOMS BB6Interop.encode.eq_1: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.upstream_nonhalting_of_defects: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.terminal_residual_generated: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.upstream_clean_return: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.blank_terminal_104: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.back_join: [propext]
+AXIOMS BB6Interop.AppC8Restricted.admissible_length: [propext]
+AXIOMS BB6Interop.AppC8TerminalGrammar.blank_generated_prefix: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.one_to_tail: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.progress_prepend: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC7.sweep_gate_unreachable: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.restricted_fuel_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.generated_core_code: []
+AXIOMS BB6Interop.AppC8Continuation.pure_boundary_progress: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.short_bad_not_restricted: [propext, Quot.sound]
+AXIOMS BB6Interop.Zipper.mk.injEq: [propext]
+AXIOMS BB6Interop.AppC7.gate_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.positive_run_list: []
+AXIOMS BB6Interop.AppC8ResidualTape.rejectTrace.eq_2: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.old_code_generated: []
+AXIOMS BB6Interop.AppC8Restricted.fueled_progress: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.residual_cycle: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.fueled_cycle: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.old_candidate_generated: []
+AXIOMS BB6Interop.read.eq_2: []
+AXIOMS BB6Interop.AppC8RunLists.second_long: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.emitted_one_generated: [propext, Quot.sound]
+AXIOMS BB6Interop.half.eq_2: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.short_bad_halts: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.seed_generated: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.short_bad_entry: []
+AXIOMS BB6Interop.AppC7.gate_unreachable_local: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.first_even_bridge: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.blank_after_five: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.middle_left: []
+AXIOMS BB6Interop.AppC8ResidualTape.first_bad_steps: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.five_collapse: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.second_even_generated: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8.blank_agrees: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.first_defect_two_progress: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.terminal_44_to_104: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.restricted_fuel_is_fueled: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.terminal_odd_boundary: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.no_safe_extension: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC7.pack_step: []
+AXIOMS BB6Interop.AppC8ResidualTape.shortBadBoundary.eq_1: []
+AXIOMS BB6Interop.AppC8Restricted.core_shuttle: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.emitted_pair_generated: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.residual_second_terminal_progress: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.blank_clean_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.blank_survives_of_boundary_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.short_bad_member: []
+AXIOMS BB6Interop.AppC8Restricted.three_twenty_six: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.four_long: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.run_list_five: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.positive_good_tail: []
+AXIOMS BB6Interop.AppC8.blank_reaches_in: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.first_even_generated: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.blank_fueled_entry: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8.mod1_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.zero_block_defect: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.short_budget_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC7.encode.eq_1: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.odd_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.defect_turn_641: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.double_even_budget_decreases: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8.mod2_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.positive_blocks: []
+AXIOMS BB6Interop.AppC8.run_commutes: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.residual_second_terminal: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.not_boundary_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.suffix.eq_1: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.phase_one: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.rejectTrace.eq_1: []
+AXIOMS BB6Interop.AppC8Restricted.blank_restricted_frontier: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8.blank_clean_entry: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.core_generated: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.generated_is_boundary: []
+AXIOMS BB6Interop.AppC8Continuation.one_collapse: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.marker_finish: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.phase_four: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.blank_survives_of_candidate_closure: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.run_list_boundary: []
+AXIOMS BB6Interop.AppC8.rounds_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.blank_after_variable_defect: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC7.sweep_gate_unreachable_local: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.suffix_zero_count: [propext]
+AXIOMS BB6Interop.AppC8Restricted.blank_restricted_prefix: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.blocks_zero_count: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.suffix.eq_2: []
+AXIOMS BB6Interop.AppC8Continuation.upstream_nonhalting_of_boundary_return: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.gprepend: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.closed_domain_excludes_witness: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.second_bad_positive: []
+AXIOMS BB6Interop.encode_step: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.core_pure_one: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC7.run_commutes: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.rejectTrace.eq_def: []
+AXIOMS BB6Interop.AppC8Restricted.terminal_left_nonempty: [propext]
+AXIOMS BB6Interop.AppC8ResidualTape.terminal_phase_not_closed: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.reject_trace_sound: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.terminal_return_candidate: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.zero_left_finish: []
+AXIOMS BB6Interop.AppC8Restricted.guarded_defect_progress: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.second_one: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.positive_word_run_list: []
+AXIOMS BB6Interop.AppC8RunLists.boundary_return_of_defects: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.upstream_nonblank_halt: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.blank_extended_frontier: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.third_entry: []
+AXIOMS BB6Interop.AppC8.pack_step: []
+AXIOMS BB6Interop.AppC8ResidualTape.residual_first_terminal_progress: [propext, Quot.sound]
+AXIOMS BB6Interop.half.eq_def: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.blank_survives_of_paired: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8.blank_clean_applied: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.paired_generated: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.bad_residual_not_fueled: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.short_bad_not_candidate: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.restricted_frontier_member: []
+AXIOMS BB6Interop.AppC8ResidualTape.first_bad_enters_residual: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.blank_paired_359: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.defect_push: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.terminal_odd_local: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.upstream_extended_frontier: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.residual.eq_1: []
+AXIOMS BB6Interop.AppC8Continuation.four_turn: []
+AXIOMS BB6Interop.AppC8ResidualTape.run_comp_none: [propext]
+AXIOMS BB6Interop.Zipper.mk.inj: []
+AXIOMS BB6Interop.AppC8Restricted.core_is_restricted: []
+AXIOMS BB6Interop.AppC8ResidualTape.residual_first_terminal: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.short_bad_not_generated_candidate: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.emitted_to_core: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.first_terminal_generated: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.macro_closed_survives: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8RunLists.run_list_shuttle: [propext, Quot.sound]
+AXIOMS BB6Interop.transfer_run: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.terminal_even_local: [propext, Quot.sound]
+AXIOMS BB6Interop.bit.eq_1: [propext]
+AXIOMS BB6Interop.AppC8Restricted.three_eight: [propext, Quot.sound]
+AXIOMS BB6Interop.half_tail: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.table_agrees: [propext]
+AXIOMS BB6Interop.read.eq_1: []
+AXIOMS BB6Interop.AppC8Restricted.restricted_fuel_left_nonempty: [propext]
+AXIOMS BB6Interop.AppC8TerminalGrammar.generated_boundary_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Restricted.ones_zero_count: [propext]
+AXIOMS BB6Interop.AppC8ResidualTape.rejectTrace.eq_3: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.second_odd_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8Continuation.arbitrary_suffix_halts: []
+AXIOMS BB6Interop.AppC8TerminalGrammar.generated_fuel_return: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8TerminalGrammar.drain_positive: [propext, Quot.sound]
+AXIOMS BB6Interop.AppC8ResidualTape.residual_bad_no_return: [propext, Quot.sound]
+INTEROP AUDIT PASS: 266 non-internal theorem constants; axioms [propext, Quot.sound, Classical.choice]
+warning: BB6Interop/KernelAudit.lean:26:100: This line exceeds the 100 character limit, please shorten it!
+You can use "string gaps" to format long strings: within a string quotation, using a '\' at the end of a line allows you to continue the string on the following line, removing all intervening whitespace.
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+info: BB6Interop/KernelAudit.lean:28:0: 'BB6Interop.AppC7.gate_unreachable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BB6Interop/KernelAudit.lean:29:0: 'BB6Interop.AppC7.sweep_gate_unreachable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BB6Interop/KernelAudit.lean:30:0: 'BB6Interop.AppC8.clean_exact_time' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BB6Interop/KernelAudit.lean:31:0: 'BB6Interop.AppC8.blank_clean_applied' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3293 jobs).

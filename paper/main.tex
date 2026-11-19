@@ -1,0 +1,593 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\DisableLigatures[-]{encoding = T1, family = tt*}
+\DeclareTextFontCommand{\texttt}{\normalfont\ttfamily}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{array,booktabs,tabularx}
+\usepackage{enumitem}
+\setlist[enumerate]{beginpenalty=10000}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=green!50!black,urlcolor=blue!70!black]{hyperref}
+
+\emergencystretch=1.5em
+\DeclareRobustCommand{\_}{\ifmmode\sb\else\textunderscore\allowbreak\fi}
+\pdfstringdefDisableCommands{%
+  \def\BB{BB}%
+  \def\_ {\textunderscore}%
+  \def\_{\textunderscore}%
+}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{heuristic}[theorem]{Heuristic Remark (Non-Theorem)}
+
+% Listings configuration for Lean 4 and C snippets
+\lstdefinelanguage{Lean4}{
+  morekeywords={def,theorem,inductive,structure,where,by,intro,cases,with,if,then,else,let,in,match,unfold,dsimp,only,repeat,split,at,all_goals,first,contradiction,injection,subst,omega,decide,refine,have,rw,simp,calc,macro,namespace,end,import,abbrev,deriving,fun},
+  sensitive=true,
+  morecomment=[l]{--},
+  morecomment=[s]{/-}{-/},
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\bfseries\color{blue!65!black},
+  commentstyle=\itshape\color{gray!75!black},
+  columns=fullflexible,
+  keepspaces=true,
+  frame=single,
+  rulecolor=\color{black!25}
+}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  columns=fullflexible,
+  keepspaces=true,
+  frame=single,
+  rulecolor=\color{black!25},
+  literate={\`}{{\textasciigrave}}1
+}
+
+\newcommand{\BB}{\mathrm{BB}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Halt}{\mathbf{Halt}}
+\newcommand{\rk}{\mathrm{rk}}
+
+\hypersetup{pdftitle={Verified Macro-Model Dynamics and Algebraic Certificates for BB(6) Cryptids},pdfauthor={Darryl Novotny},pdfsubject={Audited theorem scope, finite raw-TM checks, and algebraic examples},pdfkeywords={Busy Beaver, Lean 4, macro systems, verification}}
+\title{\textbf{Verified Macro-Model Dynamics and Algebraic Certificates for $\BB(6)$ Cryptids}}
+\author{Darryl Novotny\\SyncQutrit Research Group, LLC.\\\href{mailto:darryl@syncqutrit.com}{darryl@syncqutrit.com}}
+\date{November 18, 2026\\\small Audited revision with proved semantic interoperability}
+\begin{document}
+\maketitle
+\begin{abstract}
+Six-state Busy Beaver candidates motivate guarded integer dynamical systems extracted from Turing-machine execution. We present two Lean 4.16.0 libraries with 316 user-authored theorems and a separate Lean 4.35.0-rc4 interoperability library with 36 source theorems. We distinguish model proofs, conditional results, finite checks, and raw-machine results. The core library proves aperiodicity in the specified A.1--A.10, B.9, BMO 8, and selected frontier models under their stated domains; A.11 has finite epoch calculations and a conditional sector transition. For AppC 7, we prove the exact first undefined-attempt count $16b^2+28b+15$ for a nonblank gate family. A semantic adapter combines our halting witnesses with the pinned upstream blank-tape non-halting certificate to prove that both our prefixed and generalized sweep gate families are unreachable from blank. This is a composed corollary, not an independent blank-tape classification. For AppC 8, raw proofs establish a shuttle, reset, exit, clean-sector macro, and parameterized residue excursions. The clean macro sends $c=4(q+1)$ to $6q+8$ in $108q^2+332q+238$ defined transitions. A finite kernel-checked bridge and universal component proofs certify blank entry at carry count 696 and time 2,600,695, then carry count 1046 at time 5,890,701. The adapter transports these guarded exact-time results and defined prefixes into upstream machine semantics. Global AppC 8 survival remains unproved. Additional algebraic examples and finite compiler benchmarks retain their stated model and input restrictions.
+\end{abstract}
+
+\section{Problem, provenance, and evidence}
+\label{sec:scope}
+Rad\'o's Busy Beaver problem \cite{rado1962noncomputable} connects finite machine descriptions to uncomputability. Historical computational studies \cite{lin1965computer,brady1983determination,marxen1990attacking} and Michel's number-theoretic analysis \cite{michel2015busy} explain why small machines can induce difficult integer dynamics. The determination of $\BB(5)=47{,}176{,}870$ is documented by the bbchallenge collaboration \cite{bbchallenge2024bb5}. Its result dates to 2024; the cited preprint was first posted in 2025, and we pin version 2 dated March 23, 2026.
+
+Our machine labels A.1--A.11, B.9, T3.14, T3.15, and AppC refer to Dos Santos et al., version 2 \cite{dossantos2026limits}. In that source, Table 3's ``Undetermined'' entries concern correspondence with community rules whose Discord material was unavailable, rather than an assertion that a machine's halting status was newly unresolved. We therefore use these labels as identifiers and do not describe our macro-map analysis as solving those benchmark entries. The source's failed automated formalizations in Appendix C are also distinct from mathematical impossibility or a proof of unknown halting behavior.
+
+We separately compare with the later formal repository \cite{deepmind2026cryptidsSnapshot}, pinned to commit
+\texttt{3647718b5df2} (full hash in the cited repository record)
+dated November 12, 2026. It supplies raw-backed accelerations for the exact A.1--A.11 tables and a blank-tape non-halting certificate for the exact AppC 7 table. The integration below rebuilds the required upstream dependency closure and combines that certificate with our local raw results. Machine identity is established by full transition tables, not short labels.
+
+Our additional contributions are guarded-model drift and gate certificates, exact-cost raw refinements for selected AppC 7 and AppC 8 families, and proved semantic interoperability for those two raw machines. Our core counter models still need separate correspondence proofs to the upstream accelerations. In the pinned repository tree, no matching AppC 8 machine-named module was found under state permutations fixing the initial state and global tape reflection; this bounded catalog comparison does not establish worldwide priority.
+
+Antihydra's historical attribution follows Ligocki's July 6, 2024 article \cite{ligocki2024antihydra}: mxdys discovered the machine, and Racheline supplied its high-level rules. General Collatz results \cite{lagarias19853x,tao2022almost} provide context; probabilistic or almost-everywhere conclusions do not decide an individual deterministic cryptid orbit.
+
+The two original libraries use Lean 4.16.0 \cite{moura2021lean4}, without third-party Lean packages. The separate interoperability build uses the upstream Lean 4.35.0-rc4 toolchain and pinned Mathlib dependencies; it recompiles the nine required original source modules without modifying them. We distinguish five evidence classes throughout:
+\begin{enumerate}[leftmargin=*,nosep]
+\item \textbf{Model theorem}: kernel-checked statement about the explicitly defined counter or word transition system.
+\item \textbf{Raw-machine theorem}: statement about a tape, head, control state, transition function, and specified initial configuration.
+\item \textbf{Arithmetic or conditional theorem}: an identity or implication whose hypotheses must still be connected to machine execution.
+\item \textbf{Finite test}: equality checked for the enumerated inputs, with no universal quantifier over untested configurations.
+\item \textbf{Informal argument or open question}: mathematical reasoning given here, or a missing proof obligation explicitly identified.
+\end{enumerate}
+The distinction matters even when a declaration has a suggestive name. A theorem named ``macro law'' need not mention a Turing machine. A model with no periodic orbit can still halt, and an abstract non-halting example need not encode a listed six-state machine.
+
+\section{Guarded affine systems and valid drift certificates}
+\label{sec:drift}
+A partial transition function $F:S\to S\cup\{\Halt\}$ represents one macro step. An invariant $P$ is preserved on every non-halting step. A periodic orbit is a nonempty sequence of defined steps that returns to its initial state.
+
+\begin{proposition}[Strict drift excludes periodicity]
+If $P$ is invariant and $E(F(s))\ge E(s)+1$ for every defined step from $P$, then no state satisfying $P$ lies on a periodic orbit.
+\end{proposition}
+\begin{proof}
+After $n>0$ defined steps, induction gives $E(F^n(s))\ge E(s)+n$. Returning to $s$ contradicts this inequality. The library proves this pattern in \texttt{no\_periodic\_of\_strict\_lyapunov}, and a lexicographic variant in \texttt{no\_periodic\_of\_lex\_lyapunov}.
+\end{proof}
+Neither proposition proves that a next step exists. Non-halting additionally requires a safe invariant excluding every halting guard, as captured by the separate Phase-4 theorem \texttt{nonHalting\_of\_safe\_invariant}.
+
+For an affine branch $F_k(x)=M_kx+\beta_k$, let
+\[
+V^*=\bigcap_k\ker(M_k^T-I),\qquad E_\alpha(x)=\alpha^Tx.
+\]
+Then $\alpha\in V^*$ gives $E_\alpha(F_k(x))-E_\alpha(x)=\alpha^T\beta_k$: the drift is independent of the current state on that branch. It is a conserved quantity only if the corresponding drift vanishes. Independently of membership in $V^*$, the exact identity
+\[
+E_\alpha(F_k(x))-E_\alpha(x)
+=((M_k^T-I)\alpha)^Tx+\alpha^T\beta_k
+\]
+can prove a positive lower bound on a guarded nonnegative domain. Nonnegative coefficients and a strictly positive guard minimum are sufficient. Guard constraints, offsets, and invariance must all be checked.
+
+\paragraph{No automatic dimension reduction.}
+The common left nullspace does not determine a return-map dimension. For $F(x,y)=(x+1,y)$, $M=I_2$, so $\dim V^*=2$, while $E=x+y$ has drift 1. Subtracting the nullity and one from the ambient dimension would give $-1$. Nor does division by $E$ automatically yield a closed normalized map: $(1,1)$ and $(2,2)$ have identical normalized coordinates but their successors have first-coordinate ratios $2/3$ and $3/5$. A quotient requires a separately proved equivalence relation and transition compatibility. The synthesis tool now returns the common nullspace and reports return dimension as undetermined. The use of two counters or a reflection factorization likewise proves no dimension theorem.
+
+\section{Core macro-model results}
+\label{sec:core}
+\subsection{A.1--A.10 and B.9}
+The library's \texttt{Stage3Aperiodic.lean} proves no periodic orbits for the specified A.1--A.10 and B.9 models. Table~\ref{tab:domains} records the domains of those statements. These are the transitions encoded in the library, with separate finite raw-machine cross-checks. This artifact does not supply a universal raw-to-macro simulation theorem for each row. The matching upstream machines already have raw-backed accelerations; the missing correspondence concerns our particular counter models, guards, and return sections.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabularx}{\linewidth}{@{}lXX@{}}
+\toprule Model & Domain of the no-periodic-orbits theorem & Certificate form \\ \midrule
+A.1 & \texttt{InvA1}, including the encoded boundary restrictions & Lexicographic energy/rank \\
+A.2, A.10 & All natural counter pairs in the epoch models & Strict integer energy \\
+A.3 & \texttt{InvA3} & Strict drift of the counter energy \\
+A.4 & All natural counter pairs & Strict integer energy \\
+A.5 & \texttt{InvA5} on its tagged state space & Lexicographic energy/rank \\
+A.6 & \texttt{InvA6} on its tagged state space & Strict integer energy \\
+A.7, A.8, A.9 & \texttt{InvA7}, \texttt{InvA8}, \texttt{InvA9}, respectively & Strict integer energy \\
+B.9 & All natural counter pairs & Strict integer energy \\
+BMO 8 & Full domain in equation~\eqref{eq:bmo-domain} & Drift 3 or 5 \\
+\bottomrule
+\end{tabularx}
+\caption{Scope of core aperiodicity results. A.11 is deliberately absent: no general A.11 aperiodicity theorem is supplied.}
+\label{tab:domains}
+\end{table}
+
+For example, A.2 and A.10 use $E(L,R)=4L+2R+\mathbf{1}_{R>0}$ and strictly increase it on each defined epoch transition. Boundary and portal results are separate statements: \texttt{a1\_mixed\_bc\_unreachable} excludes a mixed-counter region from its specified initial model state; \texttt{a6\_boundary\_halts\_unreachable} excludes its named boundary halts. The three secondary-cascade identities for A.2, A.5, and A.10 concern their specified portal families. Excluding these branches does not establish that every other halting branch is unreachable.
+
+\subsection{BMO 8: domain and gates}
+Write the full invariant as
+\begin{equation}
+P(a,c):\quad a+c\ge8,\quad c\ge2,\quad
+(a\equiv0\pmod3\ \lor\ c\equiv2\pmod3).
+\label{eq:bmo-domain}
+\end{equation}
+The model starts at $(4,11)$, satisfies $P$, and preserves $P$ on defined steps. Under $P$, \texttt{bmo8\_three\_gates\_iff} states that the next step halts exactly on the union
+\[
+\begin{array}{ll}
+G_1=(3k+3,6k+5),&k\ge0,\\
+G_2=(3k+2,6k+2),&k\ge0,\\
+G_3=(3k+3,6k+4),&k\ge1.
+\end{array}
+\]
+The union is intersected with $P$; for example $G_2$ at $k=0$ is outside $P$. The modular clause alone is insufficient: $(3,4)$ satisfies it and halts, but is omitted by the displayed $G_3$ range because $3+4<8$. On defined transitions from $P$, \texttt{bmo8\_drift\_3\_or\_5} proves $\Delta(a+c)\in\{3,5\}$. Consequently \texttt{bmo8\_no\_periodic\_orbits} applies. It does not exclude later arrival at one of the three gates. Finite residue filtrations, including \texttt{bmo8\_I9\_card\_eq\_33}, concern the specified residue predicate, not infinite-time survival.
+
+\subsection{T3.15: the initial contraction run}
+The T3.15 model on $(a,b)\in\N^2$, with $b\ge1$, has the branches
+\[
+F(a,b)=\begin{cases}
+\Halt & a=0,\ b\equiv0\pmod3,\\
+(3\lfloor b/3\rfloor+3,1)&a=0,\ b\equiv1\pmod3,\\
+(3\lfloor b/3\rfloor+2,2)&a=0,\ b\equiv2\pmod3,\\
+(4\lfloor a/3\rfloor+b+2,1)&a>0,\ a\equiv0\pmod3,\\
+(4\lfloor a/3\rfloor+b+4,1)&a>0,\ a\equiv1\pmod3,\\
+(\lfloor a/3\rfloor,b+2\lfloor a/3\rfloor+3)&a\equiv2\pmod3.
+\end{cases}
+\]
+The library proves invariance of $b\ge1$ and no periodic orbits via \texttt{t315\_no\_periodic\_orbits}. Its \texttt{t315\_3adic\_step\_identity} verifies a single contraction step. The following multi-step statement is an informal induction, independently regression-tested; it is not attributed to that one-step Lean declaration.
+
+\begin{proposition}[Halt immediately after the initial contraction run]
+Starting at $(a_0,1)$ with $a_0\ge1$, the initial maximal run of the $a\equiv2\pmod3$ branch ends at $a=0$ and then immediately halts if and only if
+\[
+a_0=3^{3m}-1\quad\text{for an integer }m\ge1.
+\]
+This is not an if-and-only-if criterion for eventual halting after arbitrary subsequent branches.
+\end{proposition}
+\begin{proof}
+One contraction divides $a+1$ by 3. If $r=\nu_3(a_0+1)$, after $r$ contractions $a_r=(a_0+1)/3^r-1$. Thus $a_r=0$ exactly when $a_0=3^r-1$. In this case, at step $i$ the counter is $a_i=3^{r-i}-1$, and the increment in $b$ is $2\cdot3^{r-i-1}+1$. Summing gives $b_r=3^r+r$. For $r\ge1$, this is divisible by 3 exactly when $r\equiv0\pmod3$. If $r=0$ and $a_0\ge1$, the initial contraction run does not reach zero.
+\end{proof}
+The smallest such witness is $(26,1)\to(8,20)\to(2,27)\to(0,30)\to\Halt$. In contrast, $a_0=14$ and $20$ halt after using other branches, so they disprove a global eventual-halting interpretation of the displayed criterion. The corresponding T3.14 library results likewise concern its tagged macro model, its invariant, and its drift; no complete blank-tape halting classification is inferred from these aperiodicity proofs.
+
+\section{A.11 finite epochs and Antihydra conditional algebra}
+\label{sec:conditional}
+\subsection{A.11}
+The pinned upstream source already provides a higher-level return system for this machine. Its scan sends $(r,b)$ to $((b+r)\bmod2,3\lfloor(b+r)/2\rfloor+9)$ for $r\in\{0,1\}$. When $3\mid b$, the coordinate $X=r+2b/3+12$ gives $X'=b+r+18=\lfloor3X/2\rfloor$. This algebraic relationship identifies overlap with our homogenization; it is not a kernel-checked correspondence of all terminal cases and return sections.
+
+For the specified A.11 shuttle, the change of variable $X(a,q)=a+2q+12$ homogenizes the two-step transformation into $f(X)=\lfloor3X/2\rfloor$. Exact epoch evaluation begins
+\[
+(16,0,3)\longmapsto(12,6,3)\longmapsto(12,24,3)
+\longmapsto(20,1138,3).
+\]
+At the next calculation, $Z_3=f^{569}(20)$ is a 102-digit integer with $Z_3\equiv7\pmod8$. The resulting Epoch-4 counter satisfies
+\[
+c_4=\frac{3\lfloor Z_3/2\rfloor-19}{2}\equiv1\pmod{16}.
+\]
+The exact integer values are retained in the machine-readable revision regression output. These are finite evaluations, however large their values.
+
+The theorem \texttt{a11\_odd\_c\_activates\_d6} assumes that the epoch transition survives and returns a successor. Applied to the odd $c_4$, it establishes that \emph{if Epoch 4 completes with a successor, that successor has $d=6$}. Entry into Epoch 4 is not a proof of exit from it. No unconditional Epoch-5 survival or $d_5=6$ assertion follows.
+
+There is also no general monotonicity of the $c$ counter: the defined epoch transition sends $(20,5,6)$ to $(65,3,3)$, decreasing $c$. We make no general A.11 aperiodicity or non-halting claim. Establishing one requires an additional global invariant or a different argument.
+
+\subsection{Antihydra}
+The affine branch $16z'=81z+57$ gives the exact ghost-shift identity
+\[
+16(65z'+57)=81(65z+57).
+\]
+The library proves this identity and its iterated conditional form, along with a specified mod-32 clamping result. They do not themselves establish all quotient-graph laws at every power of two.
+
+In particular, \texttt{antihydra\_periodic\_burst\_bound} is an arithmetic implication. With natural-number parameters $A,B,C,b,z$ satisfying $0<b<C-B$, $B<C$, and
+\[
+A\le(C-B)z+b,
+\]
+it concludes $A<C(z+1)$. Substituting $A=2^{qW}$, $B=2^W$, $C=3^W$ yields a burst bound only after the displayed inequality has been established for the actual cylinder word. That inequality is a hypothesis of the theorem, not a consequence derived there from machine execution.
+
+Karp's theorem \cite{karp1978characterization} justifies computing minimum cycle means of finite weighted graphs. A finite graph calculation is evidence for that graph; it is not a proof of a proposed formula for all moduli. General quotient-count formulas, minimum-cycle-mean formulas for every $2^k$, and ultrametric ghost-separation assertions are not promoted to kernel-verified results in this paper. A Haar or Lebesgue stochastic model likewise supplies no deterministic halting conclusion for a fixed seed.
+
+\section{Algebraic examples and their machine connections}
+\label{sec:transfers}
+Phase 4 explores established techniques through exact, small examples. Weighted automata and regular model checking \cite{schutzenberger1961automata,bouajjani2000regular} motivate word abstractions; positivity and barrier certificates \cite{putinar1993positive,prajna2004barrier,chatterjee2025polyqent} motivate polynomial certificates; linear reachability \cite{karimov2025multiple} provides a related setting. These references provide background rather than evidence that all hypotheses of their general results hold for our examples.
+
+\subsection{Word matrices and polynomial barriers}
+The matrices
+\[
+\mu(T)=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad
+\mu(D)=\begin{pmatrix}17&7\\0&4\end{pmatrix}
+\]
+do not commute. The library checks that a matrix word encoding can distinguish words with identical letter counts, and proves monotonicity for its stated positive-cone context rewrite. It also proves immortality of the explicitly defined \texttt{stepMultiDefect} system. That system's rewrites and reset are an abstract example; no complete refinement of AppC 7 into that system is supplied.
+
+For a separate counter example, use $(x,y)\mapsto(x+2y+1,y+1)$ from $(2,0)$ with halt guard $4y-x-3\ge0$. The barrier $B=y^2-x+1$ is conserved and starts at $-1$, while
+\[
+B=(y-2)^2+(4y-x-3)\ge0
+\]
+on the halt guard. This proves non-halting of that counter system. The library's affine-barrier impossibility result has its own globally quantified hypotheses; it is not a theorem ruling out all affine certificates for arbitrary machines. The coupled polynomial example and the Fibonacci and Pell norm examples are similarly model theorems. For instance $x^2-xy-y^2$ changes sign under $(x,y)\mapsto(x+y,x)$; the norm of the specified halt ray separates it from the orbit starting at $(3,2)$. These are illustrative certificates, not newly identified raw BB(6) deciders.
+
+\subsection{AppC 7: a universal raw gate refinement}
+The exact machine below is already proved non-halting from blank in the pinned upstream repository \cite{deepmind2026cryptidsSnapshot}. Our halting result starts on a specified nonblank tape. Section~\ref{sec:interop} proves compatibility of the raw semantics and derives gate unreachability from the combined certificates.
+
+\label{sec:appc7raw}
+The module \texttt{AppC7RawGate.lean} now closes the gate-specific refinement gap. It defines the complete twelve-entry transition table of
+\begin{center}\small\texttt{1RB1RC\_1LC0LE\_0RA1RD\_1RF1LB\_1LD0LA\_---0RC}.
+\end{center}
+The raw configuration is a finite tape zipper: the left list stores cells nearest the head first, the right list starts with the scanned cell, and every missing cell is zero. One step performs exactly the table's write, left/right move, and state change, or returns no successor at $F0$. There are no counter-level or macro rules in this step function.
+
+\begin{theorem}[Exact AppC 7 gate family]
+For every $a,r\in\N$, start in state $D$ on the zero immediately left of $(10)^a(1110)^r11$, with all other unlisted cells zero. The first undefined instruction is attempted at
+\[
+T(a,r)=16r^2+(8a+12)r+2a+5.
+\]
+Equivalently, the machine executes exactly $T(a,r)-1$ defined transitions and is then in state $F$ scanning zero. Starting instead at $\langle A:0\rangle\,00(1110)^b11$, the first halting attempt is $16b^2+28b+15$ for every $b\in\N$. Every shorter execution prefix is defined.
+\end{theorem}
+\begin{proof}
+The raw sweep theorem \texttt{gate\_phase\_all} proves, for every $a$ and arbitrary finite right tail, that one $1110$ block is consumed and the $10$ prefix grows by four in $8a+20$ defined steps. For $a\ge1$, the proof composes three entry instructions, a $2(a-1)$-step right scan, ten turn instructions, a $6(a-1)$-step return scan, and fifteen boundary instructions; the zero-prefix case is checked directly in twenty instructions. With no $1110$ blocks remaining, \texttt{gate\_terminal\_all} reaches $F0$ in $2a+4$ defined transitions. Induction on $r$ therefore refines the recurrence
+\[
+T(a,0)=2a+5,\qquad T(a,r+1)=8a+20+T(a+4,r).
+\]
+The existing arithmetic closed form then gives the displayed polynomial. A six-instruction prefix maps the $A$-state family into the $D$-state family with $a=2$. The theorems \texttt{gate\_sweep\_exact\_time} and \texttt{appC7\_raw\_gate\_exact\_time} prove that all earlier prefixes remain defined, so these are first halting times rather than upper bounds.
+\end{proof}
+The count includes the final attempted undefined instruction, matching the Python simulator's convention; the number of completed transitions is one smaller. This result concerns the specified nonblank input families. It does not show that the machine's blank trajectory reaches a gate, nor does it refine the unrestricted multi-defect dynamics into the abstract word model in Section~\ref{sec:transfers}.
+
+Independent regression checks compare all twelve table entries with the existing dictionary-tape simulator, test 117 general gate inputs, 33 prefixed inputs, and 403 one-phase inputs with varying right tails. An additional 192 concrete execution comparisons are generated by that simulator and checked in Lean. These finite tests check transcription and execution conventions; the universally quantified result is the inductive Lean proof.
+
+\subsection{AppC 8: a universal raw shuttle refinement}
+\label{sec:appc8raw}
+The module \texttt{AppC8RawShuttle.lean} defines the complete raw table
+\begin{center}\small\texttt{1RB1LC\_1LA0RD\_0LB1LF\_1RE1LC\_1LC0RB\_0LA---}
+\end{center}
+and explicit read, write, movement, and partial iteration on a head-relative tape zipper. Missing cells are zero. Let $C(k,m)$ denote state $A$ scanning the zero immediately left of $10(110)^k1^m$, with zero-filled unlisted cells.
+
+\begin{theorem}[Raw AppC 8 shuttle and repeated rounds]
+For every $k\in\N$ and $m\ge5$, the raw machine reaches $C(k+2,m-4)$ from $C(k,m)$ after $12k+26$ defined transitions. Every prefix through that time is defined. More generally, if $r\in\N$ and $m\ge4r+1$, it reaches $C(k+2r,m-4r)$ after
+\[
+S(k,r)=12rk+12r(r-1)+26r
+\]
+defined transitions.
+\end{theorem}
+\begin{proof}
+The theorem \texttt{shuttle\_with\_tail} proves the stronger local statement with an arbitrary finite suffix after the first five trailing ones; the suffix remains unchanged. It composes three entry instructions, a $3k$-step right scan, a five-instruction turn, a $3k$-step left scan, four boundary instructions, a $3(k+1)$-step right scan, a second five-instruction turn, a $3(k+1)$-step left scan, and three final boundary instructions. Their sum is $12k+26$. Each right-scan triplet uses the literal $E,B,D$ instructions to rewrite $110$ as $001$; the return scan and boundary lemmas certify the full resulting tape, including the cases $k=0$ and $m=5$. No macro rule is assumed by the raw step function.
+
+Specializing the unchanged suffix gives \texttt{appC8\_raw\_shuttle}. Successful partial iteration implies that every earlier prefix is defined, formalized by \texttt{appC8\_shuttle\_survives}. Induction on $r$, with the guard $m\ge4r+1$ ensuring at least five ones before each round, gives \texttt{appC8\_raw\_shuttle\_rounds}. Applying the existing closed form for the sum of round durations yields \texttt{appC8\_raw\_rounds\_closed\_form} and $S(k,r)$.
+\end{proof}
+This is an elapsed-execution certificate for the specified configurations; no minimal first-return assertion is made. The existing counter identity \texttt{appC8\_shuttle\_conserves\_2k\_plus\_m} now applies to a universally proved raw shuttle: $2k+m$ is conserved between these endpoints, while the displayed word length increases by two. It is not asserted to be conserved at every individual raw instruction.
+
+Substituting $k=3$, $m=12q+10$, and $r=3q+2$ gives the raw middle-stage theorem \texttt{appC8\_clean\_middle\_raw}, for every $q\in\N$:
+\[
+C(3,12q+10)\ \xrightarrow{\ S(3,3q+2)\ }\ C(6q+7,2).
+\]
+Independent tests compare all twelve table entries, 420 single-round cases, 819 cases with varying right tails, 504 repeated-round cases, and 13 clean-middle cases against the dictionary-tape simulator. A further 192 independently generated execution comparisons are checked in Lean. These tests validate transcription and conventions; the universal claims rest on the inductive proof.
+
+\paragraph{Raw reset, exit, and the full clean macro.}
+The module \texttt{AppC8RawCleanMacro.lean} uses the same raw step function. Write $D(c)$ for the head-relative configuration $10(100)^c1\langle E:0\rangle$, with all other cells zero. Its left zipper is $(100)^c101$, nearest cell first, the reversal of the displayed word.
+
+\begin{theorem}[Raw AppC 8 clean macro]
+\label{thm:appc8clean}
+For every $c\ge1$ and $k\in\N$, the raw reset and exit are
+\[
+D(c)\xrightarrow{\ 5c+43\ }C(3,3c-2),\qquad
+C(k,2)\xrightarrow{\ 3k+6\ }D(k+1).
+\]
+Consequently, for every $q\in\N$,
+\[
+D(4(q+1))\xrightarrow{\ 108q^2+332q+238\ }D(6q+8).
+\]
+Every prefix through the displayed full-macro duration is defined. These are elapsed execution counts; no first-return minimality is asserted.
+\end{theorem}
+\begin{proof}
+For $c=n+1$, five literal entry instructions reach state $A$ with left zipper $(100)^n101$ and four right-hand ones. The inductive lemma \texttt{reset\_scan} consumes each remaining left $100$ block in five instructions and adds three ones on the right. A fixed 43-instruction boundary sequence transforms the resulting configuration into $C(3,3n+1)$. This proves \texttt{appC8\_raw\_reset}, including $c=1$. The boundary lemma preserves an arbitrary suffix after four leading ones.
+
+For the exit, three entry instructions, the previously proved $3k$-step right scan, and three final instructions give \texttt{appC8\_raw\_exit}, including $k=0$. Specializing to $c=4(q+1)$ and $k=6q+7$ gives durations $20q+63$ and $18q+27$. Composing these with the raw middle stage yields \texttt{appC8\_clean\_macro\_raw}. The arithmetic declaration \texttt{appC8\_clean\_macro\_law} supplies the exact sum
+\[
+(20q+63)+S(3,3q+2)+(18q+27)=108q^2+332q+238.
+\]
+Successful partial iteration supplies all defined prefixes via \texttt{appC8\_clean\_macro\_survives}.
+\end{proof}
+The combined theorem \texttt{appC8\_clean\_macro\_raw\_and\_ghost} connects this raw transition to $2(c'+4)=3(c+4)$ for $c=4(q+1)$ and $c'=6q+8$. Independent dictionary-tape checks cover 128 resets ($1\le c\le128$), 129 exits ($0\le k\le128$), and 33 full clean macros ($0\le q\le32$), comparing the complete tape, state, absolute head position, and elapsed duration. A further 33 complete resulting configurations generated independently are checked by Lean's kernel.
+
+This closes the clean-macro reset and exit obligations. The theorem alone does not supply blank-tape reachability, behavior in all other sectors, or global survival; the concrete blank-run connection is established separately below. In particular, the output need not remain in the clean sector: $c=12$ maps to $20$, then to $32$, then to $50$, which is not divisible by four. General behavior in the odd sector remains open; the previously observed $c=23$ checkpoint is now reached by a separate blank-run proof below. No full AppC 8 halting classification follows.
+
+Block-width scans compare only the sampled widths and trajectories. The formal Hamming-code result verifies an explicit finite coset and weight enumeration; it does not establish a full group-stabilizer theorem. The separate width-three odometer immortality theorem concerns its explicitly defined abstract odometer, without an asserted raw-machine identification.
+
+\subsection{AppC 8: certified reachability from the blank tape}
+\label{sec:appc8blank}
+The module \texttt{AppC8RawBlankReachability.lean} starts in state $A$ with both zipper lists empty, representing the all-zero tape. Table~\ref{tab:appc8blank} records exact head-relative configurations reached from this one initial state. Times count completed defined transitions; they are not first-visit claims.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{rll}
+\toprule
+Elapsed transitions & Reached configuration & Proof component \\
+\midrule
+5 & $C(0,2)$ & Five literal instructions \\
+11 & $D(1)$ & General exit at $k=0$ \\
+59 & $C(3,1)$ & General reset at $c=1$ \\
+3,244 & $C(18,10)$ & Concrete 3,185-instruction bridge \\
+3,752 & $C(22,2)$ & Two general shuttle rounds \\
+3,824 & $D(23)$ & General exit at $k=22$ \\
+3,982 & $C(3,67)$ & General reset at $c=23$ \\
+7,854 & $C(35,3)$ & Sixteen general shuttle rounds \\
+\bottomrule
+\end{tabular}
+\caption{Kernel-certified checkpoints on the AppC 8 blank trajectory. $C$ and $D$ are the configurations defined in Section~\ref{sec:appc8raw}.}
+\label{tab:appc8blank}
+\end{table}
+
+\begin{theorem}[AppC 8 blank reachability and bounded survival]
+Starting from the all-zero tape in state $A$, AppC 8 reaches $C(18,10)$ after 3,244 transitions, $D(23)$ after 3,824 transitions, and $C(35,3)$ after 7,854 transitions. Every execution prefix of length $j\le7{,}854$ is defined.
+\end{theorem}
+\begin{proof}
+Five literal instructions give \texttt{appC8\_blank\_entry}. The proved general exit and reset give $D(1)$ and then $C(3,1)$. The declaration \texttt{appC8\_first\_excursion} uses kernel reduction via \texttt{decide} to verify the concrete equality
+\[
+\operatorname{run}(3185,C(3,1))=\operatorname{some}(C(18,10)).
+\]
+This finite certificate is not a generalized rule for arbitrary odd inputs. Composing it with the 59-step prefix gives \texttt{appC8\_blank\_shuttle\_entry}. Two proved shuttle rounds take $242+266=508$ transitions; the exit adds 72, giving \texttt{appC8\_blank\_carry\_twenty\_three}. The reset adds 158; sixteen shuttle rounds add $S(3,16)=3{,}872$, yielding \texttt{appC8\_blank\_odd\_frontier}. The prefix theorem \texttt{appC8\_blank\_prefix\_defined} follows from successful partial iteration.
+\end{proof}
+The finite bridge is part of the kernel-checked proof, with no custom execution axiom or native evaluation oracle. An independent dictionary-tape simulator checks ten full configurations, including the initial state and the intermediate checkpoint $C(20,6)$ at time 3,486. All ten complete outputs are also checked in Lean by direct executions from blank, independently of the compositional route. Absolute head coordinates are tested by the simulator; the Lean configuration statements are head-relative.
+
+\paragraph{Connection to the clean macro and its remaining premise.}
+These blank-run theorems reuse the general reset and exit proved with the clean macro, together with the raw shuttle. They do not establish entry into its restricted input sector. In particular, the reached carry counts 1 and 23 are not $4(q+1)$ for any natural $q$, as formalized by \texttt{appC8\_blank\_carry\_guards}. The conditional composition theorem \texttt{appC8\_blank\_clean\_macro\_transfer} states that if the blank run reaches $D(4(q+1))$ at time $n$, it reaches $D(6q+8)$ at time $n+108q^2+332q+238$. Section~\ref{sec:appc8mod2} below supplies an actual entry premise at time 2,600,695 and $q=173$. The next subsection proves the excursion from $C(35,3)$ for a whole parameterized family. Global non-halting remains unproved.
+
+\subsection{AppC 8: a universal odd-sector excursion}
+\label{sec:appc8odd}
+The module \texttt{AppC8RawOddSector.lean} extends the raw proof beyond $C(35,3)$. For a finite suffix $t$, write $C_t(k,m)$ for $\langle A:0\rangle10(110)^k1^m t$, with unlisted cells zero. The family proved here has $k\equiv3\pmod4$ and three trailing ones.
+
+\begin{theorem}[Raw odd-sector excursion]
+For every $a\in\N$,
+\[
+C(4a+3,3)\xrightarrow{\ 108a^2+398a+356\ }C(0,18a+31).
+\]
+Every prefix through this elapsed duration is defined. Consequently the blank trajectory reaches $C(0,175)$ at time 18,306 and $C(86,3)$ at time 41,096, with every prefix through time 41,096 defined.
+\end{theorem}
+\begin{proof}
+The first collapse and terminal collapse are raw execution theorems for every $k\in\N$:
+\[
+\begin{aligned}
+ C(k,3)&\xrightarrow{\ 14k+36\ }C_{011}(0,3k+7),\\
+ C_{011}(k,4)&\xrightarrow{\ 14k+44\ }C(0,3k+13).
+\end{aligned}
+\]
+For the first collapse, the previously proved scans give a $(6k+12)$-instruction half-shuttle and a $3(k+1)$-instruction right scan. Eight literal turn instructions, the general $5(k+1)$-instruction reset scan, and eight left-boundary instructions finish the transformation. The terminal collapse uses the same scans with a 16-instruction turn. These prove \texttt{appC8\_odd\_collapse} and \texttt{appC8\_odd\_terminal}, including $k=0$, directly from the raw table.
+
+Induction extends the suffix-preserving shuttle to \texttt{tail\_shuttle\_rounds}. For $k=4a+3$, the first collapse leaves $12a+16$ ones and suffix $011$. Exactly $3a+3$ certified shuttle rounds reach $C_{011}(6a+6,4)$; the terminal collapse then gives $C(0,18a+31)$. The elapsed sum is
+\[
+(56a+78)+S(0,3a+3)+(84a+128)=108a^2+398a+356.
+\]
+The resulting theorem is \texttt{appC8\_odd\_excursion\_closed}. Its prefix corollary is \texttt{appC8\_odd\_excursion\_survives}. Taking $a=8$ gives 10,452 transitions from $C(35,3)$ to $C(0,175)$. Composing with the proved blank prefix gives time $7{,}854+10{,}452=18{,}306$. A further 43 shuttle rounds take $S(0,43)=22{,}790$ transitions, yielding $C(86,3)$ at time 41,096. These are \texttt{appC8\_blank\_after\_odd\_excursion}, \texttt{appC8\_blank\_next\_odd\_frontier}, and \texttt{appC8\_blank\_prefix\_41096}.
+\end{proof}
+The return value $18a+31$ is odd. At every admissible subsequent shuttle endpoint it remains odd, since a round subtracts four. The theorem \texttt{odd\_output\_not\_exit} therefore excludes a trailing count of two at those endpoints, so the established two-ones exit theorem cannot finish this phase. The concrete new endpoint $C(86,3)$ has state $A$, whereas the full clean macro starts at $D(4(q+1))$ in state $E$; \texttt{odd\_frontier\_not\_clean} formalizes their inequality.
+
+Thus this certified excursion returns to an odd shuttle configuration rather than establishing a clean-sector entry. It does not exclude every possible intermediate clean-sector visit or all future entries. The block count 86 is $2$ modulo four, outside the $4a+3$ family; the next subsection proves its branch and follows it into the clean sector. No first-return minimality or global survival conclusion follows.
+
+Independent checks compare 65 first collapses ($0\le k\le64$), 65 terminal collapses over the same range, 33 full excursions ($0\le a\le32$), and 900 suffix-preserving repeated-shuttle inputs. Complete blank configurations are also checked at times 18,306 and 41,096, including absolute head positions. Twenty-two complete resulting configurations from the independent simulator are checked by direct raw executions in Lean. These finite cross-checks complement the universal inductive proof.
+
+\subsection{AppC 8: the modulo-four reduction and actual clean entry}
+\label{sec:appc8mod2}
+The module \texttt{AppC8RawMod2Sector.lean} distinguishes a uniform reduction for all $k\equiv2\pmod4$ from the more specific complete excursion needed at $k=86$. Define the finite suffixes $T_8=01^8 011$ and $T_{26}=01^{26}011$.
+
+\begin{theorem}[Modulo-four reduction and the $16b+6$ branch]
+For every $a\in\N$,
+\[
+ C(4a+2,3)\xrightarrow{\ 108a^2+398a+388\ }C_{T_8}(0,18a+19).
+\]
+This reduction retains its displayed suffix; it is not a complete suffix-free excursion formula for the entire residue class. For every $b\in\N$, the more specific branch is
+\[
+\begin{aligned}
+ C(16b+6,3)&\xrightarrow{\ 14364b^2+18494b+6438\ }C(54b+36,2),\\
+ C(16b+6,3)&\xrightarrow{\ 14364b^2+18656b+6552\ }D(54b+37).
+\end{aligned}
+\]
+Every prefix through the latter duration is defined. The carry $54b+37$ is odd, so this immediate output is not a full clean-macro input.
+\end{theorem}
+\begin{proof}
+Two additional raw collapse lemmas certify
+\[
+\begin{aligned}
+ C_{011}(k,1)&\xrightarrow{\ 14k+90\ }C_{T_8}(0,3k+1) &&(k\ge2),\\
+ C_{T_8}(k,1)&\xrightarrow{\ 14k+416\ }C_{T_{26}}(0,3k-8) &&(k\ge5).
+\end{aligned}
+\]
+These are \texttt{defect\_one\_collapse} and \texttt{defect\_eight\_collapse}. They compose the inductively proved right, return, and reset scans with fixed local instruction sequences. The first collapse uses 19- and 66-instruction turns; the second uses 104- and 334-instruction turns. Each fixed sequence reduces directly in the kernel, with the unvisited left tail parameterized. No macro correspondence is assumed.
+
+Apply the earlier odd collapse at $k=4a+2$, then $3a+3$ suffix-preserving shuttle rounds, then the first new collapse. This gives \texttt{appC8\_mod2\_reduction\_closed}. For $a=4b+1$, the resulting $72b+37$ ones permit $18b+9$ rounds, leaving $C_{T_8}(36b+18,1)$. The second collapse gives $C_{T_{26}}(0,108b+46)$. Another $27b+11$ rounds leave two ones before the zero in $T_{26}$. The word equality \texttt{absorb\_defect} incorporates the exposed $110$ as one new block, giving $C_{011}(54b+23,26)$. Six more rounds and the same word equality yield $C(54b+36,2)$.
+
+Summing these five stages proves \texttt{appC8\_mod16\_branch\_closed}. The general exit adds $162b+114$ transitions, proving \texttt{appC8\_mod16\_carry}. Its successful iteration gives \texttt{appC8\_mod16\_survives}; the arithmetic theorem \texttt{mod16\_carry\_not\_clean} excludes $54b+37=4(q+1)$ for every natural $q$.
+\end{proof}
+
+The following residue family supplies the missing route into the clean sector. For every $a\in\N$, the earlier odd collapse followed by $3a+2$ shuttle rounds and one word absorption gives $C(6a+5,2)$ after $108a^2+242a+126$ transitions. Applying the general exit proves \texttt{appC8\_mod1\_carry}:
+\[
+ C(4a+1,3)\xrightarrow{\ 108a^2+260a+147\ }D(6a+6).
+\]
+For odd $a=2q+1$, its output is $D(12q+12)=D(4((3q+2)+1))$, a valid clean-macro input. This is formalized by \texttt{appC8\_mod1\_clean\_entry}.
+
+\begin{theorem}[Blank entry and application of the full clean macro]
+The actual blank trajectory reaches $D(696)$ after 2,600,695 defined transitions. Since $696=4(173+1)$, it then follows the full clean macro to $D(1046)$, reaching it at time 5,890,701. Every prefix through time 5,890,701 is defined.
+\end{theorem}
+\begin{proof}
+Set $b=5$ in the $16b+6$ branch and compose with the previously proved arrival at $C(86,3)$. This gives the first two rows of Table~\ref{tab:appc8cleanentry}. The general reset at carry 307 yields $C(3,919)$; 229 shuttle rounds give $C(461,3)$. Apply the $4a+1$ carry theorem with $a=115$ to reach $D(696)$. These are universal component theorems instantiated at concrete inputs, rather than a multi-million-step reduction of the full blank run.
+
+The declaration \texttt{appC8\_blank\_clean\_entry} supplies the premise of the earlier conditional transfer theorem at $q=173$. The full clean macro adds $108\cdot173^2+332\cdot173+238=3{,}290{,}006$ transitions and produces $6\cdot173+8=1046$. This proves \texttt{appC8\_blank\_clean\_macro\_applied}; its prefix corollary is \texttt{appC8\_blank\_prefix\_5890701}.
+\end{proof}
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{rll}
+\toprule
+Elapsed transitions & Configuration & Applied result \\
+\midrule
+499,104 & $C(306,2)$ & $16b+6$ branch, $b=5$ \\
+500,028 & $D(307)$ & General two-ones exit \\
+501,606 & $C(3,919)$ & General reset \\
+1,142,348 & $C(461,3)$ & 229 shuttle rounds \\
+2,600,695 & $D(696)$ & $4a+1$ carry branch, $a=115$ \\
+5,890,701 & $D(1046)$ & Full clean macro, $q=173$ \\
+\bottomrule
+\end{tabular}
+\caption{Certified continuation from $C(86,3)$ to a clean-sector input and through its full raw macro. Times count defined transitions from blank.}
+\label{tab:appc8cleanentry}
+\end{table}
+
+The clean-entry obligation is now closed for this concrete blank trajectory. No first-entry or first-return minimality is asserted. The new output 1046 is not divisible by four, so repeated application of the clean macro alone does not establish infinite survival. Other $k\equiv2\pmod4$ branches are covered by the uniform suffix-bearing reduction, but not by the complete $16b+6$ excursion formula. General behavior beyond the certified horizon remains open.
+
+Independent dictionary-tape checks cover 33 instances of each new collapse, 21 modulo-four reductions, 13 $16b+6$ excursions and their 13 carry exits, and 21 $4a+1$ carry inputs. Six complete blank configurations in Table~\ref{tab:appc8cleanentry} are independently checked, including tape contents, state, absolute head position, duration, and the clean-entry guard. Twenty-two smaller complete configurations from these branches are also checked by direct raw execution in Lean.
+
+\subsection{Proved semantic interoperability}
+\label{sec:interop}
+The separate library in \texttt{lean\_interop/} connects the two raw zipper models to the pinned upstream machine semantics. It maps $A,\ldots,F$ to $0,\ldots,5$, Boolean symbols to $\mathrm{Fin}\,2$, and finite half-tapes to zero-padded quotient tapes. The left list is nearest-head first; the right list starts with the scanned cell. Redundant trailing zeros may represent the same upstream tape, so injectivity on list syntax is neither assumed nor needed.
+
+For each machine, \texttt{table\_agrees} checks all twelve instructions and \texttt{blank\_agrees} identifies the blank initial configurations. The common adapter and the machine-specific \texttt{step\_commutes} and \texttt{run\_commutes} theorems establish
+\[
+\begin{aligned}
+\operatorname{step}_{U}(M,\Phi(c))
+  &=\operatorname{Option.map}\Phi(\operatorname{step}_{L}(c)),\\
+\operatorname{multiStep}_{U}(M,\Phi(c),n)
+  &=\operatorname{Option.map}\Phi(\operatorname{run}_{L}(n,c)).
+\end{aligned}
+\]
+These equalities include undefined instructions. An undefined instruction performs no additional write or move. Thus AppC 7's first undefined-attempt count $T$ corresponds to $T-1$ completed transitions, whereas AppC 8's reported durations already count completed transitions.
+
+\begin{theorem}[AppC 7 gate unreachability from blank]
+Let $I(b)$ denote the prefixed $A$-state gate and $G(a,r)$ the generalized $D$-state sweep gate defined above. For all natural $a,r,b$, neither $\Phi(I(b))$ nor $\Phi(G(a,r))$ is reachable from the upstream blank configuration. In the original zipper semantics, for every $n\in\N$,
+\[
+\operatorname{run}_{7}(n,\mathrm{blank})\ne\operatorname{some}(I(b)),
+\qquad
+\operatorname{run}_{7}(n,\mathrm{blank})\ne\operatorname{some}(G(a,r)).
+\]
+\end{theorem}
+\begin{proof}
+The pinned upstream machine module supplies its blank-tape non-halting theorem via the \texttt{TM311Donor} invariant. If a gate were reachable, its local halting witness, transported by the adapter, would extend the blank run to a configuration with an undefined next instruction. This contradicts that imported theorem. The Lean declarations are \texttt{gate\_unreachable}, \texttt{sweep\_gate\_unreachable}, and their \texttt{gate\_unreachable\_local} and \texttt{sweep\_gate\_unreachable\_local} corollaries.
+\end{proof}
+This is a checked composition with an existing upstream classification, not a new independent proof of blank-tape non-halting. The adapter also exports the exact nonblank halting statement: \texttt{gate\_halts\_after} reaches a halting configuration in $16b^2+28b+14$ transitions, and \texttt{gate\_exact\_time} preserves the first undefined-attempt count.
+
+\paragraph{AppC 8 exact-time exports.}
+For AppC 8, \texttt{reaches\_in} transports every successful local run into the upstream exact-time reachability predicate. Named exports cover the shuttle and repeated rounds, reset, exit, clean macro, odd excursion, suffix-bearing modulo-four reduction, $16b+6$ carry branch, and $4a+1$ carry branch. For example,
+\[
+\operatorname{ReachesIn}_{U}
+ \bigl(M_8,108q^2+332q+238,\Phi(D(4(q+1))),\Phi(D(6q+8))\bigr)
+\]
+holds for every $q\in\N$, by \texttt{clean\_exact\_time}. The theorems \texttt{blank\_clean\_entry} and \texttt{blank\_clean\_applied} prove the upstream blank checkpoints at times 2,600,695 and 5,890,701, and \texttt{blank\_prefix\_defined} preserves every prefix through the latter time.
+
+These are guarded reachability and bounded-survival results. We do not package unknown branches as halting branches or claim a complete upstream acceleration interface for AppC 8. Its global survival and remaining sectors stay open.
+
+\subsection{A direct raw-machine non-halting result}
+Alongside the AppC 7 gate and AppC 8 shuttle refinements, the Phase-4 library includes a direct tape-level non-halting result:
+\texttt{bipartite\_parabolic\_bouncer\_tm\_never\_halts}. Its machine is
+\begin{center}\small\texttt{1RB0RF\_0RE0RE\_1RF1LD\_0LC0LA\_0LD1RF\_0LA---}.
+\end{center}
+Starting from the blank configuration, an invariant keeps every odd tape cell zero, with states $A,C,E$ at even head positions and $B,D,F$ at odd positions. The transition table preserves this invariant and cannot take the halting transition. This proof refers directly to the raw configuration and step function. A separate three-cell NFA abstraction admits a short trace to a halting patch; that is an abstraction artifact, not a contradictory raw execution.
+
+The discrete Stokes identity is a further general result, inspired by lattice conservation laws \cite{hattori1991additive}. Its halting-obstruction theorem assumes nonnegative bulk curl, zero side currents, and a nonpositive initial horizontal sum. It then excludes a positive final sum. Those hypotheses must be connected to a chosen system before it becomes a machine certificate.
+
+\subsection{Symmetry, sequences, and finite graphs}
+Invariant theory \cite{sturmfels2008algorithms} motivates averaging linear and quadratic forms. The theorem whose historical identifier is \texttt{reynolds\_pin2\_swap\_linear} sums over the identity and coordinate swap, an order-two action. It is not integration over the full $\mathrm{Pin}(2)$ group. Central inversion and sign-and-swap identities constrain the symmetry-invariant search space; they do not rule out unrestricted affine barriers for an arbitrary guarded system.
+
+If $u(n+3)=u(n)+d$, then $(S^3-1)^2u=0$ for the shift $S$. This is an annihilator, not necessarily the minimal polynomial. Indeed $u(n)=n$ has $d=3$ and reduced generating-function denominator $(1-t)^2$. More generally the generating-function denominator divides $(1-t)(1-t^3)$: the generating function of $u(n+3)-u(n)$ is constant-sequence rational, leaving only a polynomial boundary term. Minimality needs additional information about the initial values and cancellation. Finite Berlekamp--Massey inference \cite{massey1969shift} alone does not prove an all-index recurrence.
+
+The artifact also verifies specific modular portal identities and a finite mod-8 Kirchhoff pseudoinverse. Electrical-resistance formulas \cite{chandra1996electrical} concern the associated finite graph or random walk. They supply no deterministic infinite-orbit survival theorem for Antihydra.
+
+\section{Loop acceleration: arithmetic scope and measurements}
+\label{sec:bench}
+For integers $A,B,u$ and $v\ge1$, with $u'=(Au+B)/2^v$, set $\Phi=(A-2^v)u+B$. The identity $\Phi'=A\Phi/2^v$ suggests replacing repeated affine steps with valuation-based jumps. If $A$ is odd and $\Phi\ne0$, each valid division reduces $\nu_2(\Phi)$ by $v$; the number of such divisions is bounded by $\lfloor\nu_2(\Phi)/v\rfloor$. The actual run length must also respect the branch guard and every other exit condition. If $\Phi=0$, the valuation is not a finite integer: for $A=3$, $v=1$, $B=-1$, $u=1$ is a fixed point. It must be handled separately.
+
+The C artifact evaluates six specialized kernels using fixed-width unsigned arithmetic, power tables, and leading/trailing-zero operations. Their input generators restrict iteration counts and value sizes. Correct use requires valid power-table indices, shift counts below the word size, appropriate CPU instruction support, and arithmetic that matches the intended integer semantics. Defined modular unsigned overflow is not automatically equivalent to an integer recurrence. Our finite bit-exact tests verify generated inputs, not all 64-bit inputs or a general compiler transformation. Some kernels have early-exit branches; ``branchless'' is not a blanket property.
+
+Scalar-evolution analysis \cite{pop2005scev} is historical context. We have not integrated these kernels into LLVM or MLIR, compared them against a current optimizer's complete capabilities, or proved a generic bounded-correction CLZ algorithm. The assembly inspection in the existing runner applies to MSVC listings; its GCC path compiles and runs the benchmark without performing the same instruction audit.
+
+The revised artifact retains the deterministic 1,232,500-case C equality suite and records compiler-specific timing logs. Speedups depend on the input distribution and host. In the November 17 revision's GCC 12.2 run, the six mixed-input speedups ranged from $3.90\times$ to $10.96\times$ (geometric mean $6.21\times$). The depth-1, depth-2, and depth-4 samples instead achieved $0.37\times$, $0.52\times$, and $0.79\times$: acceleration was slower on those short loops. These are dated observations, not portable performance guarantees. The corresponding MSVC 19.50 mixed-input range was $2.79\times$--$19.81\times$, also with 1,232,500 bit-exact matches. Fresh timing and MSVC assembly logs accompany the revision; variation between runs does not change the arithmetic claims.
+
+\section{Reproduction and verification boundaries}
+\label{sec:reproduce}
+There are 103 user-authored theorem declarations in the core library and 213 in Phase 4, for 316 total. The raw-gate, raw-shuttle, raw-clean-macro, blank-reachability, odd-sector, and residue-refinement modules contribute 25, 21, 13, 12, 17, and 31 declarations, respectively. The kernel audit separately counts 188 and 339 non-internal theorem constants, respectively, including generated helpers. Thus 527 kernel constants and 316 source declarations are different measurements, not competing theorem totals. The theorem audits reject every transitive axiom outside the allowlist \texttt{propext}, \texttt{Quot.sound}, and \texttt{Classical.choice}, including \texttt{sorryAx}. The libraries do not have an empty foundational axiom footprint.
+
+The interoperability library adds 36 source theorem declarations and has 50 non-internal kernel theorem constants under Lean 4.35.0-rc4, including generated helpers. These counts are reported separately from the two original libraries and from upstream results. Its transitive axiom audit includes the imported AppC 7 non-halting dependency and allows only the same three foundational axioms; negative controls reject both an external-namespace axiom and a theorem using \texttt{sorryAx}. The required upstream source modules and the unchanged local dependency sources are rebuilt, while Mathlib uses its pinned cache. This is not a source rebuild of all Mathlib or of the whole upstream repository.
+
+Run \texttt{scripts/build\_interop.py} with a fresh named Docker container to reproduce the pinned checkout, source copying, clean build, and audit. The build manifest records the upstream commit, dependency revisions, container image identifier, and source hashes. Historical audits remain unchanged; the current integration evidence is in \texttt{docs/audits/2026-11-18-interoperability-proof/}.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{@{}lr@{}}
+\toprule Phase-3 function/group & Executed raw-TM checks \\ \midrule
+T3.15 & 1,375\\
+T3.14 & 670\\
+AppC 1 & 1,085\\
+AppC 7 & 42\\
+AppC 6, AppC 5, BMO 7 & 118\\
+T3.12 & 961\\
+BMO 1, BMO 5, T3.3 & 1,020\\ \midrule
+Total & 5,271\\ \bottomrule
+\end{tabular}
+\caption{Actual per-function return counts in the Phase-3 suite. The unit is test invocations within this suite, not globally deduplicated configurations. Phase-4 tests are reported separately.}
+\label{tab:counts}
+\end{table}
+
+The frontier runner emits a JSON manifest of these executed counts. Its total supersedes the unsupported 5,433 figure in the pre-audit manuscript. Phase-4 AppC checks may overlap other suites and are not added to a claimed count of distinct configurations. Each suite's domains, state encodings, bounds, and expected transitions remain executable in its source.
+
+\noindent\begin{minipage}{\linewidth}
+The canonical Dockerfile checks the two original libraries and their verification suites. Build the interoperability overlay separately as described above. Clean reproduction must exclude host Lean build caches. Run the following from the source root:
+\begin{lstlisting}
+docker build -t bb6-audited .
+docker run --rm bb6-audited
+python scripts/verify_paper_tex.py
+python scripts/verify_revision_claims.py
+cd paper
+pdflatex -halt-on-error main.tex
+bibtex main
+pdflatex -halt-on-error main.tex
+pdflatex -halt-on-error main.tex
+\end{lstlisting}
+\end{minipage}
+The Docker build requires network access to obtain its base image and pinned Lean toolchain. Its OS package inputs are not fully pinned, so this is a reproducible verification procedure rather than a claim of byte-identical image builds. The delivered source archive and SHA-256 manifest identify the exact local revision; no public DOI or external deposit is asserted.
+
+The static paper auditor requires all three Lean source directories, rejects missing citations and duplicate keys, and checks cited declaration names. Name matching alone does not establish semantic correspondence: the claim ledger and this paper's explicit domains supply the human-reviewed interpretation. The revision regression suite preserves the mathematical counterexamples that exposed the original overclaims. A fresh kernel build, finite simulation, bibliography compilation, and PDF layout inspection are complementary checks.
+
+\section{Remaining proof obligations}
+\label{sec:limits}
+The AppC 7 gate refinement and AppC 8 shuttle, reset, exit, full clean macro, and stated residue-class refinements are proved under their specified input conditions. Section~\ref{sec:appc8mod2} closes actual AppC 8 blank entry into the clean sector and certifies the run through $D(1046)$ at time 5,890,701. The remaining AppC 8 obligations concern general behavior beyond that horizon and complete treatment of the other residue branches; the uniform $k\equiv2\pmod4$ reduction retains a nonempty suffix. Universal refinements for other applications, a global A.11 argument, all-modulus Antihydra graph laws, unrestricted trajectories, and raw identifications for the abstract examples remain open. For AppC 7, the semantic bridge and both gate-unreachability families are now proved using the pinned upstream non-halting certificate. Positive blank-to-gate reachability is therefore excluded, rather than an outstanding target. Global AppC 8 survival remains unproved. Non-periodicity alone does not settle blank-tape non-halting.
+
+\par\bigskip
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

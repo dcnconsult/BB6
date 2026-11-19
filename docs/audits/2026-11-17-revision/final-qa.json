@@ -1,0 +1,21 @@
+{
+  "pdf_pages": 10,
+  "author": "Darryl Novotny",
+  "title": "Verified Macro-Model Dynamics and Algebraic Certificates for BB(6) Cryptids",
+  "bibliography_entries": 23,
+  "unresolved_citations_or_refs": 0,
+  "overfull_or_underfull_boxes": 0,
+  "visual_review": "All 10 final pages inspected; first six pixel-identical to reviewed initial render.",
+  "source_declarations": 197,
+  "kernel_constants": 365,
+  "closed_findings": 13,
+  "full_audit": "offline source-only Lean builds and all seven preexisting mathematical suites passed",
+  "regressions": "final revision regression suite passed, including four missing-source negative checks",
+  "expected_diagnostic": "epstopdf warns that shell escape is disabled; no EPS conversion is used",
+  "not_claimed": [
+    "all named BB6 machines classified",
+    "universal raw-to-macro refinement",
+    "fresh online Docker image build",
+    "byte-identical Docker images"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "pdf_pages": 14,
+  "pdf_author": "Darryl Novotny",
+  "source_theorem_counts": {
+    "lean": 103,
+    "lean_phase4": 165
+  },
+  "kernel_constants": {
+    "lean": 188,
+    "lean_phase4": 291
+  },
+  "new_source_theorems": 12,
+  "principal_theorem_axioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "bibliography_entries": 23,
+  "bibliography_unchanged": true,
+  "compiler_kernels_unchanged": true,
+  "pdf_overfull_underfull_unresolved": 0,
+  "visual_review": "All 14 pages rendered and inspected.",
+  "validation": "Clean builds of both libraries; both negative axiom tests; all seven mathematical suites; revision regressions; AppC 7 and AppC 8 raw checks and 192 independent Lean execution fixtures each; 128 resets, 129 exits, 33 full macros and 33 complete-configuration clean-macro Lean fixtures; 10 independent direct blank-run Lean fixtures; static paper audit.",
+  "scope": "Concrete blank trajectory through time 7854 and C(35,3), connected to general raw reset/shuttle/exit. Restricted clean-sector entry remains an explicit unproved premise; no global-survival or first-visit claim."
+}

@@ -1,0 +1,26 @@
+{
+  "run_lengths": [
+    3,
+    5,
+    4,
+    2,
+    2,
+    5,
+    1
+  ],
+  "run_list_parameters": [
+    2,
+    4,
+    3,
+    1,
+    1,
+    4,
+    0
+  ],
+  "defined_steps": 1199,
+  "undefined_attempt": 1200,
+  "right_bits": "0101110111110111101101101111101",
+  "initial_state": "A",
+  "initial_left": [],
+  "scope": "Nonblank member of candidate Boundary; not a blank-tape halting result."
+}

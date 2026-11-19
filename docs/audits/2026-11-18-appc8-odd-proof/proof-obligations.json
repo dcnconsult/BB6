@@ -1,0 +1,98 @@
+[
+  {
+    "id": "O1a",
+    "obligation": "AppC 7 gate raw-to-macro refinement",
+    "priority": "Selected and proved",
+    "status": "closed for the full stated gate family",
+    "evidence": "gate_phase_all, gate_sweep_exact_time, appC7_raw_gate_exact_time; all natural a,r,b, without a raw-correspondence assumption.",
+    "limit": "Does not establish entry into the family from the blank tape or handle unrestricted multi-defect configurations."
+  },
+  {
+    "id": "O1b",
+    "obligation": "AppC 8 raw shuttle, repeated rounds, and clean middle stage",
+    "priority": "Previously proved",
+    "status": "proved under the stated guards",
+    "evidence": "appC8_raw_shuttle, appC8_raw_shuttle_rounds, appC8_raw_rounds_closed_form, appC8_clean_middle_raw.",
+    "limit": "Shuttle requires m>=5; r rounds require m>=4r+1. Elapsed execution, not first-return minimality."
+  },
+  {
+    "id": "O1d",
+    "obligation": "AppC 8 clean-macro reset and exit",
+    "status": "proved for the full stated clean sector",
+    "priority": "Previously proved",
+    "evidence": "appC8_raw_reset for all c>=1; appC8_raw_exit for all k>=0; appC8_clean_macro_raw and appC8_clean_macro_survives for all q>=0; appC8_clean_macro_raw_and_ghost.",
+    "limit": "Full macro assumes c=4(q+1). The output may leave this sector. Its general reset/exit components now connect to the finite blank trajectory; clean-sector entry and global survival remain unproved."
+  },
+  {
+    "id": "O4a",
+    "obligation": "AppC 8 finite blank-tape reachability into the raw component families",
+    "status": "proved through time 41096",
+    "priority": "Completed in this revision",
+    "evidence": "appC8_blank_after_odd_excursion, appC8_blank_next_odd_frontier, appC8_blank_prefix_41096 extend the earlier blank certificate via the universal odd law.",
+    "limit": "The initial 3185-step bridge remains a concrete kernel certificate. The new odd law is universal for k=4a+3 only. Elapsed times are not first-visit claims."
+  },
+  {
+    "id": "O4c",
+    "obligation": "AppC 8 odd excursion for k=4a+3 and m=3",
+    "status": "proved for every natural a",
+    "priority": "Completed in this revision",
+    "evidence": "appC8_odd_excursion_closed: C(4a+3,3) -> C(0,18a+31) after 108a²+398a+356 defined transitions; appC8_odd_excursion_survives.",
+    "limit": "Other block residues and arbitrary suffix variants of the full law are not asserted. The output is odd at all admissible shuttle endpoints, so the existing m=2 exit is unavailable there."
+  },
+  {
+    "id": "O4d",
+    "obligation": "AppC 8 next odd excursion from C(86,3), and k=2 modulo 4 families",
+    "status": "open",
+    "priority": "Next raw local target",
+    "evidence": "The blank trajectory reaches C(86,3) at time 41096. Its block count is outside the proved k=4a+3 family.",
+    "limit": "A new raw refinement is needed; no transition or clean-sector entry beyond this endpoint is inferred."
+  },
+  {
+    "id": "O4b",
+    "obligation": "AppC 8 blank entry into the restricted full clean-macro sector",
+    "status": "open",
+    "priority": "Separate reachability premise",
+    "evidence": "appC8_blank_clean_macro_transfer composes any such entry with the full macro, but explicitly assumes entry. Certified carry counts 1 and 23 fail c=4(q+1).",
+    "limit": "No theorem here proves blank entry into D(4(q+1)). C(86,3) is not such an input; this does not exclude every intermediate or future clean-sector visit."
+  },
+  {
+    "id": "O1c",
+    "obligation": "Other counter-model raw-to-macro refinements",
+    "priority": "Local targets after selecting a precise machine/sector",
+    "status": "open",
+    "evidence": "Core invariants and aperiodicity proofs exist for encoded models; finite raw bridges vary by suite.",
+    "limit": "Prove encoding, transitions, entry, and coverage before inferring a raw-machine classification."
+  },
+  {
+    "id": "O2",
+    "obligation": "Global A.11 aperiodicity/non-halting and Epoch-4 completion",
+    "priority": "Research-level arithmetic gap",
+    "status": "open",
+    "evidence": "Finite Epoch-3 computation and conditional d=6 successor theorem only; c can decrease.",
+    "limit": "No proved global progress measure or survival argument currently available."
+  },
+  {
+    "id": "O3",
+    "obligation": "All-modulus Antihydra quotient and cycle-mean laws",
+    "priority": "Formalize the parametric graph first",
+    "status": "open",
+    "evidence": "Specific quotient tests and conditional affine identities.",
+    "limit": "Must specify the quotient and unresolved-cylinder semantics, then prove a uniform graph decomposition and cycle bound."
+  },
+  {
+    "id": "O4",
+    "obligation": "Unrestricted AppC 7 and AppC 8 blank trajectories",
+    "priority": "Research beyond the certified prefix",
+    "status": "open",
+    "evidence": "AppC7 exact gate; AppC8 full clean macro and k=4a+3 odd excursion; blank trajectory through C(86,3) at time 41096.",
+    "limit": "The finite AppC8 prefix and partial odd-family law do not establish global survival or AppC7 gate reachability. The clean sector is not invariant."
+  },
+  {
+    "id": "O5",
+    "obligation": "Raw-machine identification for abstract algebraic examples",
+    "priority": "Construction and refinement required",
+    "status": "open",
+    "evidence": "Abstract parabolic, Fibonacci/Pell, word, and odometer theorems.",
+    "limit": "A concrete transition table and encoding must be supplied and proved, rather than inferred from similar formulas."
+  }
+]

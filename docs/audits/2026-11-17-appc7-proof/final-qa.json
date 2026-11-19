@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "pdf_pages": 11,
+  "pdf_author": "Darryl Novotny",
+  "source_theorem_counts": {
+    "lean": 103,
+    "lean_phase4": 119
+  },
+  "kernel_constants": {
+    "lean": 188,
+    "lean_phase4": 223
+  },
+  "new_source_theorems": 25,
+  "principal_theorem_axioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "bibliography_entries": 23,
+  "bibliography_unchanged": true,
+  "compiler_kernels_unchanged": true,
+  "pdf_overfull_underfull_unresolved": 0,
+  "visual_review": "All 11 pages rendered and inspected.",
+  "validation": "Clean builds of both libraries; Phase4 suite; revision regressions; new raw checks; 192 independent Lean execution fixtures; static paper audit.",
+  "scope": "Exact raw execution for the stated gate family. Blank-tape reachability remains open."
+}

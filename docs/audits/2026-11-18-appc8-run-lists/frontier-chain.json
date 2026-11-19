@@ -1,0 +1,49 @@
+{
+  "start_time": 507471992896,
+  "start": "C_tail(306555,1;01^5)",
+  "steps": [
+    {
+      "rule": "five_collapse",
+      "duration": 2452505,
+      "time": 507474445401,
+      "configuration": "C_tail(0,1;01^919664 01^8 01^2)"
+    },
+    {
+      "rule": "zero_long",
+      "duration": 37,
+      "time": 507474445438,
+      "configuration": "C_tail(3,919660;01^8 01^2)"
+    },
+    {
+      "rule": "rounds",
+      "duration": 634336864452,
+      "time": 1141811309890,
+      "configuration": "C_tail(459831,4;01^8 01^2)"
+    },
+    {
+      "rule": "four_long",
+      "duration": 5518004,
+      "time": 1141816827894,
+      "configuration": "C_tail(459834,6;01^2)"
+    },
+    {
+      "rule": "shuttle",
+      "duration": 5518034,
+      "time": 1141822345928,
+      "configuration": "C_tail(459836,2;01^2)"
+    },
+    {
+      "rule": "absorb",
+      "duration": 0,
+      "time": 1141822345928,
+      "configuration": "C(459837,2)"
+    },
+    {
+      "rule": "exit",
+      "duration": 1379517,
+      "time": 1141823725445,
+      "configuration": "D(459838)"
+    }
+  ],
+  "scope": "Exact elapsed time; no first-return minimality asserted."
+}

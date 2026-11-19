@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-18",
+  "candidate": "RestrictedBoundary OR RestrictedFuel OR TerminalResidual; a macro-state candidate, not yet an invariant",
+  "proved": {
+    "blank_candidate_entry": 5,
+    "blank_fueled_entry": 2286,
+    "fueled_cycle": "(a+1,b,6(a+1)+n+7) -> (a,b+3,6a+n+7), duration 18b+47",
+    "fueled_drain": "a cycles in 27a^2+20a+18ab; same suffix and margin",
+    "both_guarded_defect_returns": "leading run length at least 6k+5, for either marker and every GoodTail",
+    "residual_return": "RestrictedFuel and TerminalResidual each return to Candidate in positive time",
+    "physical_witness_exclusions": [
+      "shortBadBoundary from full Candidate",
+      "residual bad witness from full Candidate",
+      "first bad defect from GuardedDefect(firstMarker)",
+      "second bad defect from GuardedDefect(secondMarker)"
+    ],
+    "new_universal_branches": [
+      "three_eight",
+      "seventeen_collapse",
+      "three_twenty_six"
+    ],
+    "blank_defined_prefix": 43249783462218928,
+    "frontier": {
+      "k": 89494232,
+      "m": 1,
+      "tail_run_lengths": [
+        44
+      ]
+    }
+  },
+  "open": [
+    "CandidateClosure: every admitted boundary macro-state must return to the restricted candidate.",
+    "Large-left terminal-44 continuation at the actual frontier; 44 is far below 6k+5.",
+    "A generated grammar for later terminal defects (104 already appears in small finite probes), or a proof they can be skipped by an eventual return to the existing catalog.",
+    "Boundary-branch exhaustion, including small-block exceptions and preservation of suffix provenance.",
+    "Unconditional blank nonhalting."
+  ],
+  "evidence_limits": {
+    "catalog_probe_count": 480,
+    "first_return_escapes": 47,
+    "meaning": "The catalog is not closed under first boundary return. These finite escapes do not refute eventual positive-time CandidateClosure.",
+    "no_claim": "No proof that every raw state or every first boundary visit belongs to Candidate."
+  }
+}

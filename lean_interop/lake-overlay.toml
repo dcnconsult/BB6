@@ -1,0 +1,7 @@
+
+# Added only in the isolated pinned upstream build checkout.
+[[lean_lib]]
+name = "CryptidSolvePhase4"
+
+[[lean_lib]]
+name = "BB6Interop"

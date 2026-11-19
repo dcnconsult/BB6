@@ -1,0 +1,46 @@
+{
+  "evidence": "finite Python comparison only; no Lean interoperability theorem",
+  "T315": {
+    "candidate_embedding": "D(0,a,b), one raw step after local C(a,b)",
+    "domain": "0 <= a <= 100; 1 <= b <= 100",
+    "cases": 10100,
+    "max_upstream_macro_steps": 234,
+    "mismatches": [],
+    "mismatch_count": 0
+  },
+  "BMO8": {
+    "candidate_embedding": "P(a,0,c)",
+    "domain": "0 <= a <= 100; 2 <= c <= 100; a+c>=8; a mod3=0 or c mod3=2",
+    "cases": 5562,
+    "max_upstream_macro_steps": 51,
+    "mismatches": [],
+    "mismatch_count": 0
+  },
+  "A11": {
+    "coordinate": "X=r+2*(b/3)+12, b divisible by 3, r=0 or 1",
+    "matched_transitions": 3,
+    "epoch_sequence": [
+      [
+        12,
+        6,
+        3
+      ],
+      [
+        12,
+        24,
+        3
+      ],
+      [
+        20,
+        1138,
+        3
+      ],
+      [
+        20,
+        231629311987738697313560108358432973814578762467635178190691872087509085070209309574496394960790060929,
+        3
+      ]
+    ],
+    "scope": "finite d=3 blank-path overlap; not full four-sector conjugacy"
+  }
+}

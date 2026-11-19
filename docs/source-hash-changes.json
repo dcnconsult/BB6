@@ -1,0 +1,74 @@
+[
+  {
+    "path": "Dockerfile",
+    "change": "Dockerfile comment",
+    "original_sha256": "c8338e5579e17ce50abe6a7e094b5704fb042b091ecdb55fc8a10015644a4631",
+    "release_sha256": "0adb905e06b722d8db08a05f1363365e21745fa714596c0f0b38d0e4dbc47818"
+  },
+  {
+    "path": "Dockerfile.phase4",
+    "change": "Dockerfile comment",
+    "original_sha256": "c8338e5579e17ce50abe6a7e094b5704fb042b091ecdb55fc8a10015644a4631",
+    "release_sha256": "0adb905e06b722d8db08a05f1363365e21745fa714596c0f0b38d0e4dbc47818"
+  },
+  {
+    "path": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "change": "Lean header comment",
+    "original_sha256": "cc747b366d7ddfa7d3c4408d8e0bac7362a4935e03ac4c4d6c506d9cc399e065",
+    "release_sha256": "c4b5a19f799839d109273827c883eaa8cfde4f0808c4eea8cab4592b28ed9fcd"
+  },
+  {
+    "path": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "change": "Lean header comment",
+    "original_sha256": "2e4c1c6774c79945395c5dc4c04359071b14e5ffc81fd003bd0963cc27a4d2b1",
+    "release_sha256": "3eac5f7c7d66c8b08ed565b81e7bafac005ff140bd1e4bf81b2922b01b8d6efe"
+  },
+  {
+    "path": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "change": "Lean header comment",
+    "original_sha256": "ecdcab2b67ebacec2a3f45d250aaaaf0642314c6e2e3aebb1c5e5d6fee24f4af",
+    "release_sha256": "78e3ef2f8ea04e1b690a5df5d37d890506d5e80a7d72aacbe7ea059020f418f9"
+  },
+  {
+    "path": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "change": "Lean header comment",
+    "original_sha256": "82d3ba40db218d03576650bdca94400c969405bf0300760653a35598f69b2b2a",
+    "release_sha256": "389a9b0d2f43b79d420cc8a7bafb290975f7d9f3bf3aa22d9482552cde9103b7"
+  },
+  {
+    "path": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "change": "Lean header comment",
+    "original_sha256": "dc85ac3e5367f60081a07cd41d2bea331110f41fc0cc1c76b4ada0022e0adaf3",
+    "release_sha256": "3b49ebcb1cfe945b223b53954b4453970a0fd3738376d7f59f8637c8225400d1"
+  },
+  {
+    "path": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "change": "Lean header comment",
+    "original_sha256": "0b5c381069662fbefd9c336c97755156944cc74e037ed7a7d5e7534abe63096e",
+    "release_sha256": "382cddd21f19cac05a7bf2e851c2b2ac15b76120ab27049152f1f66ceecca869"
+  },
+  {
+    "path": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "change": "Lean header comment",
+    "original_sha256": "e05e33b727c0fb379cabda27e07a84d2c018f75acfaccd0b16146b9f5387374c",
+    "release_sha256": "00955c363c12a644e711a01a9921653bdff8c3c261718ff69972b97d95ea23c7"
+  },
+  {
+    "path": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "change": "Lean header comment",
+    "original_sha256": "66a297bc6e8f0079ef6516891c8df94ed608b81c382ee24c59239ae62f3df1af",
+    "release_sha256": "a295c5d005e8819bf55d8fc487394bdf21872a25255b491b811c857aa7d0579c"
+  },
+  {
+    "path": "lean_phase4/CryptidSolvePhase4.lean",
+    "change": "Lean header comment",
+    "original_sha256": "6b0f8a326ab53560a34d5d0e7bda675349c59bd80f2988cb8293b49f07ec6032",
+    "release_sha256": "df46cd6c9901bb347142deeded5ea9fc431e0d5799960ea1dc0437ffb4b04b41"
+  },
+  {
+    "path": "scripts/phase4_beyond_collatz_toolkit.py",
+    "change": "Python module docstring",
+    "original_sha256": "35843d4483d45655e62ae3aa44918faf715ddda595a90fa8ed8587ef5b103eb3",
+    "release_sha256": "21af6dea1770be336eb73f4525504de4af5f273f71abcb807a8aa2e1bb7e631e"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "clean_build": "PASS",
+  "source_theorems": 137,
+  "kernel_theorem_constants": 156,
+  "new_source_theorems": 35,
+  "negative_controls_rejected": true,
+  "compiled_source_hashes_verified": true,
+  "theorem_statement_and_axiom_check": "PASS",
+  "independent_dictionary_tape_checks": "PASS",
+  "trace_data_reproducibility": "PASS",
+  "BoundaryReturn": "REFUTED",
+  "first_DefectReturn": "REFUTED",
+  "second_DefectReturn": "REFUTED",
+  "blank_defined_prefix_unchanged": 1141823725445,
+  "blank_global_nonhalting": "OPEN",
+  "paper_pdf": "Earlier interoperability snapshot; current status updated in research addendum and documentation",
+  "untrusted_generated_trace_data": "Every adjacency, avoidance check and final halt kernel-checked"
+}

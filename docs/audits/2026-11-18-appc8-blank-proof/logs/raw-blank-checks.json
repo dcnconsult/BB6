@@ -1,0 +1,100 @@
+{
+  "machine": "1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---",
+  "checkpoint_count": 10,
+  "checkpoints": [
+    {
+      "steps": 0,
+      "family": "blank",
+      "k_or_c": 0,
+      "m": null,
+      "head": 0,
+      "state": "A",
+      "ones": 0
+    },
+    {
+      "steps": 5,
+      "family": "C",
+      "k_or_c": 0,
+      "m": 2,
+      "head": -3,
+      "state": "A",
+      "ones": 3
+    },
+    {
+      "steps": 11,
+      "family": "D",
+      "k_or_c": 1,
+      "m": null,
+      "head": 3,
+      "state": "E",
+      "ones": 3
+    },
+    {
+      "steps": 59,
+      "family": "C",
+      "k_or_c": 3,
+      "m": 1,
+      "head": -9,
+      "state": "A",
+      "ones": 8
+    },
+    {
+      "steps": 3244,
+      "family": "C",
+      "k_or_c": 18,
+      "m": 10,
+      "head": -48,
+      "state": "A",
+      "ones": 47
+    },
+    {
+      "steps": 3486,
+      "family": "C",
+      "k_or_c": 20,
+      "m": 6,
+      "head": -50,
+      "state": "A",
+      "ones": 47
+    },
+    {
+      "steps": 3752,
+      "family": "C",
+      "k_or_c": 22,
+      "m": 2,
+      "head": -52,
+      "state": "A",
+      "ones": 47
+    },
+    {
+      "steps": 3824,
+      "family": "D",
+      "k_or_c": 23,
+      "m": null,
+      "head": 20,
+      "state": "E",
+      "ones": 25
+    },
+    {
+      "steps": 3982,
+      "family": "C",
+      "k_or_c": 3,
+      "m": 67,
+      "head": -58,
+      "state": "A",
+      "ones": 74
+    },
+    {
+      "steps": 7854,
+      "family": "C",
+      "k_or_c": 35,
+      "m": 3,
+      "head": -90,
+      "state": "A",
+      "ones": 74
+    }
+  ],
+  "defined_prefix_horizon": 7854,
+  "bridge_steps": 3185,
+  "scope": "Concrete blank reachability plus composition with general reset/shuttle/exit. Full clean-sector entry c=4(q+1) remains unproved; no first-return or global-survival claim.",
+  "generated_direct_blank_fixtures": 10
+}

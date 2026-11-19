@@ -1,0 +1,27 @@
+{
+  "upload_type": "software",
+  "title": "Supporting proofs and experiments for Following a Six-State Busy Beaver Candidate for 97 Quadrillion Steps",
+  "description": "Lean proofs, finite tape simulations, benchmarks, and reproducibility evidence accompanying the published preprint.",
+  "creators": [
+    {
+      "name": "Novotny, Darryl",
+      "affiliation": "SyncQutrit Research Group, LLC.",
+      "orcid": "0009-0001-3525-0638"
+    }
+  ],
+  "license": "apache-2.0",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.24370902",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint"
+    }
+  ],
+  "keywords": [
+    "Busy Beaver",
+    "Lean 4",
+    "Turing machines",
+    "formal verification"
+  ]
+}

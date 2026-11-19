@@ -1,0 +1,28 @@
+{
+  "clean_build": "PASS",
+  "source_theorems": 186,
+  "kernel_theorem_constants": 211,
+  "new_source_theorems": 49,
+  "negative_controls_rejected": true,
+  "compiled_source_hashes_verified": true,
+  "statement_axiom_inspection": "PASS",
+  "independent_complete_tape_checks": 3659,
+  "candidate_catalog_probes": 480,
+  "first_boundary_return_escapes": 47,
+  "guarded_defect_return_both_markers": "PROVED",
+  "residual_phase_preservation_and_return": "PROVED",
+  "blank_candidate_entry": 5,
+  "blank_fueled_entry": 2286,
+  "counterexample_exclusions": "PROVED for the named boundary/residual witnesses and both guarded defect witnesses",
+  "blank_defined_prefix": 43249783462218928,
+  "frontier": {
+    "k": 89494232,
+    "m": 1,
+    "tail": [
+      44
+    ]
+  },
+  "global_candidate_closure": "OPEN",
+  "blank_nonhalting": "OPEN",
+  "scope": "Macro-state candidate, not one-step or first-boundary-return closure. Manuscript/PDF remains the prior publication snapshot."
+}

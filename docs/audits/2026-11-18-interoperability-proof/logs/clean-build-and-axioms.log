@@ -1,0 +1,139 @@
+✔ [1877/2158] Built CryptidSolvePhase4.Basic (475ms)
+✔ [3253/3281] Built CryptidSolvePhase4.Transfer2PutinarSOS (619ms)
+⚠ [3254/3281] Built CryptidSolvePhase4.AppC7RawGate (712ms)
+warning: CryptidSolvePhase4/AppC7RawGate.lean:56:33: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3255/3281] Built CryptidSolvePhase4.Transfer4WreathBlockGauge (921ms)
+✔ [3256/3281] Built BusyBeaver.Defs.Core (2.1s)
+⚠ [3257/3281] Built CryptidSolvePhase4.AppC8RawShuttle (615ms)
+warning: CryptidSolvePhase4/AppC8RawShuttle.lean:56:33: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3258/3281] Built CryptidSolvePhase4.AppC8RawCleanMacro (397ms)
+✔ [3259/3281] Built BusyBeaver.Defs.Patterns (1.1s)
+✔ [3260/3281] Built BusyBeaver.Defs.Odometer (1.3s)
+✔ [3261/3281] Built BusyBeaver.Defs.Stack (1.1s)
+✔ [3262/3281] Built CryptidSolvePhase4.AppC8RawBlankReachability (1.9s)
+⚠ [3263/3281] Built CryptidSolvePhase4.AppC8RawOddSector (560ms)
+warning: CryptidSolvePhase4/AppC8RawOddSector.lean:103:27: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.mul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3264/3281] Built BusyBeaver.Defs.Transducer (1.3s)
+✔ [3265/3281] Built BusyBeaver.Defs.WordRun (1.5s)
+⚠ [3266/3281] Built CryptidSolvePhase4.AppC8RawMod2Sector (1.3s)
+warning: CryptidSolvePhase4/AppC8RawMod2Sector.lean:154:27: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.mul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CryptidSolvePhase4/AppC8RawMod2Sector.lean:217:27: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.mul_zero, Nat.mul_add, Nat.add_mul, Nat.mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3267/3281] Built BusyBeaver.Defs.Segmented (987ms)
+✔ [3268/3281] Built BusyBeaver.Defs (770ms)
+✔ [3269/3281] Built BusyBeaver.Basic (2.5s)
+⚠ [3270/3281] Built BB6Interop.Zipper (1.5s)
+warning: BB6Interop/Zipper.lean:19:37: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3271/3281] Built Cryptids.Machines (14s)
+✔ [3272/3281] Built BusyBeaver.Calculi.Counter (5.0s)
+✔ [3273/3281] Built BusyBeaver.Bridge (2.3s)
+✔ [3274/3281] Built BusyBeaver.Calculi.Excursion (2.3s)
+⚠ [3275/3281] Built BB6Interop.AppC8 (2.4s)
+warning: BB6Interop/AppC8.lean:64:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: BB6Interop/AppC8.lean:61:51: missing space in the source
+
+This part of the code
+  '4*r+1) :'
+should be written as
+  '4 * r'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+✔ [3276/3281] Built BusyBeaver.Calculi.SharedDonorsA (130s)
+✔ [3277/3281] Built BusyBeaver.BB6.NonHalt.M_1RB1RC_1LC0LE_0RA1RD_1RF1LB_1LD0LA_HHH0RC (1.7s)
+✔ [3278/3281] Built BB6Interop.AppC7 (2.2s)
+✔ [3279/3281] Built BB6Interop (2.1s)
+⚠ [3281/3281] Built BB6Interop.KernelAudit (2.8s)
+info: BB6Interop/KernelAudit.lean:6:0: AXIOMS BB6Interop.AppC8.exit_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.mod16_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.blank_prefix_defined: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.clean_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.Zipper.mk.sizeOf_spec: []
+AXIOMS BB6Interop.AppC8.reaches_in: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.step_commutes: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.reset_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.instruction.eq_1: [propext]
+AXIOMS BB6Interop.AppC7.step_commutes: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.shuttle_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC7.gate_halts_after: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC7.blank_nonhalting: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC7.table_agrees: [propext]
+AXIOMS BB6Interop.zipperStep.eq_1: []
+AXIOMS BB6Interop.half_head: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC7.blank_agrees: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.unreachable_of_halts: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC7.gate_unreachable: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.encode.eq_1: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.half.eq_1: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.encode.eq_1: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC7.sweep_gate_unreachable: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.Zipper.mk.injEq: [propext]
+AXIOMS BB6Interop.AppC7.gate_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.read.eq_2: []
+AXIOMS BB6Interop.half.eq_2: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC7.gate_unreachable_local: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.blank_agrees: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC7.pack_step: []
+AXIOMS BB6Interop.AppC8.blank_reaches_in: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.mod1_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC7.encode.eq_1: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.odd_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.mod2_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.run_commutes: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.blank_clean_entry: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.rounds_exact_time: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC7.sweep_gate_unreachable_local: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.encode_step: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC7.run_commutes: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.pack_step: []
+AXIOMS BB6Interop.half.eq_def: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.blank_clean_applied: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.Zipper.mk.inj: []
+AXIOMS BB6Interop.transfer_run: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.bit.eq_1: [propext]
+AXIOMS BB6Interop.half_tail: [propext, Classical.choice, Quot.sound]
+AXIOMS BB6Interop.AppC8.table_agrees: [propext]
+AXIOMS BB6Interop.read.eq_1: []
+INTEROP AUDIT PASS: 50 non-internal theorem constants; axioms [propext, Classical.choice, Quot.sound]
+warning: BB6Interop/KernelAudit.lean:26:100: This line exceeds the 100 character limit, please shorten it!
+You can use "string gaps" to format long strings: within a string quotation, using a '\' at the end of a line allows you to continue the string on the following line, removing all intervening whitespace.
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+info: BB6Interop/KernelAudit.lean:28:0: 'BB6Interop.AppC7.gate_unreachable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BB6Interop/KernelAudit.lean:29:0: 'BB6Interop.AppC7.sweep_gate_unreachable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BB6Interop/KernelAudit.lean:30:0: 'BB6Interop.AppC8.clean_exact_time' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BB6Interop/KernelAudit.lean:31:0: 'BB6Interop.AppC8.blank_clean_applied' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3281 jobs).

@@ -1,0 +1,138 @@
+[
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.odd_half",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 12,
+    "statement": "theorem odd_half (k : Nat) (t : List Bool) :\n    run (6*k+12) (shuttleTailCfg k 3 t) =\n      some \u27e8.E, [true, false], blocks (k+1) (true :: t)\u27e9",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.odd_turn",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 23,
+    "statement": "theorem odd_turn (l : List Bool) :\n    run 8 \u27e8.E, l, [true]\u27e9 = some \u27e8.A, l, [true, false, true, true]\u27e9",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.odd_left_boundary",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 26,
+    "statement": "theorem odd_left_boundary (t : List Bool) :\n    run 8 \u27e8.A, [true, false], true :: t\u27e9 =\n      some \u27e8.A, [], false :: true :: false :: ones 4 t\u27e9",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_odd_collapse",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 31,
+    "statement": "theorem appC8_odd_collapse (k : Nat) :\n    run (14*k+36) (shuttleCfg k 3) =\n      some (shuttleTailCfg 0 (3*k+7) [false, true, true])",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.tail_shuttle",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 45,
+    "statement": "theorem tail_shuttle (k m : Nat) (t : List Bool) (hm : m \u2265 5) :\n    run (12*k+26) (shuttleTailCfg k m t) =\n      some (shuttleTailCfg (k+2) (m-4) t)",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.tail_shuttle_rounds",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 54,
+    "statement": "theorem tail_shuttle_rounds (r k m : Nat) (t : List Bool) (hm : m \u2265 4*r+1) :\n    run (appC8ShuttleRoundsSteps k r) (shuttleTailCfg k m t) =\n      some (shuttleTailCfg (k+2*r) (m-4*r) t)",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.odd_terminal_turn",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 65,
+    "statement": "theorem odd_terminal_turn (l : List Bool) :\n    run 16 \u27e8.E, l, [true, true, false, true, true]\u27e9 =\n      some \u27e8.A, l, ones 7 []\u27e9",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_odd_terminal",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 70,
+    "statement": "theorem appC8_odd_terminal (k : Nat) :\n    run (14*k+44) (shuttleTailCfg k 4 [false, true, true]) =\n      some (shuttleCfg 0 (3*k+13))",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_odd_excursion",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 87,
+    "statement": "theorem appC8_odd_excursion (a : Nat) :\n    run ((14*(4*a+3)+36)+appC8ShuttleRoundsSteps 0 (3*a+3)+(14*(6*a+6)+44))\n      (shuttleCfg (4*a+3) 3) = some (shuttleCfg 0 (18*a+31))",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.odd_duration",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 98,
+    "statement": "theorem odd_duration (a : Nat) :\n    (14*(4*a+3)+36)+appC8ShuttleRoundsSteps 0 (3*a+3)+(14*(6*a+6)+44) =\n      108*a*a+398*a+356",
+    "evidence_class": "arithmetic identity or guard",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_odd_excursion_closed",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 109,
+    "statement": "theorem appC8_odd_excursion_closed (a : Nat) :\n    run (108*a*a+398*a+356) (shuttleCfg (4*a+3) 3) =\n      some (shuttleCfg 0 (18*a+31))",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_odd_excursion_survives",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 116,
+    "statement": "theorem appC8_odd_excursion_survives (a j : Nat) (hj : j \u2264 108*a*a+398*a+356) :\n    \u2203 e, run j (shuttleCfg (4*a+3) 3) = some e",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.odd_output_not_exit",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 121,
+    "statement": "theorem odd_output_not_exit (a r : Nat) (h : 4*r+1 \u2264 18*a+31) :\n    (18*a+31-4*r)%2 = 1 \u2227 18*a+31-4*r \u2260 2",
+    "evidence_class": "arithmetic identity or guard",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_after_odd_excursion",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 124,
+    "statement": "theorem appC8_blank_after_odd_excursion :\n    run 18306 blankCfg = some (shuttleCfg 0 175)",
+    "evidence_class": "concrete raw blank-run composition",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_next_odd_frontier",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 129,
+    "statement": "theorem appC8_blank_next_odd_frontier :\n    run 41096 blankCfg = some (shuttleCfg 86 3)",
+    "evidence_class": "concrete raw blank-run composition",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_prefix_41096",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 134,
+    "statement": "theorem appC8_blank_prefix_41096 (j : Nat) (hj : j \u2264 41096) :\n    \u2203 e, run j blankCfg = some e",
+    "evidence_class": "concrete raw blank-run composition",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.odd_frontier_not_clean",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawOddSector.lean",
+    "line": 139,
+    "statement": "theorem odd_frontier_not_clean (q : Nat) :\n    shuttleCfg 86 3 \u2260 cleanCfg (4*(q+1))",
+    "evidence_class": "arithmetic identity or guard",
+    "limit": "Only the stated guards and endpoints. No global survival, first-return claim, or exclusion of all intermediate clean visits."
+  }
+]

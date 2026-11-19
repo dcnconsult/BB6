@@ -1,0 +1,35 @@
+{
+  "clean_build": "PASS",
+  "source_theorems": 241,
+  "kernel_theorem_constants": 266,
+  "new_source_theorems": 55,
+  "negative_controls_rejected": true,
+  "compiled_source_hashes_verified": true,
+  "statement_axiom_inspection": "PASS",
+  "exact_time_full_tape_checks": 2220,
+  "terminal_bounded_probes": 1025,
+  "paired_bounded_probes": 2050,
+  "all_probe_cases_returned_to_generated_grammar": true,
+  "previous_catalog_escapes_now_admitted": 47,
+  "terminal_44_to_104": "PROVED uniformly for input blocks >=18",
+  "all_single_terminal_3r_plus_2_returns": "PROVED for every left-block count and both markers",
+  "generated_candidate_extends_previous": "PROVED",
+  "prior_halting_boundary_and_residual_excluded": "PROVED",
+  "remaining_universal_predicates": [
+    "PairedOneReturn",
+    "PairedThreeReturn"
+  ],
+  "blank_defined_prefix": 97311884181777598,
+  "actual_frontier": {
+    "k": 134241197,
+    "m": 3,
+    "tail": [
+      359,
+      2
+    ],
+    "q": 39
+  },
+  "global_closure": "OPEN",
+  "blank_nonhalting": "OPEN",
+  "scope": "Exact macro returns; no first-return minimality or unconditional global nonhalting claim. Paper/PDF remains preceding publication snapshot."
+}

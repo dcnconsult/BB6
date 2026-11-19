@@ -1,0 +1,8 @@
+{
+  "previous_catalog_escapes": 47,
+  "now_admitted": 47,
+  "remaining_unadmitted": [],
+  "source": "docs/audits/2026-11-18-appc8-restricted-invariant/differential-tests.json",
+  "source_sha256": "8b6bdf9135314254c925c9f24d650fc4d854e69558f936ec48638a2d978f735a",
+  "scope": "Finite comparison against the previous 480-case probe. Not global closure."
+}

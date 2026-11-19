@@ -1,0 +1,39 @@
+Host Python: 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]
+Host CPU:    Intel64 Family 6 Model 170 Stepping 4, GenuineIntel (22 logical cores)
+C Compiler:  Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35728 for x64
+
+=== C11 Hardware Benchmark Output (/O2 /Oi /arch:AVX2) ===
+[VERIFY] 100% bit-exact match across 1232500 test vectors (0 discrepancies).
+ROW|MixedRandom|CTZ-K1_Antihydra_Tneg1_v4|4.51|13.453|2.341|40.29|7.01|5.75x|5.75x
+ROW|MixedRandom|CTZ-K2_Antihydra_OddRun_v1|18.38|30.972|1.563|92.77|4.68|19.81x|19.82x
+ROW|MixedRandom|CTZ-K3_Antihydra_Relay_v3|6.00|15.492|2.026|46.40|6.07|7.65x|7.65x
+ROW|MixedRandom|CLZ-K4_Cousin_A2_A10|24.50|22.876|3.277|68.52|9.82|6.98x|6.98x
+ROW|MixedRandom|CLZ-K5_Cousin_A5_BMO5|24.47|20.293|3.067|60.78|9.18|6.62x|6.62x
+ROW|MixedRandom|CLZ-K6_AppC1_Chained2Loop|24.13|28.173|10.082|84.38|30.19|2.79x|2.79x
+ROW|Geom2Adic|CTZ-K2_Geom_Half|2.00|11.375|2.189|34.07|6.56|5.20x|5.20x
+ROW|ShortEpoch_1_16|CLZ-K5_ShortEpoch|8.51|14.469|4.671|43.34|13.99|3.10x|3.10x
+ROW|DepthSweep|CLZ-K5_Depth_j=1|1.00|2.529|5.197|7.57|15.56|0.49x|0.49x
+ROW|DepthSweep|CLZ-K5_Depth_j=2|2.00|2.394|5.865|7.17|17.57|0.41x|0.41x
+ROW|DepthSweep|CLZ-K5_Depth_j=4|4.00|4.348|3.771|13.02|11.29|1.15x|1.15x
+ROW|DepthSweep|CLZ-K5_Depth_j=8|8.00|6.013|5.935|18.01|17.78|1.01x|1.01x
+ROW|DepthSweep|CLZ-K5_Depth_j=16|16.00|12.170|3.726|36.45|11.16|3.27x|3.27x
+ROW|DepthSweep|CLZ-K5_Depth_j=32|32.00|14.054|4.418|42.09|13.23|3.18x|3.18x
+ROW|DepthSweep|CLZ-K5_Depth_j=48|48.00|45.922|5.302|137.54|15.88|8.66x|8.66x
+
+=== x86-64 Machine-Code Audit (MSVC /FAcs Listing) ===
+ASM|k1_antihydra_tneg1_naive    |insns=19|tzcnt=0|lzcnt=0|div=0|cond_br=3|back_loops=1
+ASM|k1_antihydra_tneg1_ghost    |insns=26|tzcnt=1|lzcnt=0|div=0|cond_br=0|back_loops=0
+ASM|k2_antihydra_odd_naive      |insns=17|tzcnt=0|lzcnt=0|div=0|cond_br=3|back_loops=1
+ASM|k2_antihydra_odd_ghost      |insns=16|tzcnt=1|lzcnt=0|div=0|cond_br=0|back_loops=0
+ASM|k3_antihydra_t0_naive       |insns=26|tzcnt=0|lzcnt=0|div=0|cond_br=3|back_loops=1
+ASM|k3_antihydra_t0_ghost       |insns=25|tzcnt=1|lzcnt=0|div=0|cond_br=0|back_loops=0
+ASM|k4_cousin_a2_a10_naive      |insns=18|tzcnt=0|lzcnt=0|div=0|cond_br=2|back_loops=1
+ASM|k4_cousin_a2_a10_ghost      |insns=56|tzcnt=0|lzcnt=2|div=0|cond_br=1|back_loops=0
+ASM|k5_cousin_a5_naive          |insns=18|tzcnt=0|lzcnt=0|div=0|cond_br=2|back_loops=1
+ASM|k5_cousin_a5_ghost          |insns=56|tzcnt=0|lzcnt=2|div=0|cond_br=1|back_loops=0
+ASM|k6_appc1_chained_naive      |insns=34|tzcnt=0|lzcnt=0|div=0|cond_br=4|back_loops=2
+ASM|k6_appc1_chained_ghost      |insns=89|tzcnt=0|lzcnt=4|div=0|cond_br=2|back_loops=0
+
+=== Python 3.14 Arbitrary-Precision BigInt Benchmark ===
+PY|Py3.14 BigInt CTZ (Antihydra Odd-Run, m in 20..139)|mean_steps=79.1|naive=18.287 us|ghost=0.464 us|speedup=39.42x
+PY|Py3.14 BigInt CLZ (Cryptid A.5 Doubler, j in 30..189)|mean_steps=109.5|naive=27.826 us|ghost=0.728 us|speedup=38.24x

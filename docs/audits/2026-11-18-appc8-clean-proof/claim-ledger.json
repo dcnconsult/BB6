@@ -1,0 +1,106 @@
+[
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.ones_add",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 11,
+    "statement": "theorem ones_add (a b : Nat) (t : List Bool) :\n    ones a (ones b t) = ones (a+b) t",
+    "evidence_class": "list identity",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.reset_triplet",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 17,
+    "statement": "theorem reset_triplet (l t : List Bool) :\n    run 5 \u27e8.A, true :: false :: false :: l, true :: t\u27e9 =\n      some \u27e8.A, l, ones 4 t\u27e9",
+    "evidence_class": "kernel-checked raw execution or composition",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.reset_scan",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 21,
+    "statement": "theorem reset_scan (n : Nat) (l t : List Bool) :\n    run (5*n) \u27e8.A, back n l, true :: t\u27e9 =\n      some \u27e8.A, l, ones (3*n+1) t\u27e9",
+    "evidence_class": "kernel-checked raw execution or composition",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.reset_entry",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 33,
+    "statement": "theorem reset_entry (n : Nat) :\n    run 5 (cleanCfg (n+1)) =\n      some \u27e8.A, back n [true, false, true], ones 4 []\u27e9",
+    "evidence_class": "kernel-checked raw execution or composition",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.reset_boundary",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 38,
+    "statement": "theorem reset_boundary (t : List Bool) :\n    run 43 \u27e8.A, [true, false, true], ones 4 t\u27e9 =\n      some \u27e8.A, [], false :: true :: false :: blocks 3 (true :: t)\u27e9",
+    "evidence_class": "kernel-checked raw execution or composition",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_raw_reset",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 44,
+    "statement": "theorem appC8_raw_reset (n : Nat) :\n    run (5*(n+1)+43) (cleanCfg (n+1)) = some (shuttleCfg 3 (3*n+1))",
+    "evidence_class": "kernel-checked raw execution or composition",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.exit_boundary",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 54,
+    "statement": "theorem exit_boundary (l : List Bool) :\n    run 3 \u27e8.E, l, [true, true]\u27e9 =\n      some \u27e8.E, true :: false :: false :: l, []\u27e9",
+    "evidence_class": "kernel-checked raw execution or composition",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_raw_exit",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 59,
+    "statement": "theorem appC8_raw_exit (k : Nat) :\n    run (3*k+6) (shuttleCfg k 2) = some (cleanCfg (k+1))",
+    "evidence_class": "kernel-checked raw execution or composition",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_clean_reset_raw",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 67,
+    "statement": "theorem appC8_clean_reset_raw (q : Nat) :\n    run (20*q+63) (cleanCfg (4*(q+1))) = some (shuttleCfg 3 (12*q+10))",
+    "evidence_class": "kernel-checked raw execution or composition",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_clean_exit_raw",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 76,
+    "statement": "theorem appC8_clean_exit_raw (q : Nat) :\n    run (18*q+27) (shuttleCfg (6*q+7) 2) = some (cleanCfg (6*q+8))",
+    "evidence_class": "kernel-checked raw execution or composition",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_clean_macro_raw",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 84,
+    "statement": "theorem appC8_clean_macro_raw (q : Nat) :\n    run (108*q*q+332*q+238) (cleanCfg (4*(q+1))) =\n      some (cleanCfg (6*q+8))",
+    "evidence_class": "kernel-checked raw execution or composition",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_clean_macro_survives",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 92,
+    "statement": "theorem appC8_clean_macro_survives (q j : Nat) (hj : j \u2264 108*q*q+332*q+238) :\n    \u2203 e, run j (cleanCfg (4*(q+1))) = some e",
+    "evidence_class": "kernel-checked raw execution or composition",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_clean_macro_raw_and_ghost",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawCleanMacro.lean",
+    "line": 97,
+    "statement": "theorem appC8_clean_macro_raw_and_ghost (q : Nat) :\n    run (108*q*q+332*q+238) (cleanCfg (4*(q+1))) = some (cleanCfg (6*q+8)) \u2227\n      2*((6*q+8)+4) = 3*((4*(q+1))+4)",
+    "evidence_class": "kernel-checked raw execution or composition",
+    "scope": "Exact quantified Lean statement; clean macro input c=4(q+1), no blank reachability or first-return assertion."
+  }
+]

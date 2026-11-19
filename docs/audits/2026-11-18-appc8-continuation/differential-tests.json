@@ -1,0 +1,19 @@
+{
+  "family_cases": {
+    "four_collapse": 33,
+    "one_collapse": 33,
+    "three_with_tail": 33,
+    "zero_block_defect_param": 126,
+    "one_to_tail": 17,
+    "even_carry_to_four": 17
+  },
+  "total_family_cases": 259,
+  "independent_blank_check": {
+    "time": 13314194,
+    "k": 0,
+    "m": 4717,
+    "absolute_head": -4670
+  },
+  "arbitrary_suffix_halting_witness": true,
+  "scope": "Finite complete-tape comparisons. Infinite survival and BoundaryReturn remain unproved."
+}

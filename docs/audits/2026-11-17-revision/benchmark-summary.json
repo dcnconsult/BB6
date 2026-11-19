@@ -1,0 +1,32 @@
+{
+  "GCC12.2": {
+    "mixed_speedup_min": 3.9,
+    "mixed_speedup_max": 10.96,
+    "mixed_geomean": 6.208432808760143,
+    "depth_speedups": {
+      "CLZ-K5_Depth_j=1": 0.37,
+      "CLZ-K5_Depth_j=2": 0.52,
+      "CLZ-K5_Depth_j=4": 0.79,
+      "CLZ-K5_Depth_j=8": 1.38,
+      "CLZ-K5_Depth_j=16": 2.64,
+      "CLZ-K5_Depth_j=32": 5.62,
+      "CLZ-K5_Depth_j=48": 7.01
+    },
+    "bit_exact_cases": 1232500
+  },
+  "MSVC19.50": {
+    "mixed_speedup_min": 2.79,
+    "mixed_speedup_max": 19.81,
+    "mixed_geomean": 6.946327071667678,
+    "depth_speedups": {
+      "CLZ-K5_Depth_j=1": 0.49,
+      "CLZ-K5_Depth_j=2": 0.41,
+      "CLZ-K5_Depth_j=4": 1.15,
+      "CLZ-K5_Depth_j=8": 1.01,
+      "CLZ-K5_Depth_j=16": 3.27,
+      "CLZ-K5_Depth_j=32": 3.18,
+      "CLZ-K5_Depth_j=48": 8.66
+    },
+    "bit_exact_cases": 1232500
+  }
+}

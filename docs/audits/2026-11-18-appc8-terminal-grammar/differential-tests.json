@@ -1,0 +1,290 @@
+{
+  "full_tape_rule_cases": {
+    "terminal_even_local": 775,
+    "terminal_odd_local": 775,
+    "double_even": 153,
+    "even_odd": 153,
+    "odd_boundary": 225,
+    "44_to_104": 82,
+    "104_to_239": 57
+  },
+  "total_full_tape_checks": 2220,
+  "terminal_generated_return_probes": 1025,
+  "paired_generated_return_probes": 2050,
+  "paired_statuses": {
+    "generated_return": 2050
+  },
+  "paired_unresolved": [],
+  "max_terminal_boundary_visits": 1,
+  "paired_sample": [
+    {
+      "input": [
+        3,
+        3,
+        [
+          17,
+          2
+        ]
+      ],
+      "status": "generated_return",
+      "duration": 619,
+      "boundary_visits": 2,
+      "output": [
+        6,
+        13,
+        [
+          8,
+          2
+        ]
+      ]
+    },
+    {
+      "input": [
+        4,
+        3,
+        [
+          17,
+          2
+        ]
+      ],
+      "status": "generated_return",
+      "duration": 771,
+      "boundary_visits": 2,
+      "output": [
+        9,
+        7,
+        [
+          8,
+          2
+        ]
+      ]
+    },
+    {
+      "input": [
+        5,
+        3,
+        [
+          17,
+          2
+        ]
+      ],
+      "status": "generated_return",
+      "duration": 977,
+      "boundary_visits": 2,
+      "output": [
+        12,
+        1,
+        [
+          8,
+          2
+        ]
+      ]
+    },
+    {
+      "input": [
+        6,
+        3,
+        [
+          17,
+          2
+        ]
+      ],
+      "status": "generated_return",
+      "duration": 1589,
+      "boundary_visits": 2,
+      "output": [
+        2,
+        19,
+        [
+          26,
+          2
+        ]
+      ]
+    },
+    {
+      "input": [
+        6,
+        3,
+        [
+          35,
+          2
+        ]
+      ],
+      "status": "generated_return",
+      "duration": 1507,
+      "boundary_visits": 2,
+      "output": [
+        6,
+        40,
+        [
+          8,
+          2
+        ]
+      ]
+    },
+    {
+      "input": [
+        7,
+        3,
+        [
+          17,
+          2
+        ]
+      ],
+      "status": "generated_return",
+      "duration": 1693,
+      "boundary_visits": 2,
+      "output": [
+        5,
+        13,
+        [
+          26,
+          2
+        ]
+      ]
+    },
+    {
+      "input": [
+        7,
+        3,
+        [
+          35,
+          2
+        ]
+      ],
+      "status": "generated_return",
+      "duration": 1659,
+      "boundary_visits": 2,
+      "output": [
+        9,
+        34,
+        [
+          8,
+          2
+        ]
+      ]
+    },
+    {
+      "input": [
+        8,
+        1,
+        [
+          17,
+          2
+        ]
+      ],
+      "status": "generated_return",
+      "duration": 1645,
+      "boundary_visits": 2,
+      "output": [
+        6,
+        13,
+        [
+          26,
+          2
+        ]
+      ]
+    },
+    {
+      "input": [
+        8,
+        3,
+        [
+          17,
+          2
+        ]
+      ],
+      "status": "generated_return",
+      "duration": 1851,
+      "boundary_visits": 2,
+      "output": [
+        8,
+        7,
+        [
+          26,
+          2
+        ]
+      ]
+    },
+    {
+      "input": [
+        8,
+        3,
+        [
+          35,
+          2
+        ]
+      ],
+      "status": "generated_return",
+      "duration": 1865,
+      "boundary_visits": 2,
+      "output": [
+        12,
+        28,
+        [
+          8,
+          2
+        ]
+      ]
+    },
+    {
+      "input": [
+        9,
+        1,
+        [
+          17,
+          2
+        ]
+      ],
+      "status": "generated_return",
+      "duration": 1797,
+      "boundary_visits": 2,
+      "output": [
+        9,
+        7,
+        [
+          26,
+          2
+        ]
+      ]
+    },
+    {
+      "input": [
+        9,
+        3,
+        [
+          17,
+          2
+        ]
+      ],
+      "status": "generated_return",
+      "duration": 2063,
+      "boundary_visits": 2,
+      "output": [
+        11,
+        1,
+        [
+          26,
+          2
+        ]
+      ]
+    }
+  ],
+  "below_44_guard": {
+    "input": [
+      17,
+      1,
+      [
+        44
+      ]
+    ],
+    "output": {
+      "status": "return",
+      "k": 32,
+      "m": 4,
+      "tail": [],
+      "duration": 5059
+    }
+  },
+  "scope": "Full tape differential checks plus bounded raw searches: 200000 transitions per segment, at most 20 boundary visits. PairedOneReturn and PairedThreeReturn remain unproved."
+}

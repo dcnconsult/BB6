@@ -1,0 +1,61 @@
+BB6Interop.AppC8ResidualTape.first_bad_avoids : rejectTrace (badFirst :: firstTrace.tail) = true
+'BB6Interop.AppC8ResidualTape.first_bad_avoids' does not depend on any axioms
+BB6Interop.AppC8ResidualTape.second_bad_avoids : rejectTrace (badSecond :: secondTrace.tail) = true
+'BB6Interop.AppC8ResidualTape.second_bad_avoids' does not depend on any axioms
+BB6Interop.AppC8ResidualTape.residual_bad_no_return :
+  ¬BB6Interop.AppC8RunLists.Progress
+      (BB6Interop.AppC8ResidualTape.residual BB6Interop.AppC8RunLists.firstMarker 0 0 [4, 4, 1])
+'BB6Interop.AppC8ResidualTape.residual_bad_no_return' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.first_bad_steps :
+  (∃ d, CryptidSolvePhase4.AppC8Raw.run 742 badFirst = some d) ∧ CryptidSolvePhase4.AppC8Raw.run 743 badFirst = none
+'BB6Interop.AppC8ResidualTape.first_bad_steps' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.second_bad_steps :
+  (∃ d, CryptidSolvePhase4.AppC8Raw.run 680 badSecond = some d) ∧ CryptidSolvePhase4.AppC8Raw.run 681 badSecond = none
+'BB6Interop.AppC8ResidualTape.second_bad_steps' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.short_bad_member : BB6Interop.AppC8Continuation.Boundary shortBadBoundary
+'BB6Interop.AppC8ResidualTape.short_bad_member' does not depend on any axioms
+BB6Interop.AppC8ResidualTape.short_bad_prefix : ∃ d, CryptidSolvePhase4.AppC8Raw.run 748 shortBadBoundary = some d
+'BB6Interop.AppC8ResidualTape.short_bad_prefix' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.short_bad_halts : CryptidSolvePhase4.AppC8Raw.run 749 shortBadBoundary = none
+'BB6Interop.AppC8ResidualTape.short_bad_halts' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.not_boundary_return : ¬BB6Interop.AppC8Continuation.BoundaryReturn
+'BB6Interop.AppC8ResidualTape.not_boundary_return' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.not_first_defect_return :
+  ¬BB6Interop.AppC8RunLists.DefectReturn BB6Interop.AppC8RunLists.firstMarker
+'BB6Interop.AppC8ResidualTape.not_first_defect_return' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.not_second_defect_return :
+  ¬BB6Interop.AppC8RunLists.DefectReturn BB6Interop.AppC8RunLists.secondMarker
+'BB6Interop.AppC8ResidualTape.not_second_defect_return' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.residual_terminal_local (l : List Bool) :
+  CryptidSolvePhase4.AppC8Raw.run 30
+      { st := CryptidSolvePhase4.AppC8Raw.State.A, left := l,
+        right := false :: true :: false :: CryptidSolvePhase4.AppC8Raw.blocks 2 [true] } =
+    some
+      { st := CryptidSolvePhase4.AppC8Raw.State.A, left := l,
+        right := true :: CryptidSolvePhase4.AppC8Raw.defectTail 8 }
+'BB6Interop.AppC8ResidualTape.residual_terminal_local' does not depend on any axioms
+BB6Interop.AppC8ResidualTape.residual_first_terminal (k : ℕ) :
+  CryptidSolvePhase4.AppC8Raw.run (5 * k + 36)
+      (BB6Interop.AppC8ResidualTape.residual BB6Interop.AppC8RunLists.firstMarker k 0 []) =
+    some (BB6Interop.AppC8RunLists.runListCfg 0 0 [3 * k + 1, 7, 1])
+'BB6Interop.AppC8ResidualTape.residual_first_terminal' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.residual_second_terminal (k : ℕ) :
+  CryptidSolvePhase4.AppC8Raw.run (5 * k + 38)
+      (BB6Interop.AppC8ResidualTape.residual BB6Interop.AppC8RunLists.secondMarker k 0 []) =
+    some (BB6Interop.AppC8RunLists.runListCfg 0 (3 * k + 3) [7, 1])
+'BB6Interop.AppC8ResidualTape.residual_second_terminal' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.macro_closed_survives {P : CryptidSolvePhase4.AppC8Raw.Cfg → Prop}
+  (hclosed : MacroClosed P) (j : ℕ) (c : CryptidSolvePhase4.AppC8Raw.Cfg) :
+  P c → ∃ d, CryptidSolvePhase4.AppC8Raw.run j c = some d
+'BB6Interop.AppC8ResidualTape.macro_closed_survives' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.no_safe_extension (P : CryptidSolvePhase4.AppC8Raw.Cfg → Prop)
+  (hcontains : ∀ (c : CryptidSolvePhase4.AppC8Raw.Cfg), BB6Interop.AppC8Continuation.Boundary c → P c) : ¬MacroClosed P
+'BB6Interop.AppC8ResidualTape.no_safe_extension' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.terminal_phase_not_closed : ¬MacroClosed TerminalPhaseDomain
+'BB6Interop.AppC8ResidualTape.terminal_phase_not_closed' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.closed_domain_excludes_witness {P : CryptidSolvePhase4.AppC8Raw.Cfg → Prop}
+  (hc : MacroClosed P) : ¬P shortBadBoundary
+'BB6Interop.AppC8ResidualTape.closed_domain_excludes_witness' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8ResidualTape.upstream_nonblank_halt :
+  BusyBeaver.multiStep BB6Interop.AppC8.machine (BB6Interop.AppC8.encode shortBadBoundary) 749 = none
+'BB6Interop.AppC8ResidualTape.upstream_nonblank_halt' depends on axioms: [propext, Classical.choice, Quot.sound]

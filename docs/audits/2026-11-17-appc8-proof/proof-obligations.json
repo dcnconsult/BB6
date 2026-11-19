@@ -1,0 +1,66 @@
+[
+  {
+    "id": "O1a",
+    "obligation": "AppC 7 gate raw-to-macro refinement",
+    "priority": "Selected and proved",
+    "status": "closed for the full stated gate family",
+    "evidence": "gate_phase_all, gate_sweep_exact_time, appC7_raw_gate_exact_time; all natural a,r,b, without a raw-correspondence assumption.",
+    "limit": "Does not establish entry into the family from the blank tape or handle unrestricted multi-defect configurations."
+  },
+  {
+    "id": "O1b",
+    "obligation": "AppC 8 raw shuttle, repeated rounds, and clean middle stage",
+    "priority": "Completed in this revision",
+    "status": "proved under the stated guards",
+    "evidence": "appC8_raw_shuttle, appC8_raw_shuttle_rounds, appC8_raw_rounds_closed_form, appC8_clean_middle_raw.",
+    "limit": "Shuttle requires m>=5; r rounds require m>=4r+1. Elapsed execution, not first-return minimality. Reset/exit split into O1d."
+  },
+  {
+    "id": "O1d",
+    "obligation": "AppC 8 clean-macro reset and exit",
+    "status": "open",
+    "priority": "Next local refinement targets",
+    "evidence": "The raw middle stage is now proved. Full-duration and ghost formulas remain arithmetic; five full-macro finite checks exist.",
+    "limit": "Prove the reset to C(3,12q+10) and exit from C(6q+7,2) before claiming the full raw clean-macro law. Does not settle the odd sector or blank trajectory."
+  },
+  {
+    "id": "O1c",
+    "obligation": "Other counter-model raw-to-macro refinements",
+    "priority": "Local targets after selecting a precise machine/sector",
+    "status": "open",
+    "evidence": "Core invariants and aperiodicity proofs exist for encoded models; finite raw bridges vary by suite.",
+    "limit": "Prove encoding, transitions, entry, and coverage before inferring a raw-machine classification."
+  },
+  {
+    "id": "O2",
+    "obligation": "Global A.11 aperiodicity/non-halting and Epoch-4 completion",
+    "priority": "Research-level arithmetic gap",
+    "status": "open",
+    "evidence": "Finite Epoch-3 computation and conditional d=6 successor theorem only; c can decrease.",
+    "limit": "No proved global progress measure or survival argument currently available."
+  },
+  {
+    "id": "O3",
+    "obligation": "All-modulus Antihydra quotient and cycle-mean laws",
+    "priority": "Formalize the parametric graph first",
+    "status": "open",
+    "evidence": "Specific quotient tests and conditional affine identities.",
+    "limit": "Must specify the quotient and unresolved-cylinder semantics, then prove a uniform graph decomposition and cycle bound."
+  },
+  {
+    "id": "O4",
+    "obligation": "Unrestricted AppC 7 and AppC 8 blank trajectories",
+    "priority": "Beyond the proved local gate family",
+    "status": "open",
+    "evidence": "New AppC7 exact gate theorem; AppC8 arithmetic and finite tests.",
+    "limit": "Reachability and behavior outside the certified family remain unproved; abstract multiDefect immortality is not a raw refinement."
+  },
+  {
+    "id": "O5",
+    "obligation": "Raw-machine identification for abstract algebraic examples",
+    "priority": "Construction and refinement required",
+    "status": "open",
+    "evidence": "Abstract parabolic, Fibonacci/Pell, word, and odometer theorems.",
+    "limit": "A concrete transition table and encoding must be supplied and proved, rather than inferred from similar formulas."
+  }
+]

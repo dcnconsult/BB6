@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "pdf_pages": 15,
+  "pdf_author": "Darryl Novotny",
+  "source_theorem_counts": {
+    "lean": 103,
+    "lean_phase4": 182
+  },
+  "kernel_constants": {
+    "lean": 188,
+    "lean_phase4": 308
+  },
+  "new_source_theorems": 17,
+  "principal_raw_theorem_axioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "parity_lemma_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "bibliography_entries": 23,
+  "bibliography_unchanged": true,
+  "compiler_kernels_unchanged": true,
+  "pdf_overfull_underfull_unresolved": 0,
+  "visual_review": "All 15 pages rendered and inspected.",
+  "validation": "Clean builds of both libraries; both negative axiom tests; all seven mathematical suites; revision regressions; AppC 7 and AppC 8 raw checks and 192 independent Lean execution fixtures each; 128 resets, 129 exits, 33 full macros and 33 complete-configuration clean-macro Lean fixtures; 10 independent direct blank-run Lean fixtures; 65 first collapses, 65 terminal collapses, 33 full excursions, 900 tailed repeated-shuttle cases and 22 independent odd-sector Lean fixtures; static paper audit.",
+  "scope": "Universal C(4a+3,3) -> C(0,18a+31) after 108a\u00b2+398a+356 transitions. Blank trajectory certified through C(86,3) at time 41096. Restricted clean-sector entry, other block residues, and global survival remain open; no first-visit or intermediate-visit exclusion claim."
+}

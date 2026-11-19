@@ -1,0 +1,103 @@
+BB6Interop.AppC8TerminalGrammar.drain_positive (a b n : ℕ) (l t : List Bool) :
+  CryptidSolvePhase4.AppC8Raw.run (27 * a * a + 20 * a + 18 * a * b)
+      (BB6Interop.AppC8Restricted.phase (CryptidSolvePhase4.AppC8Raw.back a l) b (6 * a + n + 1) t) =
+    some (BB6Interop.AppC8Restricted.phase l (b + 3 * a) (n + 1) t)
+'BB6Interop.AppC8TerminalGrammar.drain_positive' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.terminal_even_local (q : ℕ) (l : List Bool) :
+  CryptidSolvePhase4.AppC8Raw.run (27 * q * q + 44 * q + 19)
+      { st := CryptidSolvePhase4.AppC8Raw.State.E, left := CryptidSolvePhase4.AppC8Raw.back q l,
+        right := true :: false :: CryptidSolvePhase4.AppC8Raw.ones (6 * q + 2) [] } =
+    some
+      { st := CryptidSolvePhase4.AppC8Raw.State.A, left := l.tail,
+        right := CryptidSolvePhase4.AppC8Raw.read l :: false :: CryptidSolvePhase4.AppC8Raw.ones (9 * q + 5) [] }
+'BB6Interop.AppC8TerminalGrammar.terminal_even_local' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.terminal_odd_local (q : ℕ) (l : List Bool) :
+  CryptidSolvePhase4.AppC8Raw.run (27 * q * q + 80 * q + 61)
+      { st := CryptidSolvePhase4.AppC8Raw.State.E, left := CryptidSolvePhase4.AppC8Raw.back (q + 1) l,
+        right := true :: false :: CryptidSolvePhase4.AppC8Raw.ones (6 * q + 5) [] } =
+    some
+      { st := CryptidSolvePhase4.AppC8Raw.State.A, left := l,
+        right := true :: CryptidSolvePhase4.AppC8Raw.defectTail (9 * q + 8) }
+'BB6Interop.AppC8TerminalGrammar.terminal_odd_local' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.terminal_double_even (k s : ℕ) :
+  CryptidSolvePhase4.AppC8Raw.run (12 * k + 351 * s * s + 685 * s + 336)
+      (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg (k + 5 * s + 3) 1
+        (false :: CryptidSolvePhase4.AppC8Raw.ones (12 * s + 8) [])) =
+    some (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg k 1 (false :: CryptidSolvePhase4.AppC8Raw.ones (27 * s + 23) []))
+'BB6Interop.AppC8TerminalGrammar.terminal_double_even' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.terminal_even_odd (k s : ℕ) :
+  CryptidSolvePhase4.AppC8Raw.run (14 * k + 351 * s * s + 361 * s + 104)
+      (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg (k + 5 * s + 1) 1
+        (false :: CryptidSolvePhase4.AppC8Raw.ones (12 * s + 2) [])) =
+    some (BB6Interop.AppC8RunLists.runListCfg 0 (3 * k + 3) [27 * s + 7, 1])
+'BB6Interop.AppC8TerminalGrammar.terminal_even_odd' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.terminal_odd_boundary (k q : ℕ) :
+  CryptidSolvePhase4.AppC8Raw.run (8 * k + 27 * q * q + 83 * q + 73)
+      (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg (k + q + 1) 1
+        (false :: CryptidSolvePhase4.AppC8Raw.ones (6 * q + 5) [])) =
+    some (BB6Interop.AppC8RunLists.runListCfg 0 0 [3 * k + 1, 9 * q + 7, 1])
+'BB6Interop.AppC8TerminalGrammar.terminal_odd_boundary' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.terminal_44_to_104 (k : ℕ) :
+  CryptidSolvePhase4.AppC8Raw.run (12 * k + 5550)
+      (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg (k + 18) 1 (false :: CryptidSolvePhase4.AppC8Raw.ones 44 [])) =
+    some (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg k 1 (false :: CryptidSolvePhase4.AppC8Raw.ones 104 []))
+'BB6Interop.AppC8TerminalGrammar.terminal_44_to_104' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.terminal_104_to_239 (k : ℕ) :
+  CryptidSolvePhase4.AppC8Raw.run (12 * k + 28280)
+      (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg (k + 43) 1 (false :: CryptidSolvePhase4.AppC8Raw.ones 104 [])) =
+    some (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg k 1 (false :: CryptidSolvePhase4.AppC8Raw.ones 239 []))
+'BB6Interop.AppC8TerminalGrammar.terminal_104_to_239' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.first_terminal_generated (k r : ℕ) :
+  GProgress
+    { st := CryptidSolvePhase4.AppC8Raw.State.E,
+      left := CryptidSolvePhase4.AppC8Raw.back k BB6Interop.AppC8RunLists.firstMarker,
+      right := true :: false :: CryptidSolvePhase4.AppC8Raw.ones (3 * r + 2) [] }
+'BB6Interop.AppC8TerminalGrammar.first_terminal_generated' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.second_terminal_generated (k r : ℕ) :
+  GProgress
+    { st := CryptidSolvePhase4.AppC8Raw.State.E,
+      left := CryptidSolvePhase4.AppC8Raw.back k BB6Interop.AppC8RunLists.secondMarker,
+      right := true :: false :: CryptidSolvePhase4.AppC8Raw.ones (3 * r + 2) [] }
+'BB6Interop.AppC8TerminalGrammar.second_terminal_generated' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.terminal_boundary_generated (k r : ℕ) :
+  GProgress (BB6Interop.AppC8RunLists.runListCfg k 0 [3 * r + 1])
+'BB6Interop.AppC8TerminalGrammar.terminal_boundary_generated' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.old_candidate_generated {c : CryptidSolvePhase4.AppC8Raw.Cfg}
+  (hc : BB6Interop.AppC8Restricted.Candidate c) : GeneratedCandidate c
+'BB6Interop.AppC8TerminalGrammar.old_candidate_generated' does not depend on any axioms
+BB6Interop.AppC8TerminalGrammar.short_bad_not_generated_candidate :
+  ¬GeneratedCandidate BB6Interop.AppC8ResidualTape.shortBadBoundary
+'BB6Interop.AppC8TerminalGrammar.short_bad_not_generated_candidate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BB6Interop.AppC8TerminalGrammar.bad_residual_not_generated_candidate :
+  ¬GeneratedCandidate (BB6Interop.AppC8ResidualTape.residual BB6Interop.AppC8RunLists.firstMarker 0 0 [4, 4, 1])
+'BB6Interop.AppC8TerminalGrammar.bad_residual_not_generated_candidate' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.pure_generated (k m : ℕ) : GProgress (BB6Interop.AppC8RunLists.runListCfg k m [])
+'BB6Interop.AppC8TerminalGrammar.pure_generated' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.seed_generated (k m : ℕ) : GProgress (BB6Interop.AppC8RunLists.runListCfg k m [1])
+'BB6Interop.AppC8TerminalGrammar.seed_generated' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.emitted_pair_generated (a q : ℕ) :
+  GProgress (BB6Interop.AppC8RunLists.runListCfg 0 0 [3 * a + 1, 9 * q + 7, 1])
+'BB6Interop.AppC8TerminalGrammar.emitted_pair_generated' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.PairedOneReturn : Prop
+BB6Interop.AppC8TerminalGrammar.PairedThreeReturn : Prop
+BB6Interop.AppC8TerminalGrammar.generated_closure_of_paired (h1 : PairedOneReturn) (h3 : PairedThreeReturn) :
+  BB6Interop.AppC8ResidualTape.MacroClosed GeneratedCandidate
+'BB6Interop.AppC8TerminalGrammar.generated_closure_of_paired' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.upstream_nonhalting_of_paired (h1 : PairedOneReturn) (h3 : PairedThreeReturn) :
+  BusyBeaver.IsNotHalt BB6Interop.AppC8.machine
+'BB6Interop.AppC8TerminalGrammar.upstream_nonhalting_of_paired' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BB6Interop.AppC8TerminalGrammar.blank_generated_frontier :
+  CryptidSolvePhase4.AppC8Raw.run 97311884181777598 CryptidSolvePhase4.AppC8Raw.blankCfg =
+    some (BB6Interop.AppC8RunLists.runListCfg 134241197 2 [358, 1])
+'BB6Interop.AppC8TerminalGrammar.blank_generated_frontier' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.blank_generated_prefix (j : ℕ) (hj : j ≤ 97311884181777598) :
+  ∃ d, CryptidSolvePhase4.AppC8Raw.run j CryptidSolvePhase4.AppC8Raw.blankCfg = some d
+'BB6Interop.AppC8TerminalGrammar.blank_generated_prefix' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8TerminalGrammar.upstream_generated_frontier :
+  BusyBeaver.ReachesIn BB6Interop.AppC8.machine 97311884181777598 (BusyBeaver.init [])
+    (BB6Interop.AppC8.encode (BB6Interop.AppC8RunLists.runListCfg 134241197 2 [358, 1]))
+'BB6Interop.AppC8TerminalGrammar.upstream_generated_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]

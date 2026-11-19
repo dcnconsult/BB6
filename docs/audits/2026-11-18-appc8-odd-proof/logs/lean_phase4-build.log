@@ -1,0 +1,19 @@
+info: cryptid_solve_phase4: no previous manifest, creating one from scratch
+info: toolchain not updated; already up-to-date
+✔ [2/18] Built CryptidSolvePhase4.Basic
+✔ [3/18] Built CryptidSolvePhase4.Transfer1MatrixMonoid
+✔ [4/18] Built CryptidSolvePhase4.Transfer5SpaceTimeCohomology
+✔ [5/18] Built CryptidSolvePhase4.Transfer6MolienAndWalkSeries
+✔ [6/18] Built CryptidSolvePhase4.Transfer2PutinarSOS
+✔ [7/18] Built CryptidSolvePhase4.Transfer4WreathBlockGauge
+✔ [8/18] Built CryptidSolvePhase4.Transfer3PisotQuadratic
+✔ [9/18] Built CryptidSolvePhase4.AppC7RawGate
+✔ [10/18] Built CryptidSolvePhase4.AppC8RawShuttle
+✔ [11/18] Built CryptidSolvePhase4.AppC8RawCleanMacro
+✔ [12/18] Built CryptidSolvePhase4.AppC8RawBlankReachability
+✔ [13/18] Built CryptidSolvePhase4.AppC8RawOddSector
+✔ [14/18] Built CryptidSolvePhase4.Transfer7MultiPrimeKirchhoff
+✔ [15/18] Built CryptidSolvePhase4
+ℹ [17/18] Built CryptidSolvePhase4.KernelAudit
+info: ././././CryptidSolvePhase4/KernelAudit.lean:16:0: [PHASE-4 KERNEL AUDIT PASS] Verified 308 CryptidSolvePhase4 theorems in Lean 4 kernel (0 sorryAx, 0 custom axioms). Core axioms used: [propext, Quot.sound, Classical.choice]
+Build completed successfully.

@@ -1,0 +1,1184 @@
+[
+  {
+    "name": "iterStep_invariant",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 32,
+    "statement": "theorem iterStep_invariant {S : Type} (step : StepFn S) (P : S → Prop)\n    (hInv : IsInvariant step P) :\n    ∀ n x y, P x → iterStep step n x = some y → P y\n  | 0, _, _, hx, hIter => by\n      simp [iterStep] at hIter\n      cases hIter\n      exact hx\n  | n + 1, x, y, hx, hIter => by\n      simp only [iterStep] at hIter\n      split at hIter\n      · contradiction\n      · rename_i x' hStep\n        have hx' : P x'"
+  },
+  {
+    "name": "iterStep_strict_lyapunov_drift",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 49,
+    "statement": "theorem iterStep_strict_lyapunov_drift {S : Type} (step : StepFn S) (P : S → Prop)\n    (E : S → Nat) (d : Nat)\n    (hInv : IsInvariant step P)\n    (hDrift : ∀ x x', P x → step x = some x' → E x + d ≤ E x') :\n    ∀ n x y, P x → iterStep step n x = some y → E x + n * d ≤ E y\n  | 0, _, _, _, hIter => by\n      simp [iterStep] at hIter\n      cases hIter\n      omega\n  | n + 1, x, y, hx, hIter => by\n      simp only [iterStep] at hIter\n      split at hIter\n      · contradiction\n      · rename_i x' hStep\n        have hx' : P x'"
+  },
+  {
+    "name": "no_periodic_of_strict_lyapunov",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 74,
+    "statement": "theorem no_periodic_of_strict_lyapunov {S : Type} (step : StepFn S) (P : S → Prop)\n    (E : S → Nat) (d : Nat) (hd : d > 0)\n    (hInv : IsInvariant step P)\n    (hDrift : ∀ x x', P x → step x = some x' → E x + d ≤ E x')\n    (x : S) (hx : P x) : ¬ IsPeriodic step x"
+  },
+  {
+    "name": "lexProgress_trans",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 98,
+    "statement": "theorem lexProgress_trans {S : Type} {E rank : S → Nat} {x y z : S}\n    (h1 : LexProgress E rank x y) (h2 : LexProgress E rank y z) :\n    LexProgress E rank x z"
+  },
+  {
+    "name": "iterStep_lex_lyapunov_drift",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 104,
+    "statement": "theorem iterStep_lex_lyapunov_drift {S : Type} (step : StepFn S) (P : S → Prop)\n    (E rank : S → Nat)\n    (hInv : IsInvariant step P)\n    (hLex : ∀ x x', P x → step x = some x' → LexProgress E rank x x') :\n    ∀ k x y, P x → iterStep step (k + 1) x = some y → LexProgress E rank x y\n  | 0, x, y, hx, hIter => by\n      simp only [iterStep] at hIter\n      split at hIter\n      · contradiction\n      · rename_i x' hStep\n        simp [iterStep] at hIter\n        cases hIter\n        exact hLex x _ hx hStep\n  | k + 1, x, y, hx, hIter => by\n      simp only [iterStep] at hIter\n      split at hIter\n      · contradiction\n      · rename_i x' hStep\n        have hx' : P x'"
+  },
+  {
+    "name": "no_periodic_of_lex_lyapunov",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 132,
+    "statement": "theorem no_periodic_of_lex_lyapunov {S : Type} (step : StepFn S) (P : S → Prop)\n    (E rank : S → Nat)\n    (hInv : IsInvariant step P)\n    (hLex : ∀ x x', P x → step x = some x' → LexProgress E rank x x')\n    (x : S) (hx : P x) : ¬ IsPeriodic step x"
+  },
+  {
+    "name": "cl20_fundamental_split",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 106,
+    "statement": "theorem cl20_fundamental_split (a1 a2 x1 x2 : Int) :\n    (Cl20.vec a1 a2).mul (Cl20.vec x1 x2) =\n      (Cl20.contractVec a1 a2 x1 x2).add (Cl20.wedgeVec a1 a2 x1 x2)"
+  },
+  {
+    "name": "cl20_gradeInvol_involutive",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 114,
+    "statement": "theorem cl20_gradeInvol_involutive (m : Cl20) :\n    Cl20.gradeInvol (Cl20.gradeInvol m) = m"
+  },
+  {
+    "name": "cl20_cartan_dieudonne_swap",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 124,
+    "statement": "theorem cl20_cartan_dieudonne_swap (x1 x2 : Int) :\n    wallNormal.mul wallNormal = Cl20.scalar 2 ∧\n      Cl20.negSandwich wallNormal (Cl20.vec x1 x2) = Cl20.smul 2 (Cl20.vec x2 x1)"
+  },
+  {
+    "name": "a3_pin2_reflection_factorization",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 145,
+    "statement": "theorem a3_pin2_reflection_factorization (k m : Int) :\n    2 * (linA3Gt (k, m)).1 + (linA3Gt (k, m)).2 = 2 * k + m ∧\n      linA3Lt (k, m) = linA3Gt (reflectWall (k, m)) ∧\n      (2 * k + m) + (k + 2 * m) = 3 * (k + m)"
+  },
+  {
+    "name": "a8_a9_pin2_reflection_factorization",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 156,
+    "statement": "theorem a8_a9_pin2_reflection_factorization (u v : Int) :\n    (linA89Stay (u, v)).1 + 2 * (linA89Stay (u, v)).2 = u + 2 * v ∧\n      linA89Flip (u, v) = linA89Stay (reflectWall (u, v))"
+  },
+  {
+    "name": "bmo1_dual_stage3a_cones",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 166,
+    "statement": "theorem bmo1_dual_stage3a_cones (X Y : Int) :\n    3 * (X - Y) + 4 * Y = 3 * X + Y ∧\n      2 * X + (Y - X) = X + Y"
+  },
+  {
+    "name": "pga1_ghost_bivector_eigenblade",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 202,
+    "statement": "theorem pga1_ghost_bivector_eigenblade (A B D u uNext : Int)\n    (hStep : D * uNext = A * u + B) :\n    PGA1.smul D (PGA1.wedge1 (PGA1.point uNext) (PGA1.homPoint B (D - A))) =\n      PGA1.smul A (PGA1.wedge1 (PGA1.point u) (PGA1.homPoint B (D - A)))"
+  },
+  {
+    "name": "pga1_antihydra_bridge_bivectors",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 219,
+    "statement": "theorem pga1_antihydra_bridge_bivectors :\n    let gDeficit"
+  },
+  {
+    "name": "appC1_bridge_B_to_E2_jump",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 232,
+    "statement": "theorem appC1_bridge_B_to_E2_jump (L R : Nat) (hL : L ≥ 2) :\n    stepAppC1 (.B L R) = some (.E2 0 (L - 1) R) ∧\n      energyAppC1 (.E2 0 (L - 1) R) = energyAppC1 (.B L R) + 2"
+  },
+  {
+    "name": "appC1_bridge_E2_to_E1_zero_loss",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 248,
+    "statement": "theorem appC1_bridge_E2_to_E1_zero_loss (x k R : Nat) (hk : k ≤ x) :\n    stepAppC1 (.E2 x k R) = some (.E1 (x + 1) (2 * k + 2 + R)) ∧\n      energyAppC1 (.E1 (x + 1) (2 * k + 2 + R)) = energyAppC1 (.E2 x k R) ∧\n      (2 * x + 4) + 2 = 2 * ((x + 1) + 2)"
+  },
+  {
+    "name": "appC1_bridge_E1_to_B_even_zero_loss",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 261,
+    "statement": "theorem appC1_bridge_E1_to_B_even_zero_loss (X z : Nat)\n    (hX : X ≥ 2) (hzLo : z ≥ 2) (hzHi : z ≤ 2 * X - 1) (hzEven : z % 2 = 0) :\n    energyAppC1 (.B (X - 1 - z / 2) (4 * (z / 2) + 2)) = energyAppC1 (.E1 X z)"
+  },
+  {
+    "name": "t314_bridge_LCLE_to_AB_intertwining",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 281,
+    "statement": "theorem t314_bridge_LCLE_to_AB_intertwining (isLC : Bool) (u w : Nat)\n    (hu : u ≥ 1) (hwLo : w ≥ 2)\n    (hwHi : w < 2 * ((u - 1) / 3) + 4 + (if (u - 1) % 3 ≥ 1 then 1 else 0)) :\n    stepT314 (mkLeftT314 isLC u w) = some (.AB (2 * u + 9 - 3 * w) (2 * w - 4)) ∧\n      energyT314 (.AB (2 * u + 9 - 3 * w) (2 * w - 4)) = energyT314 (mkLeftT314 isLC u w) + 1"
+  },
+  {
+    "name": "t314_zero_drift_iff_sheet_flip",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 298,
+    "statement": "theorem t314_zero_drift_iff_sheet_flip (isLC : Bool) (u w : Nat)\n    (hu : u ≥ 1)\n    (hw : w ≥ 2 * ((u - 1) / 3) + 4 + (if (u - 1) % 3 ≥ 1 then 1 else 0)) :\n    (energyT314 (stepT314Left isLC u w) = energyT314 (mkLeftT314 isLC u w) ↔ (u - 1) % 3 = 2) ∧\n      ((u - 1) % 3 = 2 → isLCSheetT314 (stepT314Left isLC u w) = !isLCSheetT314 (mkLeftT314 isLC u w))"
+  },
+  {
+    "name": "t312_bridge_R_to_C_zero_loss",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 327,
+    "statement": "theorem t312_bridge_R_to_C_zero_loss (u w : Nat) (hu : u ≥ 1) (huw : u ≤ w) :\n    stepT312 (.R u w) = some (.C (2 * u - 1) (2 * (w + 1 - u))) ∧\n      energyT312 (.C (2 * u - 1) (2 * (w + 1 - u))) = energyT312 (.R u w)"
+  },
+  {
+    "name": "a5_bridge_D_to_C_da0_jump",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 340,
+    "statement": "theorem a5_bridge_D_to_C_da0_jump (q dw : Nat) (hdw : dw ≥ 1) :\n    stepA5 (.D 0 (2 * q + 1) dw) = some (.C (q + 1) dw) ∧\n      energyA5 (.C (q + 1) dw) = energyA5 (.D 0 (2 * q + 1) dw) + 1"
+  },
+  {
+    "name": "a1_plucker_blade_and_swap_bridge",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 357,
+    "statement": "theorem a1_plucker_blade_and_swap_bridge (n : Nat) (s : StateA1)\n    (hReach : iterStep stepA1 n ⟨0, 0, 1, 3⟩ = some s) :\n    s.b * s.c = 0"
+  },
+  {
+    "name": "a1_blade_swap_reflection_step",
+    "file": "lean/CryptidSolve/CliffordBridge.lean",
+    "line": 365,
+    "statement": "theorem a1_blade_swap_reflection_step (b d : Nat) (hd : d ≥ 2) :\n    stepA1 ⟨0, b, 0, d⟩ = some ⟨0, 0, b + 2, d - 2⟩ ∧\n      0 + 2 * 0 + 2 * (b + 2) + (d - 2) = (0 + 2 * b + 2 * 0 + d) + 2"
+  },
+  {
+    "name": "fIter_ge_self",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 60,
+    "statement": "theorem fIter_ge_self : ∀ m x, x ≤ fIter m x\n  | 0, _ => by simp [fIter]\n  | m + 1, x => by\n      simp only [fIter]\n      have hx : x ≤ fA11 x"
+  },
+  {
+    "name": "a11_homogenize_two_step",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 73,
+    "statement": "theorem a11_homogenize_two_step (a q c d : Nat) :\n    ∃ a', iterStep stepMacroA11 2 (.C a (3 * q) (c + 2) d) = some (.C a' 3 c d) ∧\n          homogX a' 1 = fA11 (homogX a q)"
+  },
+  {
+    "name": "a11_epochs_0_to_3",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 114,
+    "statement": "theorem a11_epochs_0_to_3 :\n    iterStep epochStepA11 3 (16, 0, 3) = some (20, 1138, 3)"
+  },
+  {
+    "name": "a11_Z3_eval_and_residues",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 128,
+    "statement": "theorem a11_Z3_eval_and_residues :\n    fIter 569 20 = Z3_exact ∧ fIter 569 20 % 8 = 7 ∧ fIter 569 20 % 4 = 3"
+  },
+  {
+    "name": "a11_epoch3_survives_with_odd_c4",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 136,
+    "statement": "theorem a11_epoch3_survives_with_odd_c4 :\n    epochStepA11 (20, 1138, 3) = some (20, c4_exact, 3) ∧\n    c4_exact % 2 = 1 ∧\n    c4_exact % 16 = 1"
+  },
+  {
+    "name": "a11_odd_c_activates_d6",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 145,
+    "statement": "theorem a11_odd_c_activates_d6 (X0 c : Nat) (ep' : Nat × Nat × Nat)\n    (hX0 : X0 ≥ 14)\n    (hcOdd : c % 2 = 1)\n    (hSurv : epochStepA11 (X0, c, 3) = some ep') :\n    ep'.2.2 = 6"
+  },
+  {
+    "name": "invT315_preserved",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 58,
+    "statement": "theorem invT315_preserved : IsInvariant stepT315 InvT315"
+  },
+  {
+    "name": "t315_strict_drift",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 66,
+    "statement": "theorem t315_strict_drift (s s' : Nat × Nat) (hs : InvT315 s)\n    (hStep : stepT315 s = some s') :\n    energyT315 s + 1 ≤ energyT315 s'"
+  },
+  {
+    "name": "t315_no_periodic_orbits",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 76,
+    "statement": "theorem t315_no_periodic_orbits (s : Nat × Nat) (hs : InvT315 s) :\n    ¬ IsPeriodic stepT315 s"
+  },
+  {
+    "name": "t315_3adic_step_identity",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 84,
+    "statement": "theorem t315_3adic_step_identity (k b : Nat) (_ : b ≥ 1) :\n    stepT315 (3 * k + 2, b) = some (k, b + 2 * k + 3) ∧\n      3 * (k + 1) = (3 * k + 2) + 1 ∧\n      k + (b + 2 * k + 3) = (3 * k + 2) + b + 1"
+  },
+  {
+    "name": "invT314_preserved",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 162,
+    "statement": "theorem invT314_preserved : IsInvariant stepT314 InvT314"
+  },
+  {
+    "name": "t314_lex_drift",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 167,
+    "statement": "theorem t314_lex_drift (s s' : StateT314) (hs : InvT314 s)\n    (hStep : stepT314 s = some s') :\n    LexProgress energyT314 rankT314 s s'"
+  },
+  {
+    "name": "t314_no_periodic_orbits",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 175,
+    "statement": "theorem t314_no_periodic_orbits (s : StateT314) (hs : InvT314 s) :\n    ¬ IsPeriodic stepT314 s"
+  },
+  {
+    "name": "invAppC1_preserved",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 235,
+    "statement": "theorem invAppC1_preserved : IsInvariant stepAppC1 InvAppC1"
+  },
+  {
+    "name": "appC1_lex_drift",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 240,
+    "statement": "theorem appC1_lex_drift (s s' : StateAppC1) (hs : InvAppC1 s)\n    (hStep : stepAppC1 s = some s') :\n    LexProgress energyAppC1 rankAppC1 s s'"
+  },
+  {
+    "name": "appC1_no_periodic_orbits",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 248,
+    "statement": "theorem appC1_no_periodic_orbits (s : StateAppC1) (hs : InvAppC1 s) :\n    ¬ IsPeriodic stepAppC1 s"
+  },
+  {
+    "name": "appC1_ghost_shift_step",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 256,
+    "statement": "theorem appC1_ghost_shift_step (X : Nat) :\n    (2 * X + 2) + 2 = 2 * (X + 2)"
+  },
+  {
+    "name": "appC1_even_sector_return",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 262,
+    "statement": "theorem appC1_even_sector_return (X z : Nat) (hX : X ≥ 2) (_hzLo : z ≥ 2)\n    (hzHi : z ≤ 2 * X - 1) (hzEven : z % 2 = 0) :\n    stepAppC1 (StateAppC1.E1 X z) =\n      some (StateAppC1.B (X - 1 - z / 2) (4 * (z / 2) + 2)) ∧\n      (4 * (z / 2) + 2) % 2 = 0"
+  },
+  {
+    "name": "invT312_preserved",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 311,
+    "statement": "theorem invT312_preserved : IsInvariant stepT312 InvT312"
+  },
+  {
+    "name": "t312_lex_drift",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 316,
+    "statement": "theorem t312_lex_drift (s s' : StateT312) (hs : InvT312 s)\n    (hStep : stepT312 s = some s') :\n    LexProgress energyT312 rankT312 s s'"
+  },
+  {
+    "name": "t312_no_periodic_orbits",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 324,
+    "statement": "theorem t312_no_periodic_orbits (s : StateT312) (hs : InvT312 s) :\n    ¬ IsPeriodic stepT312 s"
+  },
+  {
+    "name": "invBMO1_preserved",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 345,
+    "statement": "theorem invBMO1_preserved : IsInvariant stepBMO1 InvBMO1"
+  },
+  {
+    "name": "bmo1_strict_drift",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 353,
+    "statement": "theorem bmo1_strict_drift (s s' : Nat × Nat) (hs : InvBMO1 s)\n    (hStep : stepBMO1 s = some s') :\n    energyBMO1 s + 1 ≤ energyBMO1 s'"
+  },
+  {
+    "name": "bmo1_no_periodic_orbits",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 363,
+    "statement": "theorem bmo1_no_periodic_orbits (s : Nat × Nat) (hs : InvBMO1 s) :\n    ¬ IsPeriodic stepBMO1 s"
+  },
+  {
+    "name": "bmo5_band_strict_drift",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 383,
+    "statement": "theorem bmo5_band_strict_drift (m N : Nat) (hm : m ≥ 2)\n    (hPow : 2 ^ (m - 1) ≥ m)\n    (hAbove : N > bmo5HaltPoint (m - 1)) :\n    bmo5BandMap m N ≥ N + m + 3"
+  },
+  {
+    "name": "appC7_E0_D0_never_halts",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 399,
+    "statement": "theorem appC7_E0_D0_never_halts (tape : Int → Nat) (p : Int)\n    (_ : tape p = 0) (_ : tape (p - 1) = 0) :\n    let tapeAfterE0"
+  },
+  {
+    "name": "invA1_init",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 57,
+    "statement": "theorem invA1_init : InvA1 ⟨0, 0, 1, 3⟩"
+  },
+  {
+    "name": "invA1_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 60,
+    "statement": "theorem invA1_preserved : IsInvariant stepA1 InvA1"
+  },
+  {
+    "name": "a1_mixed_bc_unreachable",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 69,
+    "statement": "theorem a1_mixed_bc_unreachable (n : Nat) (s : StateA1)\n    (hReach : iterStep stepA1 n ⟨0, 0, 1, 3⟩ = some s) :\n    ¬ (s.b ≥ 1 ∧ s.c ≥ 1)"
+  },
+  {
+    "name": "a4_collatz_sweep_avoids_gate2",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 90,
+    "statement": "theorem a4_collatz_sweep_avoids_gate2 (a b : Nat) (s' : Nat × Nat)\n    (hLo : 3 ≤ b) (hHi : b ≤ 2 * a + 2)\n    (hStep : stepA4 (a, b) = some s') :\n    s'.2 = 1 ∨ s'.2 = 3"
+  },
+  {
+    "name": "invA5_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 125,
+    "statement": "theorem invA5_preserved : IsInvariant stepA5 InvA5"
+  },
+  {
+    "name": "safeOddA5_non_portal_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 137,
+    "statement": "theorem safeOddA5_non_portal_preserved (s s' : StateA5)\n    (hSafe : SafeOddA5 s)\n    (hNotPortal : ∀ L, s ≠ .C L 1)\n    (hStep : stepA5 s = some s') : SafeOddA5 s'"
+  },
+  {
+    "name": "invA6_init",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 194,
+    "statement": "theorem invA6_init : InvA6 (.DR 0 4 1)"
+  },
+  {
+    "name": "invA6_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 197,
+    "statement": "theorem invA6_preserved : IsInvariant stepA6 InvA6"
+  },
+  {
+    "name": "a6_boundary_halts_unreachable",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 206,
+    "statement": "theorem a6_boundary_halts_unreachable (n b c eps : Nat)\n    (hReach : iterStep stepA6 n (.DR 0 4 1) = some (.DR b c eps))\n    (hb : b ≥ 1) : c ≠ 2 ∧ c ≠ 6"
+  },
+  {
+    "name": "invA7_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 247,
+    "statement": "theorem invA7_preserved : IsInvariant stepA7 InvA7"
+  },
+  {
+    "name": "invA8_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 285,
+    "statement": "theorem invA8_preserved : IsInvariant stepA8 InvA8"
+  },
+  {
+    "name": "invA9_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 308,
+    "statement": "theorem invA9_preserved : IsInvariant stepA9 InvA9"
+  },
+  {
+    "name": "invBMO8_init",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 327,
+    "statement": "theorem invBMO8_init : InvBMO8 (4, 11)"
+  },
+  {
+    "name": "invBMO8_preserved",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 330,
+    "statement": "theorem invBMO8_preserved : IsInvariant stepBMO8 InvBMO8"
+  },
+  {
+    "name": "bmo8_three_gates_iff",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 340,
+    "statement": "theorem bmo8_three_gates_iff (a c : Nat) (hInv : InvBMO8 (a, c)) :\n    stepBMO8 (a, c) = none ↔\n      (∃ k, a = 3 * k + 3 ∧ c = 6 * k + 5) ∨\n      (∃ k, a = 3 * k + 2 ∧ c = 6 * k + 2) ∨\n      (∃ k, k ≥ 1 ∧ a = 3 * k + 3 ∧ c = 6 * k + 4)"
+  },
+  {
+    "name": "bmo8_I9_card_eq_33",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 399,
+    "statement": "theorem bmo8_I9_card_eq_33 : countI9BMO8 = 33"
+  },
+  {
+    "name": "a1_lex_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 27,
+    "statement": "theorem a1_lex_drift (s s' : StateA1) (hs : InvA1 s) (hStep : stepA1 s = some s') :\n    LexProgress energyA1 rankA1 s s'"
+  },
+  {
+    "name": "a1_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 36,
+    "statement": "theorem a1_no_periodic_orbits (s : StateA1) (hs : InvA1 s) :\n    ¬ IsPeriodic stepA1 s"
+  },
+  {
+    "name": "a2_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 67,
+    "statement": "theorem a2_strict_drift (s s' : Nat × Nat) (_ : True) (hStep : stepA2Epoch s = some s') :\n    energyCousinEpoch s + 1 ≤ energyCousinEpoch s'"
+  },
+  {
+    "name": "a2_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 75,
+    "statement": "theorem a2_no_periodic_orbits (s : Nat × Nat) :\n    ¬ IsPeriodic stepA2Epoch s"
+  },
+  {
+    "name": "a10_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 80,
+    "statement": "theorem a10_strict_drift (s s' : Nat × Nat) (_ : True) (hStep : stepA10Epoch s = some s') :\n    energyCousinEpoch s + 1 ≤ energyCousinEpoch s'"
+  },
+  {
+    "name": "a10_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 88,
+    "statement": "theorem a10_no_periodic_orbits (s : Nat × Nat) :\n    ¬ IsPeriodic stepA10Epoch s"
+  },
+  {
+    "name": "invA3_preserved",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 126,
+    "statement": "theorem invA3_preserved : IsInvariant stepA3 InvA3"
+  },
+  {
+    "name": "a3_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 132,
+    "statement": "theorem a3_strict_drift (s s' : Nat × Nat × Nat) (hs : InvA3 s) (hStep : stepA3 s = some s') :\n    energyA3 s + 2 ≤ energyA3 s'"
+  },
+  {
+    "name": "a3_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 143,
+    "statement": "theorem a3_no_periodic_orbits (s : Nat × Nat × Nat) (hs : InvA3 s) :\n    ¬ IsPeriodic stepA3 s"
+  },
+  {
+    "name": "a4_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 152,
+    "statement": "theorem a4_strict_drift (s s' : Nat × Nat) (_ : True) (hStep : stepA4 s = some s') :\n    energyA4 s + 1 ≤ energyA4 s'"
+  },
+  {
+    "name": "a4_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 160,
+    "statement": "theorem a4_no_periodic_orbits (s : Nat × Nat) :\n    ¬ IsPeriodic stepA4 s"
+  },
+  {
+    "name": "a5_lex_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 175,
+    "statement": "theorem a5_lex_drift (s s' : StateA5) (hs : InvA5 s) (hStep : stepA5 s = some s') :\n    LexProgress energyA5 rankA5 s s'"
+  },
+  {
+    "name": "a5_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 181,
+    "statement": "theorem a5_no_periodic_orbits (s : StateA5) (hs : InvA5 s) :\n    ¬ IsPeriodic stepA5 s"
+  },
+  {
+    "name": "a6_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 191,
+    "statement": "theorem a6_strict_drift (s s' : StateA6) (hs : InvA6 s) (hStep : stepA6 s = some s') :\n    energyA6 s + 3 ≤ energyA6 s'"
+  },
+  {
+    "name": "a6_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 197,
+    "statement": "theorem a6_no_periodic_orbits (s : StateA6) (hs : InvA6 s) :\n    ¬ IsPeriodic stepA6 s"
+  },
+  {
+    "name": "a7_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 206,
+    "statement": "theorem a7_strict_drift (s s' : Nat × Nat) (hs : InvA7 s) (hStep : stepA7 s = some s') :\n    energyA7 s + 3 ≤ energyA7 s'"
+  },
+  {
+    "name": "a7_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 230,
+    "statement": "theorem a7_no_periodic_orbits (s : Nat × Nat) (hs : InvA7 s) :\n    ¬ IsPeriodic stepA7 s"
+  },
+  {
+    "name": "a8_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 239,
+    "statement": "theorem a8_strict_drift (s s' : Nat × Nat) (hs : InvA8 s) (hStep : stepA8 s = some s') :\n    energyA8 s + 7 ≤ energyA8 s'"
+  },
+  {
+    "name": "a8_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 248,
+    "statement": "theorem a8_no_periodic_orbits (s : Nat × Nat) (hs : InvA8 s) :\n    ¬ IsPeriodic stepA8 s"
+  },
+  {
+    "name": "a9_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 257,
+    "statement": "theorem a9_strict_drift (s s' : Nat × Nat) (hs : InvA9 s) (hStep : stepA9 s = some s') :\n    energyA9 s + 3 ≤ energyA9 s'"
+  },
+  {
+    "name": "a9_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 266,
+    "statement": "theorem a9_no_periodic_orbits (s : Nat × Nat) (hs : InvA9 s) :\n    ¬ IsPeriodic stepA9 s"
+  },
+  {
+    "name": "b9_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 290,
+    "statement": "theorem b9_strict_drift (s s' : Nat × Nat) (_ : True) (hStep : stepB9 s = some s') :\n    energyB9 s + 1 ≤ energyB9 s'"
+  },
+  {
+    "name": "b9_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 313,
+    "statement": "theorem b9_no_periodic_orbits (s : Nat × Nat) :\n    ¬ IsPeriodic stepB9 s"
+  },
+  {
+    "name": "bmo8_drift_3_or_5",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 322,
+    "statement": "theorem bmo8_drift_3_or_5 (s s' : Nat × Nat) (hs : InvBMO8 s)\n    (hStep : stepBMO8 s = some s') :\n    energyBMO8 s' = energyBMO8 s + 3 ∨ energyBMO8 s' = energyBMO8 s + 5"
+  },
+  {
+    "name": "bmo8_strict_drift",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 332,
+    "statement": "theorem bmo8_strict_drift (s s' : Nat × Nat) (hs : InvBMO8 s)\n    (hStep : stepBMO8 s = some s') :\n    energyBMO8 s + 3 ≤ energyBMO8 s'"
+  },
+  {
+    "name": "bmo8_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 338,
+    "statement": "theorem bmo8_no_periodic_orbits (s : Nat × Nat) (hs : InvBMO8 s) :\n    ¬ IsPeriodic stepBMO8 s"
+  },
+  {
+    "name": "pow2_ge_succ",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 24,
+    "statement": "theorem pow2_ge_succ : ∀ n : Nat, 2 ^ n ≥ n + 1\n  | 0 => by decide\n  | n + 1 => by\n      have ih"
+  },
+  {
+    "name": "pow2_mono",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 33,
+    "statement": "theorem pow2_mono : ∀ {a b : Nat}, a ≤ b → 2 ^ a ≤ 2 ^ b\n  | a, 0, h => by\n      have ha : a = 0"
+  },
+  {
+    "name": "pow2_diff_lower_bound",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 47,
+    "statement": "theorem pow2_diff_lower_bound (j t : Nat) :\n    2 ^ (j + 1 + t) - 2 ^ j ≥ 2 ^ (j + t)"
+  },
+  {
+    "name": "antihydra_Tneg1_ghost_step",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 63,
+    "statement": "theorem antihydra_Tneg1_ghost_step (z z' : Nat) (hStep : 16 * z' = 81 * z + 57) :\n    16 * (65 * z' + 57) = 81 * (65 * z + 57)"
+  },
+  {
+    "name": "antihydra_Tneg1_ghost_iter",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 69,
+    "statement": "theorem antihydra_Tneg1_ghost_iter (z : Nat → Nat) :\n    ∀ m : Nat, (∀ i, i < m → 16 * z (i + 1) = 81 * z i + 57) →\n      16 ^ m * (65 * z m + 57) = 81 ^ m * (65 * z 0 + 57)\n  | 0, _ => by simp\n  | m + 1, hChain => by\n      have ih"
+  },
+  {
+    "name": "antihydra_mod32_bulk_clamping",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 91,
+    "statement": "theorem antihydra_mod32_bulk_clamping (z : Nat)\n    (_hOdd : z % 2 = 1) (hNot7 : z % 32 ≠ 7) :\n    (65 * z + 57) % 32 ≠ 0"
+  },
+  {
+    "name": "antihydra_periodic_burst_bound",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 100,
+    "statement": "theorem antihydra_periodic_burst_bound (pow2qW pow2W pow3W Bw z0 : Nat)\n    (_hBpos : 0 < Bw) (hBhi : Bw < pow3W - pow2W) (h3gt2 : pow2W < pow3W)\n    (hDivBound : pow2qW ≤ (pow3W - pow2W) * z0 + Bw) :\n    pow2qW < pow3W * (z0 + 1)"
+  },
+  {
+    "name": "a5_doubling_ghost_shift",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 118,
+    "statement": "theorem a5_doubling_ghost_shift :\n    ∀ j L R, (stepA5Doubling j (L, R)).1 + 5 = (L + 5) * 2 ^ j\n  | 0, L, _ => by simp [stepA5Doubling]\n  | j + 1, L, R => by\n      simp only [stepA5Doubling]\n      have ih"
+  },
+  {
+    "name": "a6_sawtooth_ghost_shift",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 140,
+    "statement": "theorem a6_sawtooth_ghost_shift :\n    ∀ j k m, (stepA6Sawtooth j (k, m)).1 + 3 = (k + 3) * 2 ^ j\n  | 0, k, _ => by simp [stepA6Sawtooth]\n  | j + 1, k, m => by\n      simp only [stepA6Sawtooth]\n      have ih"
+  },
+  {
+    "name": "a10_secondary_cascade_sealed",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 162,
+    "statement": "theorem a10_secondary_cascade_sealed (j k : Nat) (_hj : j ≥ 1) (hk : k ≥ 1) :\n    k ≠ 2 ^ (k + 2) - 2 ^ (j + 2) ∧ k + 1 ≠ 2 ^ (k + 2) - 2 ^ (j + 2)"
+  },
+  {
+    "name": "a2_secondary_cascade_sealed",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 178,
+    "statement": "theorem a2_secondary_cascade_sealed (j k : Nat) (_hj : j ≥ 1) (hk : k ≥ 1) :\n    k ≠ 6 * (2 ^ k - 2 ^ j) ∧ k + 1 ≠ 6 * (2 ^ k - 2 ^ j)"
+  },
+  {
+    "name": "a5_secondary_cascade_sealed",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 194,
+    "statement": "theorem a5_secondary_cascade_sealed (j m : Nat) (hm : m > j) :\n    m ≠ 5 * (2 ^ m - 2 ^ j) ∧ m + 1 ≠ 5 * (2 ^ m - 2 ^ j)"
+  },
+  {
+    "name": "iterStep_add_of_some",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 47,
+    "statement": "theorem iterStep_add_of_some {S : Type} (step : StepFn S) :\n    ∀ m k : Nat, ∀ x y : S,\n      iterStep step m x = some y → iterStep step (m + k) x = iterStep step k y\n  | 0, k, _, y, h => by\n      simp [iterStep] at h\n      subst h\n      simp\n  | m + 1, k, x, y, h => by\n      simp only [iterStep] at h\n      split at h\n      · contradiction\n      · rename_i x' hStep\n        have hIdx : m + 1 + k = (m + k) + 1"
+  },
+  {
+    "name": "iterStep_invariant",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 65,
+    "statement": "theorem iterStep_invariant {S : Type} (step : StepFn S) (P : S → Prop)\n    (hInv : IsInvariant step P) :\n    ∀ n : Nat, ∀ x y : S, P x → iterStep step n x = some y → P y\n  | 0, _, y, hx, hIter => by\n      simp [iterStep] at hIter\n      subst hIter\n      exact hx\n  | n + 1, x, y, hx, hIter => by\n      simp only [iterStep] at hIter\n      split at hIter\n      · contradiction\n      · rename_i x' hStep\n        exact iterStep_invariant step P hInv n x' y (hInv x x' hx hStep) hIter\n\n/-- Master Inductive Safety Meta-Theorem:\n    If `P` is forward-invariant and every state satisfying `P` has a valid successor\n    (`step x ≠ none`), then every initial state in `P` is unconditionally non-halting,\n    producing a witness `y` in `P` at every step `n`. -/\ntheorem iterStep_exists_of_safe_invariant {S : Type} (step : StepFn S) (P : S → Prop)\n    (hInv : IsInvariant step P)\n    (hSafe : ∀ x : S, P x → step x ≠ none) :\n    ∀ n : Nat, ∀ x : S, P x → ∃ y : S, iterStep step n x = some y ∧ P y\n  | 0, x, hx => ⟨x, rfl, hx⟩\n  | n + 1, x, hx => by\n      cases hStep : step x with\n      | none => exact False.elim (hSafe x hx hStep)\n      | some x' =>\n          have hx' : P x'"
+  },
+  {
+    "name": "iterStep_exists_of_safe_invariant",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 83,
+    "statement": "theorem iterStep_exists_of_safe_invariant {S : Type} (step : StepFn S) (P : S → Prop)\n    (hInv : IsInvariant step P)\n    (hSafe : ∀ x : S, P x → step x ≠ none) :\n    ∀ n : Nat, ∀ x : S, P x → ∃ y : S, iterStep step n x = some y ∧ P y\n  | 0, x, hx => ⟨x, rfl, hx⟩\n  | n + 1, x, hx => by\n      cases hStep : step x with\n      | none => exact False.elim (hSafe x hx hStep)\n      | some x' =>\n          have hx' : P x'"
+  },
+  {
+    "name": "nonHalting_of_safe_invariant",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 95,
+    "statement": "theorem nonHalting_of_safe_invariant {S : Type} (step : StepFn S) (P : S → Prop)\n    (hInv : IsInvariant step P)\n    (hSafe : ∀ x : S, P x → step x ≠ none)\n    (x0 : S) (hx0 : P x0) : IsNonHalting step x0"
+  },
+  {
+    "name": "nonHalting_of_barrier_cert",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 113,
+    "statement": "theorem nonHalting_of_barrier_cert {S : Type} (step : StepFn S)\n    (Dom : S → Prop) (B : S → Int)\n    (hDomInv : IsInvariant step Dom)\n    (hBarrierMono : ∀ x x' : S, Dom x → B x < 0 → step x = some x' → B x' ≤ B x)\n    (hHaltNonneg : ∀ x : S, Dom x → step x = none → 0 ≤ B x)\n    (x0 : S) (hDom0 : Dom x0) (hInitNeg : B x0 < 0) :\n    IsNonHalting step x0"
+  },
+  {
+    "name": "iterStep_strict_int_drift",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 134,
+    "statement": "theorem iterStep_strict_int_drift {S : Type} (step : StepFn S) (P : S → Prop)\n    (E : S → Int) (d : Int)\n    (hInv : IsInvariant step P)\n    (hDrift : ∀ x x' : S, P x → step x = some x' → E x + d ≤ E x') :\n    ∀ n : Nat, ∀ x y : S, P x → iterStep step n x = some y → E x + (n : Int) * d ≤ E y\n  | 0, _, y, _, hIter => by\n      simp [iterStep] at hIter\n      subst hIter\n      omega\n  | n + 1, x, y, hx, hIter => by\n      simp only [iterStep] at hIter\n      split at hIter\n      · contradiction\n      · rename_i x' hStep\n        have hx' : P x'"
+  },
+  {
+    "name": "no_periodic_of_strict_int_drift",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 158,
+    "statement": "theorem no_periodic_of_strict_int_drift {S : Type} (step : StepFn S) (P : S → Prop)\n    (E : S → Int) (d : Int) (hd : 0 < d)\n    (hInv : IsInvariant step P)\n    (hDrift : ∀ x x' : S, P x → step x = some x' → E x + d ≤ E x')\n    (x : S) (hx : P x) : ¬ IsPeriodic step x"
+  },
+  {
+    "name": "immortal_of_safe_invariant_and_drift",
+    "file": "lean_phase4/CryptidSolvePhase4/Basic.lean",
+    "line": 176,
+    "statement": "theorem immortal_of_safe_invariant_and_drift {S : Type} (step : StepFn S) (P : S → Prop)\n    (E : S → Int) (d : Int) (hd : 0 < d)\n    (hInv : IsInvariant step P)\n    (hSafe : ∀ x : S, P x → step x ≠ none)\n    (hDrift : ∀ x x' : S, P x → step x = some x' → E x + d ≤ E x')\n    (x0 : S) (hx0 : P x0) : IsImmortalOrbit step x0"
+  },
+  {
+    "name": "id_mul",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 58,
+    "statement": "theorem id_mul (A : Mat2Int) : mul id A = A"
+  },
+  {
+    "name": "mul_id",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 63,
+    "statement": "theorem mul_id (A : Mat2Int) : mul A id = A"
+  },
+  {
+    "name": "mul_assoc",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 68,
+    "statement": "theorem mul_assoc (A B C : Mat2Int) : mul (mul A B) C = mul A (mul B C)"
+  },
+  {
+    "name": "wordLift_append",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 107,
+    "statement": "theorem wordLift_append :\n    ∀ u v : List DefectSym, wordLift (u ++ v) = Mat2Int.mul (wordLift u) (wordLift v)\n  | [], v => by\n      simp [wordLift, Mat2Int.id_mul]\n  | s :: u, v => by\n      simp only [List.cons_append, wordLift]\n      rw [wordLift_append u v, Mat2Int.mul_assoc]\n\n/-- Non-commutativity of `[mu(T), mu(D)] != 0`. -/\ntheorem matT_matD_noncommuting :\n    Mat2Int.mul (symMatrix .T) (symMatrix .D) ≠\n      Mat2Int.mul (symMatrix .D) (symMatrix .T)"
+  },
+  {
+    "name": "matT_matD_noncommuting",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 116,
+    "statement": "theorem matT_matD_noncommuting :\n    Mat2Int.mul (symMatrix .T) (symMatrix .D) ≠\n      Mat2Int.mul (symMatrix .D) (symMatrix .T)"
+  },
+  {
+    "name": "abelian_parikh_blind_but_matrix_separates",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 127,
+    "statement": "theorem abelian_parikh_blind_but_matrix_separates :\n    parikhCount wordT4D2 = (4, 2) ∧\n      parikhCount wordD2T4 = (4, 2) ∧\n      wordLift wordT4D2 = ⟨289, 211, 0, 16⟩ ∧\n      wordLift wordD2T4 = ⟨289, 1303, 0, 16⟩ ∧\n      wordLift wordT4D2 ≠ wordLift wordD2T4"
+  },
+  {
+    "name": "upperPosCone_id",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 145,
+    "statement": "theorem upperPosCone_id : InUpperPosCone Mat2Int.id"
+  },
+  {
+    "name": "upperPosCone_mul",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 150,
+    "statement": "theorem upperPosCone_mul {A B : Mat2Int}\n    (hA : InUpperPosCone A) (hB : InUpperPosCone B) :\n    InUpperPosCone (Mat2Int.mul A B)"
+  },
+  {
+    "name": "wordLift_in_upperPosCone",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 175,
+    "statement": "theorem wordLift_in_upperPosCone :\n    ∀ w : List DefectSym, InUpperPosCone (wordLift w)\n  | [] => upperPosCone_id\n  | s :: rest => by\n      have ih"
+  },
+  {
+    "name": "wordLift_context_rewrite_monotone",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 190,
+    "statement": "theorem wordLift_context_rewrite_monotone\n    (p u v s : List DefectSym)\n    (hAdv : StrictUpperAdvance (wordLift u) (wordLift v)) :\n    (wordLift (p ++ u ++ s)).m01 + 1 ≤ (wordLift (p ++ v ++ s)).m01"
+  },
+  {
+    "name": "stepMultiDefect_strict_matrix_drift",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 273,
+    "statement": "theorem stepMultiDefect_strict_matrix_drift (st st' : MultiDefectState)\n    (_hInv : InvMultiDefect st) (hStep : stepMultiDefect st = some st') :\n    matrixEnergyM01 st + 1 ≤ matrixEnergyM01 st'"
+  },
+  {
+    "name": "invMultiDefect_preserved",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 325,
+    "statement": "theorem invMultiDefect_preserved : IsInvariant stepMultiDefect InvMultiDefect"
+  },
+  {
+    "name": "invMultiDefect_safe",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 331,
+    "statement": "theorem invMultiDefect_safe (st : MultiDefectState) (hInv : InvMultiDefect st) :\n    stepMultiDefect st ≠ none"
+  },
+  {
+    "name": "multiDefect_cascade_immortal",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 354,
+    "statement": "theorem multiDefect_cascade_immortal :\n    IsImmortalOrbit stepMultiDefect ⟨[], [.D]⟩"
+  },
+  {
+    "name": "sq_nonneg_int",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 40,
+    "statement": "theorem sq_nonneg_int (z : Int) : 0 ≤ z * z"
+  },
+  {
+    "name": "weighted_sos2_nonneg",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 50,
+    "statement": "theorem weighted_sos2_nonneg {d0 d1 : Int} (hd0 : 0 ≤ d0) (hd1 : 0 ≤ d1) (q0 q1 : Int) :\n    0 ≤ d0 * (q0 * q0) + d1 * (q1 * q1)"
+  },
+  {
+    "name": "putinar_cleared_nonneg_of_guard",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 59,
+    "statement": "theorem putinar_cleared_nonneg_of_guard\n    {N B d0 d1 e0 q0 q1 g r0 : Int}\n    (hN : 0 < N) (hd0 : 0 ≤ d0) (hd1 : 0 ≤ d1) (he0 : 0 ≤ e0)\n    (hId : N * B = d0 * (q0 * q0) + d1 * (q1 * q1) + g * (e0 * (r0 * r0)))\n    (hGuard : 0 ≤ g) : 0 ≤ B"
+  },
+  {
+    "name": "putinar_sos_barrier_nonHalting",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 77,
+    "statement": "theorem putinar_sos_barrier_nonHalting {S : Type}\n    (step : StepFn S) (Dom : S → Prop)\n    (B g q0 q1 r0 : S → Int) (N d0 d1 e0 : Int)\n    (hN : 0 < N) (hd0 : 0 ≤ d0) (hd1 : 0 ≤ d1) (he0 : 0 ≤ e0)\n    (hDomInv : IsInvariant step Dom)\n    (hMono : ∀ s s' : S, Dom s → B s < 0 → step s = some s' → B s' ≤ B s)\n    (hHaltGuard : ∀ s : S, Dom s → step s = none → 0 ≤ g s)\n    (hPutinar : ∀ s : S, Dom s →\n      N * B s = d0 * (q0 s * q0 s) + d1 * (q1 s * q1 s) + g s * (e0 * (r0 s * r0 s)))\n    (s0 : S) (hDom0 : Dom s0) (hInitNeg : B s0 < 0) :\n    IsNonHalting step s0"
+  },
+  {
+    "name": "parabolic_no_affine_barrier",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 110,
+    "statement": "theorem parabolic_no_affine_barrier (a b c : Int)\n    (hInit : a * 2 + b * 0 + c < 0)\n    (hMono : ∀ x y : Int, 0 ≤ x → 0 ≤ y →\n      a * (x + 2 * y + 1) + b * (y + 1) + c ≤ a * x + b * y + c)\n    (hHalt : ∀ x y : Int, 0 ≤ x → 0 ≤ y → 0 ≤ 4 * y - x - 3 →\n      0 ≤ a * x + b * y + c) : False"
+  },
+  {
+    "name": "parabolic_putinar_sos_identity",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 135,
+    "statement": "theorem parabolic_putinar_sos_identity (x y : Int) :\n    1 * barrierParabolic (x, y) =\n      1 * ((y - 2) * (y - 2)) + 0 * (0 * 0) + guardParabolic (x, y) * (1 * (1 * 1))"
+  },
+  {
+    "name": "parabolic_barrier_conserved",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 147,
+    "statement": "theorem parabolic_barrier_conserved (p p' : Int × Int)\n    (_hDom : DomParabolic p) (_hNeg : barrierParabolic p < 0)\n    (hStep : stepParabolic p = some p') :\n    barrierParabolic p' ≤ barrierParabolic p"
+  },
+  {
+    "name": "domParabolic_preserved",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 164,
+    "statement": "theorem domParabolic_preserved : IsInvariant stepParabolic DomParabolic"
+  },
+  {
+    "name": "parabolic_counter_nonHalting",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 180,
+    "statement": "theorem parabolic_counter_nonHalting :\n    IsNonHalting stepParabolic (2, 0)"
+  },
+  {
+    "name": "parabolic_counter_immortal",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 196,
+    "statement": "theorem parabolic_counter_immortal :\n    IsImmortalOrbit stepParabolic (2, 0)"
+  },
+  {
+    "name": "coupled_bouncer_2pivot_ldlt_identity",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 242,
+    "statement": "theorem coupled_bouncer_2pivot_ldlt_identity (x y : Int) :\n    4 * barrierCoupledBouncer (x, y) =\n      3 * ((2 - y) * (2 - y)) + 1 * (y * y) + guardCoupledBouncer (x, y) * (4 * (1 * 1))"
+  },
+  {
+    "name": "coupled_bouncer_nonHalting",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 253,
+    "statement": "theorem coupled_bouncer_nonHalting :\n    IsNonHalting stepCoupledBouncer (3, 0)"
+  },
+  {
+    "name": "appC7GateSweep_closed_form",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 296,
+    "statement": "theorem appC7GateSweep_closed_form :\n    ∀ (r a : Nat),\n      appC7GateSweep a r = 16 * r * r + (8 * a + 12) * r + (2 * a + 5)\n  | 0, a => by\n      simp [appC7GateSweep]\n  | r + 1, a => by\n      simp only [appC7GateSweep]\n      rw [appC7GateSweep_closed_form r (a + 4)]\n      have hSq : 16 * (r + 1) * (r + 1) = 16 * r * r + 32 * r + 16"
+  },
+  {
+    "name": "appC7_parabolic_gate_step_law",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 321,
+    "statement": "theorem appC7_parabolic_gate_step_law (b : Nat) :\n    6 + appC7GateSweep 2 b = 16 * b * b + 28 * b + 15"
+  },
+  {
+    "name": "mul_comm",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 61,
+    "statement": "theorem mul_comm (z w : ZPhi) : mul z w = mul w z"
+  },
+  {
+    "name": "mul_assoc",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 70,
+    "statement": "theorem mul_assoc (u v w : ZPhi) : mul (mul u v) w = mul u (mul v w)"
+  },
+  {
+    "name": "conj_mul",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 75,
+    "statement": "theorem conj_mul (z w : ZPhi) : conj (mul z w) = mul (conj z) (conj w)"
+  },
+  {
+    "name": "mul_conj_eq_ofInt_norm",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 80,
+    "statement": "theorem mul_conj_eq_ofInt_norm (z : ZPhi) : mul z (conj z) = ofInt (norm z)"
+  },
+  {
+    "name": "ofInt_mul_ofInt",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 86,
+    "statement": "theorem ofInt_mul_ofInt (x y : Int) : mul (ofInt x) (ofInt y) = ofInt (x * y)"
+  },
+  {
+    "name": "norm_mul",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 93,
+    "statement": "theorem norm_mul (z w : ZPhi) : norm (mul z w) = norm z * norm w"
+  },
+  {
+    "name": "phi_sq_eq_phi_add_one",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 103,
+    "statement": "theorem phi_sq_eq_phi_add_one : mul phi phi = add phi (ofInt 1)"
+  },
+  {
+    "name": "norm_phiBar_eq_neg_one",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 106,
+    "statement": "theorem norm_phiBar_eq_neg_one : norm phiBar = -1"
+  },
+  {
+    "name": "fibModStep_left_inv",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 125,
+    "statement": "theorem fibModStep_left_inv (M x y : Nat) (hx : x < M) (hy : y < M) :\n    fibModInv M (fibModStep M (x, y)) = (x, y)"
+  },
+  {
+    "name": "fib_modular_sieve_fails_every_modulus",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 159,
+    "statement": "theorem fib_modular_sieve_fails_every_modulus (M : Nat) (hM : M ≥ 1) :\n    let gHalt : Nat × Nat"
+  },
+  {
+    "name": "fib_pisot_eigen_step",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 231,
+    "statement": "theorem fib_pisot_eigen_step (x y : Int) :\n    eigenCoordPhi (x + y) x = ZPhi.mul ZPhi.phiBar (eigenCoordPhi x y)"
+  },
+  {
+    "name": "fib_pisot_norm_flip",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 238,
+    "statement": "theorem fib_pisot_norm_flip (x y : Int) :\n    ZPhi.norm (eigenCoordPhi (x + y) x) = -ZPhi.norm (eigenCoordPhi x y)"
+  },
+  {
+    "name": "fib_pisot_halt_ray_norm_ge_four",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 244,
+    "statement": "theorem fib_pisot_halt_ray_norm_ge_four (k : Int) (hk : 2 ≤ k) :\n    ZPhi.norm (eigenCoordPhi (2 * k) k) = k * k ∧ 4 ≤ k * k"
+  },
+  {
+    "name": "invFibPisot_preserved",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 267,
+    "statement": "theorem invFibPisot_preserved : IsInvariant stepFibPisot InvFibPisot"
+  },
+  {
+    "name": "invFibPisot_safe",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 284,
+    "statement": "theorem invFibPisot_safe (p : Int × Int) (hp : InvFibPisot p) :\n    stepFibPisot p ≠ none"
+  },
+  {
+    "name": "fib_pisot_counter_immortal",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 307,
+    "statement": "theorem fib_pisot_counter_immortal :\n    IsImmortalOrbit stepFibPisot (3, 2)"
+  },
+  {
+    "name": "pellNorm_step_flip",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 347,
+    "statement": "theorem pellNorm_step_flip (x y : Int) :\n    ZSqrt2.pellNorm ⟨x + 2 * y, x + y⟩ = -ZSqrt2.pellNorm ⟨x, y⟩"
+  },
+  {
+    "name": "pell_pisot_counter_nonHalting",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 374,
+    "statement": "theorem pell_pisot_counter_nonHalting :\n    IsNonHalting stepPellPisot (3, 2)"
+  },
+  {
+    "name": "walkParity_gauge_telescope",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 50,
+    "statement": "theorem walkParity_gauge_telescope (eps0 : Nat → Nat → Bool) (f : Nat → Bool) :\n    ∀ (vs : List Nat) (u : Nat),\n      walkParity (gaugeShiftEdge eps0 f) u vs =\n        xor (walkParity eps0 u vs) (xor (f (lastVertex u vs)) (f u))\n  | [], u => by\n      simp [walkParity, lastVertex]\n  | v :: vs, u => by\n      simp only [walkParity, lastVertex]\n      rw [walkParity_gauge_telescope eps0 f vs v]\n      unfold gaugeShiftEdge\n      cases (eps0 u v) <;> cases (walkParity eps0 v vs) <;>\n        cases (f u) <;> cases (f v) <;> cases (f (lastVertex v vs)) <;> rfl\n\n/-- **Closed-Loop Coboundary Gauge Invariance**:\n    Along ANY closed walk returning to `u0` (`lastVertex u0 vs = u0`), the total `F_2`\n    holonomy is strictly invariant under all local gauge transformations `f`. -/\ntheorem coboundary_closed_walk_invariant\n    (eps0 : Nat → Nat → Bool) (f : Nat → Bool) (u0 : Nat) (vs : List Nat)\n    (hClosed : lastVertex u0 vs = u0) :\n    walkParity (gaugeShiftEdge eps0 f) u0 vs = walkParity eps0 u0 vs"
+  },
+  {
+    "name": "coboundary_closed_walk_invariant",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 66,
+    "statement": "theorem coboundary_closed_walk_invariant\n    (eps0 : Nat → Nat → Bool) (f : Nat → Bool) (u0 : Nat) (vs : List Nat)\n    (hClosed : lastVertex u0 vs = u0) :\n    walkParity (gaugeShiftEdge eps0 f) u0 vs = walkParity eps0 u0 vs"
+  },
+  {
+    "name": "hamming743_gauge_coset_verified",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 102,
+    "statement": "theorem hamming743_gauge_coset_verified :\n    hammingWeightCounts = (16, 1, 7, 7, 1) ∧\n      ((List.range 128).filter isHamming743Codeword).map (fun c => Nat.xor 8 c) =\n        [8, 15, 17, 22, 34, 37, 59, 60, 67, 68, 90, 93, 105, 110, 112, 119]"
+  },
+  {
+    "name": "invWreathOdometer3_preserved",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 140,
+    "statement": "theorem invWreathOdometer3_preserved : IsInvariant stepWreathOdometer3 InvWreathOdometer3"
+  },
+  {
+    "name": "stepWreathOdometer3_total",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 165,
+    "statement": "theorem stepWreathOdometer3_total (s : StateWreathOdometer3) (hs : InvWreathOdometer3 s) :\n    ∃ s', stepWreathOdometer3 s = some s'"
+  },
+  {
+    "name": "stepWreathOdometer3_strict_drift",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 184,
+    "statement": "theorem stepWreathOdometer3_strict_drift :\n    ∀ s s', InvWreathOdometer3 s → stepWreathOdometer3 s = some s' →\n      energyWreathOdometer3 s' ≥ energyWreathOdometer3 s + 2"
+  },
+  {
+    "name": "stepWreathOdometer3_safe",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 211,
+    "statement": "theorem stepWreathOdometer3_safe (s : StateWreathOdometer3) (hs : InvWreathOdometer3 s) :\n    stepWreathOdometer3 s ≠ none"
+  },
+  {
+    "name": "wreath_width3_odometer_immortal",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 222,
+    "statement": "theorem wreath_width3_odometer_immortal :\n    IsImmortalOrbit stepWreathOdometer3 (.Shuttle 0 4)"
+  },
+  {
+    "name": "appC8_shuttle_conserves_2k_plus_m",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 239,
+    "statement": "theorem appC8_shuttle_conserves_2k_plus_m (k m : Nat) (hm : m ≥ 5) :\n    2 * (k + 2) + (m - 4) = 2 * k + m ∧\n      (2 + 3 * (k + 2) + (m - 4)) = (2 + 3 * k + m) + 2"
+  },
+  {
+    "name": "appC8ShuttleRoundsSteps_closed_form",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 249,
+    "statement": "theorem appC8ShuttleRoundsSteps_closed_form (r : Nat) :\n    ∀ k : Nat,\n      appC8ShuttleRoundsSteps k r = 12 * (r * k) + 12 * (r * (r - 1)) + 26 * r"
+  },
+  {
+    "name": "appC8_clean_macro_law",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 290,
+    "statement": "theorem appC8_clean_macro_law (q : Nat) :\n    let c"
+  },
+  {
+    "name": "coboundary_d1_d0_zero",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 43,
+    "statement": "theorem coboundary_d1_d0_zero (phi : Nat → Nat → Int) (x t : Nat) :\n    plaquetteCurl (d0Horiz phi) (d0Vert phi) x t = 0"
+  },
+  {
+    "name": "discrete_stokes_row",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 72,
+    "statement": "theorem discrete_stokes_row (Jx Jt : Nat → Nat → Int) (t W : Nat) :\n    sumPlaquetteRow Jx Jt t W =\n      sumHoriz Jx t W + Jt W t - sumHoriz Jx (t + 1) W - Jt 0 t"
+  },
+  {
+    "name": "discrete_stokes_rectangle",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 87,
+    "statement": "theorem discrete_stokes_rectangle (Jx Jt : Nat → Nat → Int) (W T : Nat) :\n    sumPlaquetteRect Jx Jt W T =\n      sumHoriz Jx 0 W + sumVert Jt W T - sumHoriz Jx T W - sumVert Jt 0 T"
+  },
+  {
+    "name": "sumPlaquetteRow_nonneg_of_pointwise",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 97,
+    "statement": "theorem sumPlaquetteRow_nonneg_of_pointwise\n    (Jx Jt : Nat → Nat → Int) (t W : Nat)\n    (hRow : ∀ x, x < W → 0 ≤ plaquetteCurl Jx Jt x t) :\n    0 ≤ sumPlaquetteRow Jx Jt t W"
+  },
+  {
+    "name": "sumPlaquetteRect_nonneg_of_pointwise",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 109,
+    "statement": "theorem sumPlaquetteRect_nonneg_of_pointwise\n    (Jx Jt : Nat → Nat → Int) (W T : Nat)\n    (hBulk : ∀ x t, x < W → t < T → 0 ≤ plaquetteCurl Jx Jt x t) :\n    0 ≤ sumPlaquetteRect Jx Jt W T"
+  },
+  {
+    "name": "sumVert_zero_of_pointwise",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 123,
+    "statement": "theorem sumVert_zero_of_pointwise\n    (Jt : Nat → Nat → Int) (x T : Nat)\n    (hBdry : ∀ t, t < T → Jt x t = 0) :\n    sumVert Jt x T = 0"
+  },
+  {
+    "name": "stokes_cohomological_halting_obstruction",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 142,
+    "statement": "theorem stokes_cohomological_halting_obstruction\n    (Jx Jt : Nat → Nat → Int) (W T : Nat)\n    (hBulk : ∀ x t, x < W → t < T → 0 ≤ plaquetteCurl Jx Jt x t)\n    (hLeft : ∀ t, t < T → Jt 0 t = 0)\n    (hRight : ∀ t, t < T → Jt W t = 0)\n    (hInit : sumHoriz Jx 0 W ≤ 0) :\n    ¬ (sumHoriz Jx T W ≥ 1)"
+  },
+  {
+    "name": "bouncer_3cell_nfa_reaches_halt_in_3_steps",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 202,
+    "statement": "theorem bouncer_3cell_nfa_reaches_halt_in_3_steps :\n    let p0 : Local3Patch"
+  },
+  {
+    "name": "oddSublatticeCocycle_init",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 245,
+    "statement": "theorem oddSublatticeCocycle_init : OddSublatticeCocycleInv blankBouncerCfg"
+  },
+  {
+    "name": "oddSublatticeCocycle_preserved",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 249,
+    "statement": "theorem oddSublatticeCocycle_preserved :\n    IsInvariant stepRawBouncer OddSublatticeCocycleInv"
+  },
+  {
+    "name": "oddSublatticeCocycle_total",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 318,
+    "statement": "theorem oddSublatticeCocycle_total (cfg : RawBouncerCfg) (hInv : OddSublatticeCocycleInv cfg) :\n    ∃ cfg', stepRawBouncer cfg = some cfg'"
+  },
+  {
+    "name": "oddSublatticeCocycle_safe",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 332,
+    "statement": "theorem oddSublatticeCocycle_safe (cfg : RawBouncerCfg) (hInv : OddSublatticeCocycleInv cfg) :\n    stepRawBouncer cfg ≠ none"
+  },
+  {
+    "name": "bipartite_parabolic_bouncer_tm_never_halts",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 344,
+    "statement": "theorem bipartite_parabolic_bouncer_tm_never_halts :\n    IsNonHalting stepRawBouncer blankBouncerCfg"
+  },
+  {
+    "name": "reynolds_pin2_swap_linear",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 30,
+    "statement": "theorem reynolds_pin2_swap_linear (a b x y : Int) :\n    (a * x + b * y) + (a * y + b * x) = (a + b) * (x + y)"
+  },
+  {
+    "name": "reynolds_inversion_kills_all_linear",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 40,
+    "statement": "theorem reynolds_inversion_kills_all_linear (a b x y : Int) :\n    (a * x + b * y) + (a * (-x) + b * (-y)) = 0"
+  },
+  {
+    "name": "reynolds_inversion_preserves_quadratic",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 48,
+    "statement": "theorem reynolds_inversion_preserves_quadratic (c20 c11 c02 x y : Int) :\n    c20 * (-x) * (-x) + c11 * (-x) * (-y) + c02 * (-y) * (-y) =\n      c20 * x * x + c11 * x * y + c02 * y * y"
+  },
+  {
+    "name": "reynolds_d4_degree2_routing",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 61,
+    "statement": "theorem reynolds_d4_degree2_routing (a b x y : Int) :\n    (a * x + b * y) + (a * (-x) + b * y) + (a * x + b * (-y)) + (a * (-x) + b * (-y)) = 0 ∧\n      ((-y) * (-y) + x * x = x * x + y * y)"
+  },
+  {
+    "name": "walk_denom_translated_cycler_period3",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 72,
+    "statement": "theorem walk_denom_translated_cycler_period3\n    (u : Nat → Int) (d : Int) (hd : d ≠ 0)\n    (hShift : ∀ n : Nat, u (n + 3) = u n + d) (n : Nat) :\n    u (n + 6) - 2 * u (n + 3) + u n = 0 ∧ u (n + 3) - u n ≠ 0"
+  },
+  {
+    "name": "quadratic_walk_denom_cube",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 90,
+    "statement": "theorem quadratic_walk_denom_cube (A B C z : Int) :\n    let P"
+  },
+  {
+    "name": "walk_denom_parabolic_appC7_and_appC8",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 140,
+    "statement": "theorem walk_denom_parabolic_appC7_and_appC8 (n : Int) :\n    (walkAppC7Gate (n + 2) - 2 * walkAppC7Gate (n + 1) + walkAppC7Gate n = 32 ∧\n      walkAppC7Gate (n + 3) - 3 * walkAppC7Gate (n + 2) + 3 * walkAppC7Gate (n + 1) -\n        walkAppC7Gate n = 0) ∧\n    (walkAppC8Macro (n + 2) - 2 * walkAppC8Macro (n + 1) + walkAppC8Macro n = 216 ∧\n      walkAppC8Macro (n + 3) - 3 * walkAppC8Macro (n + 2) + 3 * walkAppC8Macro (n + 1) -\n        walkAppC8Macro n = 0)"
+  },
+  {
+    "name": "walk_denom_pisot_fibonacci",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 157,
+    "statement": "theorem walk_denom_pisot_fibonacci (n : Nat) :\n    fibCounterSeq (n + 2) - fibCounterSeq (n + 1) - fibCounterSeq n = 0 ∧\n      (∀ r : Int, ¬ (fibCounterSeq 1 = r * fibCounterSeq 0 ∧ fibCounterSeq 2 = r * fibCounterSeq 1))"
+  },
+  {
+    "name": "walk_denom_mixed_portal_a5_bmo5",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 172,
+    "statement": "theorem walk_denom_mixed_portal_a5_bmo5 (j : Nat) :\n    walkPortalA5 (j + 2) - 3 * walkPortalA5 (j + 1) + 2 * walkPortalA5 j = 1 ∧\n      walkPortalA5 (j + 3) - 4 * walkPortalA5 (j + 2) + 5 * walkPortalA5 (j + 1) -\n        2 * walkPortalA5 j = 0"
+  },
+  {
+    "name": "pow2_mod3_cycle",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 29,
+    "statement": "theorem pow2_mod3_cycle (j : Nat) :\n    (j % 2 = 0 → (2 ^ j) % 3 = 1) ∧ (j % 2 = 1 → (2 ^ j) % 3 = 2)"
+  },
+  {
+    "name": "pow2_mod7_cycle",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 38,
+    "statement": "theorem pow2_mod7_cycle (j : Nat) :\n    (j % 3 = 0 → (2 ^ j) % 7 = 1) ∧\n      (j % 3 = 1 → (2 ^ j) % 7 = 2) ∧\n      (j % 3 = 2 → (2 ^ j) % 7 = 4)"
+  },
+  {
+    "name": "pow3_mod7_cycle",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 49,
+    "statement": "theorem pow3_mod7_cycle (j : Nat) :\n    (j % 6 = 0 → (3 ^ j) % 7 = 1) ∧\n      (j % 6 = 1 → (3 ^ j) % 7 = 3) ∧\n      (j % 6 = 2 → (3 ^ j) % 7 = 2) ∧\n      (j % 6 = 3 → (3 ^ j) % 7 = 6) ∧\n      (j % 6 = 4 → (3 ^ j) % 7 = 4) ∧\n      (j % 6 = 5 → (3 ^ j) % 7 = 5)"
+  },
+  {
+    "name": "multiprime_2_3_eliminates_portal_2j_3j_1",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 70,
+    "statement": "theorem multiprime_2_3_eliminates_portal_2j_3j_1 :\n    ((2 ^ 3 + 3 * 3) % 8 = 1) ∧\n      ((2 ^ 4 + 3 * 4) % 9 = 1) ∧\n      (∀ j : Nat, j ≥ 1 → (2 ^ j + 3 * j) % 6 ≠ 1)"
+  },
+  {
+    "name": "multiprime_3_7_eliminates_portal_2j_7j_15",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 92,
+    "statement": "theorem multiprime_3_7_eliminates_portal_2j_7j_15 :\n    ((2 ^ 7 + 7 * 7) % 9 = 15 % 9) ∧\n      ((2 ^ 12 + 7 * 12) % 49 = 15) ∧\n      (∀ j : Nat, (2 ^ j + 7 * j) % 21 ≠ 15)"
+  },
+  {
+    "name": "multiprime_3_7_eliminates_dual_exp_2j_3j",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 109,
+    "statement": "theorem multiprime_3_7_eliminates_dual_exp_2j_3j :\n    ((2 ^ 4 + 3 ^ 4) % 9 = 7) ∧\n      ((2 ^ 9 + 3 ^ 9) % 49 = 7) ∧\n      (∀ j : Nat, j ≥ 1 → (2 ^ j + 3 ^ j) % 21 ≠ 7)"
+  },
+  {
+    "name": "antihydra_mod8_kirchhoff_pseudoinverse_verified",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer7MultiPrimeKirchhoff.lean",
+    "line": 189,
+    "statement": "theorem antihydra_mod8_kirchhoff_pseudoinverse_verified :\n    verifyAntihydraMod8Kirchhoff = true"
+  }
+]

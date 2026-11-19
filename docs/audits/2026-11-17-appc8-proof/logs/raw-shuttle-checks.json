@@ -1,0 +1,114 @@
+{
+  "machine": "1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---",
+  "table_entries_matched": 12,
+  "single_round_cases": 420,
+  "single_round_ranges": {
+    "k": [
+      0,
+      20
+    ],
+    "m": [
+      5,
+      24
+    ]
+  },
+  "arbitrary_tail_cases": 819,
+  "repeated_round_cases": 504,
+  "clean_middle_cases": 13,
+  "clean_middle_samples": [
+    {
+      "q": 0,
+      "rounds": 2,
+      "duration": 148,
+      "output_k": 7,
+      "output_m": 2
+    },
+    {
+      "q": 1,
+      "rounds": 5,
+      "duration": 550,
+      "output_k": 13,
+      "output_m": 2
+    },
+    {
+      "q": 2,
+      "rounds": 8,
+      "duration": 1168,
+      "output_k": 19,
+      "output_m": 2
+    },
+    {
+      "q": 3,
+      "rounds": 11,
+      "duration": 2002,
+      "output_k": 25,
+      "output_m": 2
+    },
+    {
+      "q": 4,
+      "rounds": 14,
+      "duration": 3052,
+      "output_k": 31,
+      "output_m": 2
+    },
+    {
+      "q": 5,
+      "rounds": 17,
+      "duration": 4318,
+      "output_k": 37,
+      "output_m": 2
+    },
+    {
+      "q": 6,
+      "rounds": 20,
+      "duration": 5800,
+      "output_k": 43,
+      "output_m": 2
+    },
+    {
+      "q": 7,
+      "rounds": 23,
+      "duration": 7498,
+      "output_k": 49,
+      "output_m": 2
+    },
+    {
+      "q": 8,
+      "rounds": 26,
+      "duration": 9412,
+      "output_k": 55,
+      "output_m": 2
+    },
+    {
+      "q": 9,
+      "rounds": 29,
+      "duration": 11542,
+      "output_k": 61,
+      "output_m": 2
+    },
+    {
+      "q": 10,
+      "rounds": 32,
+      "duration": 13888,
+      "output_k": 67,
+      "output_m": 2
+    },
+    {
+      "q": 11,
+      "rounds": 35,
+      "duration": 16450,
+      "output_k": 73,
+      "output_m": 2
+    },
+    {
+      "q": 12,
+      "rounds": 38,
+      "duration": 19228,
+      "output_k": 79,
+      "output_m": 2
+    }
+  ],
+  "elapsed_count": "defined raw transitions; no minimal first-return claim",
+  "scope": "Raw shuttle and its finite repetitions. Clean-macro reset and exit remain unproved.",
+  "generated_differential_fixtures": 192
+}

@@ -1,0 +1,250 @@
+[
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.blocks_add",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 12,
+    "statement": "theorem blocks_add (a b : Nat) (t : List Bool) :\n    blocks a (blocks b t) = blocks (a+b) t",
+    "evidence_class": "algebraic identity or guard",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.return_close_prefix",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 18,
+    "statement": "theorem return_close_prefix (n : Nat) (t : List Bool) :\n    true :: returnWord n t = blocks n (true :: t)",
+    "evidence_class": "algebraic identity or guard",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.defect_turn_19",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 24,
+    "statement": "theorem defect_turn_19 (l : List Bool) :\n    run 19 \u27e8.E, l, [true, false, true, true]\u27e9 =\n      some \u27e8.A, l.tail, read l :: false :: ones 5 []\u27e9",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.defect_turn_66",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 28,
+    "statement": "theorem defect_turn_66 (l : List Bool) :\n    run 66 \u27e8.E, back 2 l, true :: false :: ones 5 []\u27e9 =\n      some \u27e8.A, l, ones 4 (defectTail 8)\u27e9",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.defect_one_collapse",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 33,
+    "statement": "theorem defect_one_collapse (n : Nat) :\n    run (14*(n+2)+90) (shuttleTailCfg (n+2) 1 [false, true, true]) =\n      some (shuttleTailCfg 0 (3*(n+2)+1) (defectTail 8))",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.defect_turn_104",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 56,
+    "statement": "theorem defect_turn_104 (l : List Bool) :\n    run 104 \u27e8.E, back 3 l, true :: false :: ones 8 [false, true, true]\u27e9 =\n      some \u27e8.A, l.tail, read l :: true :: false :: true :: true :: false :: true :: false :: ones 17 []\u27e9",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.defect_turn_334",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 60,
+    "statement": "theorem defect_turn_334 (l : List Bool) :\n    run 334 \u27e8.E, back 4 l, true :: false :: ones 17 []\u27e9 =\n      some \u27e8.A, l, ones 4 (defectTail 26)\u27e9",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.defect_eight_collapse",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 65,
+    "statement": "theorem defect_eight_collapse (n : Nat) :\n    run (14*(n+5)+416) (shuttleTailCfg (n+5) 1 (defectTail 8)) =\n      some (shuttleTailCfg 0 (3*n+7) (defectTail 26))",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.absorb_defect",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 91,
+    "statement": "theorem absorb_defect (k m : Nat) (t : List Bool) :\n    shuttleTailCfg k 2 (false :: ones m t) = shuttleTailCfg (k+1) m t",
+    "evidence_class": "algebraic identity or guard",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_mod2_reduction",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 98,
+    "statement": "theorem appC8_mod2_reduction (a : Nat) :\n    run ((14*(4*a+2)+36)+appC8ShuttleRoundsSteps 0 (3*a+3)+(14*(6*a+6)+90))\n      (shuttleCfg (4*a+2) 3) = some (shuttleTailCfg 0 (18*a+19) (defectTail 8))",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.mod2_duration",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 109,
+    "statement": "theorem mod2_duration (a : Nat) :\n    (14*(4*a+2)+36)+appC8ShuttleRoundsSteps 0 (3*a+3)+(14*(6*a+6)+90) =\n      108*a*a+398*a+388",
+    "evidence_class": "algebraic identity or guard",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_mod2_reduction_closed",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 115,
+    "statement": "theorem appC8_mod2_reduction_closed (a : Nat) :\n    run (108*a*a+398*a+388) (shuttleCfg (4*a+2) 3) =\n      some (shuttleTailCfg 0 (18*a+19) (defectTail 8))",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_mod16_branch",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 123,
+    "statement": "theorem appC8_mod16_branch (b : Nat) :\n    run ((108*(4*b+1)*(4*b+1)+398*(4*b+1)+388)+\n        appC8ShuttleRoundsSteps 0 (18*b+9)+(14*(36*b+18)+416)+\n        appC8ShuttleRoundsSteps 0 (27*b+11)+appC8ShuttleRoundsSteps (54*b+23) 6)\n      (shuttleCfg (16*b+6) 3) = some (shuttleCfg (54*b+36) 2)",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.mod16_duration",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 146,
+    "statement": "theorem mod16_duration (b : Nat) :\n    (108*(4*b+1)*(4*b+1)+398*(4*b+1)+388)+\n        appC8ShuttleRoundsSteps 0 (18*b+9)+(14*(36*b+18)+416)+\n        appC8ShuttleRoundsSteps 0 (27*b+11)+appC8ShuttleRoundsSteps (54*b+23) 6 =\n      14364*b*b+18494*b+6438",
+    "evidence_class": "algebraic identity or guard",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_mod16_branch_closed",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 161,
+    "statement": "theorem appC8_mod16_branch_closed (b : Nat) :\n    run (14364*b*b+18494*b+6438) (shuttleCfg (16*b+6) 3) =\n      some (shuttleCfg (54*b+36) 2)",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_mod16_carry",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 168,
+    "statement": "theorem appC8_mod16_carry (b : Nat) :\n    run (14364*b*b+18656*b+6552) (shuttleCfg (16*b+6) 3) =\n      some (cleanCfg (54*b+37))",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_mod16_survives",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 175,
+    "statement": "theorem appC8_mod16_survives (b j : Nat) (hj : j \u2264 14364*b*b+18656*b+6552) :\n    \u2203 e, run j (shuttleCfg (16*b+6) 3) = some e",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.mod16_carry_not_clean",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 179,
+    "statement": "theorem mod16_carry_not_clean (b q : Nat) : 54*b+37 \u2260 4*(q+1)",
+    "evidence_class": "algebraic identity or guard",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_after_mod16",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 181,
+    "statement": "theorem appC8_blank_after_mod16 : run 499104 blankCfg = some (shuttleCfg 306 2)",
+    "evidence_class": "raw blank-run composition",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_carry_307",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 185,
+    "statement": "theorem appC8_blank_carry_307 : run 500028 blankCfg = some (cleanCfg 307)",
+    "evidence_class": "raw blank-run composition",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_reset_307",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 189,
+    "statement": "theorem appC8_blank_reset_307 : run 501606 blankCfg = some (shuttleCfg 3 919)",
+    "evidence_class": "raw blank-run composition",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_frontier_461",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 193,
+    "statement": "theorem appC8_blank_frontier_461 : run 1142348 blankCfg = some (shuttleCfg 461 3)",
+    "evidence_class": "raw blank-run composition",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_prefix_1142348",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 197,
+    "statement": "theorem appC8_blank_prefix_1142348 (j : Nat) (hj : j \u2264 1142348) :\n    \u2203 e, run j blankCfg = some e",
+    "evidence_class": "raw blank-run composition",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_mod1_branch",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 202,
+    "statement": "theorem appC8_mod1_branch (a : Nat) :\n    run ((14*(4*a+1)+36)+appC8ShuttleRoundsSteps 0 (3*a+2))\n      (shuttleCfg (4*a+1) 3) = some (shuttleCfg (6*a+5) 2)",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.mod1_duration",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 213,
+    "statement": "theorem mod1_duration (a : Nat) :\n    (14*(4*a+1)+36)+appC8ShuttleRoundsSteps 0 (3*a+2) = 108*a*a+242*a+126",
+    "evidence_class": "algebraic identity or guard",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_mod1_branch_closed",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 221,
+    "statement": "theorem appC8_mod1_branch_closed (a : Nat) :\n    run (108*a*a+242*a+126) (shuttleCfg (4*a+1) 3) = some (shuttleCfg (6*a+5) 2)",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_mod1_carry",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 227,
+    "statement": "theorem appC8_mod1_carry (a : Nat) :\n    run (108*a*a+260*a+147) (shuttleCfg (4*a+1) 3) = some (cleanCfg (6*a+6))",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_mod1_clean_entry",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 234,
+    "statement": "theorem appC8_mod1_clean_entry (q : Nat) :\n    run (108*(2*q+1)*(2*q+1)+260*(2*q+1)+147) (shuttleCfg (8*q+5) 3) =\n      some (cleanCfg (4*((3*q+2)+1)))",
+    "evidence_class": "universal raw execution or prefix theorem",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_clean_entry",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 242,
+    "statement": "theorem appC8_blank_clean_entry : run 2600695 blankCfg = some (cleanCfg 696)",
+    "evidence_class": "raw blank-run composition",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_clean_macro_applied",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 247,
+    "statement": "theorem appC8_blank_clean_macro_applied : run 5890701 blankCfg = some (cleanCfg 1046)",
+    "evidence_class": "raw blank-run composition",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_prefix_5890701",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawMod2Sector.lean",
+    "line": 251,
+    "statement": "theorem appC8_blank_prefix_5890701 (j : Nat) (hj : j \u2264 5890701) :\n    \u2203 e, run j blankCfg = some e",
+    "evidence_class": "raw blank-run composition",
+    "limit": "Only the stated families and hypotheses. Uniform k=4a+2 reduction retains its suffix. No first-entry/return minimality or infinite survival."
+  }
+]

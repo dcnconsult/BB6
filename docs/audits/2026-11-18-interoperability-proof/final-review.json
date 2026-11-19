@@ -1,0 +1,17 @@
+{
+  "completed_utc": "2026-11-18T16:59:36.183282+00:00",
+  "upstream_commit": "3647718b5df22e1a61462dec0376bd204526285a",
+  "adapter_source_theorems": 36,
+  "adapter_kernel_theorems": 50,
+  "compiled_source_hashes_match": true,
+  "foreign_axiom_negative_control": "rejected",
+  "sorry_negative_control": "rejected",
+  "pdf_pages": 18,
+  "overfull_boxes": 0,
+  "unresolved_references": 0,
+  "visual_review": "all-page contact sheets; theorem pages 13-14; final provenance page 2 and ending pages 17-18",
+  "paper_audit": "[PASS] LaTeX & BibTeX audit passed: 20 unique labels (8 refs resolved), 24/24 BibTeX keys matched, 79 Lean-4 identifiers cross-verified, 0 syntax/delimiter errors.",
+  "shell_harnesses": "bash -n passed in container",
+  "original_lean_sources": "not modified; nine imported dependencies copied byte-for-byte",
+  "scope": "AppC 7 gate unreachability uses pinned upstream non-halting certificate; AppC 8 global survival remains open."
+}

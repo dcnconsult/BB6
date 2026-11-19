@@ -1,0 +1,119 @@
+[
+  {
+    "id": "F01",
+    "original_priority": "High",
+    "title": "The T3.15 halting iff has the wrong exponent and an overbroad scope",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Corrected and scoped",
+    "repair": "Section 3.3 gives 3^(3m)-1, m>=1, only for a halt immediately after the initial contraction run; supplies an induction and counterexamples to the global reading.",
+    "validation": "90 exponent cases, 500 initial states, and later-branch witnesses 14 and 20."
+  },
+  {
+    "id": "F02",
+    "original_priority": "High",
+    "title": "The dimension formula is not a consequence of the stated hypotheses",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Withdrawn dimension claim",
+    "repair": "Section 2 retains drift identities and removes automatic dimension reduction. The synthesis API returns return_dimension=None.",
+    "validation": "Identity-matrix and normalized-successor counterexamples; existing synthesis suite passes."
+  },
+  {
+    "id": "F03",
+    "original_priority": "High",
+    "title": "The 11/11 A.11 aperiodicity claim exceeds the available proof",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Narrowed to proved models",
+    "repair": "Section 3 and Table 1 cover A1-A10, B9, and BMO8; A11 is handled separately as finite/conditional.",
+    "validation": "Fresh Lean builds; epoch(20,5,6)=(65,3,3) regression."
+  },
+  {
+    "id": "F04",
+    "original_priority": "High",
+    "title": "The formalization traceability matrix conflates arithmetic certificates with raw-TM correctness",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Separated evidence classes",
+    "repair": "Sections 1, 4, and 5 plus a 31-entry exact-statement ledger distinguish model, raw, conditional, arithmetic, and finite evidence. Blanket formalization claims removed.",
+    "validation": "197-declaration inventory, 365 audited kernel constants, and statement-by-statement review of retained principal claims."
+  },
+  {
+    "id": "F05",
+    "original_priority": "High",
+    "title": "Table 3 “Undetermined” is misread, and “solved” overstates outcomes",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Corrected literature interpretation",
+    "repair": "Section 1 explains Table 3 Undetermined as missing community-rule correspondence. No claim to solve both machines or classify AppC blank seeds remains.",
+    "validation": "Pinned Dos Santos v2 source from original bibliography audit; open obligations in Sections 5.2 and 8."
+  },
+  {
+    "id": "F06",
+    "original_priority": "High",
+    "title": "BMO #8 drops hypotheses required for its three-gate theorem",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Restored full domain",
+    "repair": "Section 3.2 states the full InvBMO8 and the ray union intersected with that domain, including endpoint caveats.",
+    "validation": "22,296 bounded domain cases; (3,4) counterexample; Lean bmo8_three_gates_iff."
+  },
+  {
+    "id": "F07",
+    "original_priority": "High",
+    "title": "A.11 output-sector activation is conditional on survival",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Restored survival hypothesis",
+    "repair": "Section 4.1 states d=6 only if Epoch 4 returns a successor. A11 source commentary also corrected.",
+    "validation": "Exact finite epoch regressions and the hSurv hypothesis recorded in claim C19."
+  },
+  {
+    "id": "F08",
+    "original_priority": "Medium",
+    "title": "“Minimal” cyclotomic denominator is not proved and is false in general",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Replaced minimality with annihilation",
+    "repair": "Section 5.4 states the polynomial is an annihilator and supplies the u(n)=n counterexample; source comments corrected.",
+    "validation": "Translated-sequence regressions and the smaller (S-1)(S^3-1) annihilator."
+  },
+  {
+    "id": "F09",
+    "original_priority": "Medium",
+    "title": "Phase 4 examples need to be separated from deciders for actual BB6 machines",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Labeled abstract examples",
+    "repair": "Section 5 identifies counter and word examples, restricts symmetry averaging to the actual action, and singles out the genuinely raw bouncer theorem.",
+    "validation": "Exact declarations and hypotheses in claim ledger; Phase-4 suite passes."
+  },
+  {
+    "id": "F10",
+    "original_priority": "Medium",
+    "title": "The 5,433 raw-configuration total is not reproduced by the shipped suites",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Replaced unsupported count",
+    "repair": "Table 2 lists the actual 5,271 Phase-3 invocations; Phase-4 AppC8 36+5 checks are separate and not deduplicated globally.",
+    "validation": "Executed phase3-counts.json; regression compares every row and the sum."
+  },
+  {
+    "id": "F11",
+    "original_priority": "Medium",
+    "title": "Compiler claims need complete input domains and balanced benchmark reporting",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Restricted compiler claims",
+    "repair": "Section 6 states nonzero ghost, guard, integer/word, table, shift and CPU conditions; removes blanket branchless and LLVM/MLIR extension claims; records short-loop slowdowns.",
+    "validation": "Fresh GCC12.2 and MSVC19.50 runs each match all 1,232,500 vectors; MSVC assembly log retained."
+  },
+  {
+    "id": "F12",
+    "original_priority": "Medium",
+    "title": "Bibliographic accuracy and attribution require targeted repairs",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Corrected bibliography",
+    "repair": "All 23 keys retained; Michel, Ligocki, PolyQEnt, Karimov, version pins and dates corrected; DOI/URL notes render in plain BibTeX style.",
+    "validation": "23/23 citation audit, bibliography field review, clean BibTeX build and rendered reference inspection."
+  },
+  {
+    "id": "F13",
+    "original_priority": "Medium",
+    "title": "The artifact is not yet a self-contained submission package",
+    "status": "closed within revised manuscript and verification scope",
+    "action": "Rebuilt and packaged",
+    "repair": "Author/contact metadata supplied by author; shortened abstract; tables precede references; full canonical Dockerfile; fail-closed source checks and transitive axiom allowlist; versioned source archive and hashes.",
+    "validation": "Fresh source-only Lean builds, two external-axiom negative tests, missing-directory negative tests, PDF metadata/layout and archive integrity checks."
+  }
+]

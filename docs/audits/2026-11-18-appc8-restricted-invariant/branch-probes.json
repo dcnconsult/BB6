@@ -1,0 +1,786 @@
+{
+  "(3, [8, 2])": [
+    {
+      "input_k": 0,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 116
+    },
+    {
+      "input_k": 1,
+      "status": "return",
+      "k": 1,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 128
+    },
+    {
+      "input_k": 2,
+      "status": "return",
+      "k": 2,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 140
+    },
+    {
+      "input_k": 3,
+      "status": "return",
+      "k": 3,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 152
+    },
+    {
+      "input_k": 4,
+      "status": "return",
+      "k": 4,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 164
+    },
+    {
+      "input_k": 5,
+      "status": "return",
+      "k": 5,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 176
+    },
+    {
+      "input_k": 6,
+      "status": "return",
+      "k": 6,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 188
+    },
+    {
+      "input_k": 7,
+      "status": "return",
+      "k": 7,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 200
+    },
+    {
+      "input_k": 8,
+      "status": "return",
+      "k": 8,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 212
+    },
+    {
+      "input_k": 9,
+      "status": "return",
+      "k": 9,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 224
+    },
+    {
+      "input_k": 10,
+      "status": "return",
+      "k": 10,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 236
+    },
+    {
+      "input_k": 11,
+      "status": "return",
+      "k": 11,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 248
+    },
+    {
+      "input_k": 12,
+      "status": "return",
+      "k": 12,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 260
+    },
+    {
+      "input_k": 13,
+      "status": "return",
+      "k": 13,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 272
+    },
+    {
+      "input_k": 14,
+      "status": "return",
+      "k": 14,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 284
+    },
+    {
+      "input_k": 15,
+      "status": "return",
+      "k": 15,
+      "m": 1,
+      "tail": [
+        17
+      ],
+      "duration": 296
+    }
+  ],
+  "(1, [17])": [
+    {
+      "input_k": 0,
+      "status": "return",
+      "k": 3,
+      "m": 13,
+      "tail": [],
+      "duration": 37
+    },
+    {
+      "input_k": 1,
+      "status": "return",
+      "k": 6,
+      "m": 7,
+      "tail": [],
+      "duration": 123
+    },
+    {
+      "input_k": 2,
+      "status": "return",
+      "k": 9,
+      "m": 1,
+      "tail": [],
+      "duration": 263
+    },
+    {
+      "input_k": 3,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        2,
+        26,
+        2
+      ],
+      "duration": 347
+    },
+    {
+      "input_k": 4,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        5,
+        26,
+        2
+      ],
+      "duration": 355
+    },
+    {
+      "input_k": 5,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        8,
+        26,
+        2
+      ],
+      "duration": 363
+    },
+    {
+      "input_k": 6,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        11,
+        26,
+        2
+      ],
+      "duration": 371
+    },
+    {
+      "input_k": 7,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        14,
+        26,
+        2
+      ],
+      "duration": 379
+    },
+    {
+      "input_k": 8,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        17,
+        26,
+        2
+      ],
+      "duration": 387
+    },
+    {
+      "input_k": 9,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        20,
+        26,
+        2
+      ],
+      "duration": 395
+    },
+    {
+      "input_k": 10,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        23,
+        26,
+        2
+      ],
+      "duration": 403
+    },
+    {
+      "input_k": 11,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        26,
+        26,
+        2
+      ],
+      "duration": 411
+    },
+    {
+      "input_k": 12,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        29,
+        26,
+        2
+      ],
+      "duration": 419
+    },
+    {
+      "input_k": 13,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        32,
+        26,
+        2
+      ],
+      "duration": 427
+    },
+    {
+      "input_k": 14,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        35,
+        26,
+        2
+      ],
+      "duration": 435
+    },
+    {
+      "input_k": 15,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        38,
+        26,
+        2
+      ],
+      "duration": 443
+    }
+  ],
+  "(3, [26, 2])": [
+    {
+      "input_k": 0,
+      "status": "return",
+      "k": 5,
+      "m": 16,
+      "tail": [
+        2
+      ],
+      "duration": 129
+    },
+    {
+      "input_k": 1,
+      "status": "return",
+      "k": 8,
+      "m": 10,
+      "tail": [
+        2
+      ],
+      "duration": 275
+    },
+    {
+      "input_k": 2,
+      "status": "return",
+      "k": 11,
+      "m": 4,
+      "tail": [
+        2
+      ],
+      "duration": 475
+    },
+    {
+      "input_k": 3,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 680
+    },
+    {
+      "input_k": 4,
+      "status": "return",
+      "k": 1,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 692
+    },
+    {
+      "input_k": 5,
+      "status": "return",
+      "k": 2,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 704
+    },
+    {
+      "input_k": 6,
+      "status": "return",
+      "k": 3,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 716
+    },
+    {
+      "input_k": 7,
+      "status": "return",
+      "k": 4,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 728
+    },
+    {
+      "input_k": 8,
+      "status": "return",
+      "k": 5,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 740
+    },
+    {
+      "input_k": 9,
+      "status": "return",
+      "k": 6,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 752
+    },
+    {
+      "input_k": 10,
+      "status": "return",
+      "k": 7,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 764
+    },
+    {
+      "input_k": 11,
+      "status": "return",
+      "k": 8,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 776
+    },
+    {
+      "input_k": 12,
+      "status": "return",
+      "k": 9,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 788
+    },
+    {
+      "input_k": 13,
+      "status": "return",
+      "k": 10,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 800
+    },
+    {
+      "input_k": 14,
+      "status": "return",
+      "k": 11,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 812
+    },
+    {
+      "input_k": 15,
+      "status": "return",
+      "k": 12,
+      "m": 1,
+      "tail": [
+        44
+      ],
+      "duration": 824
+    }
+  ],
+  "(1, [44])": [
+    {
+      "input_k": 0,
+      "status": "return",
+      "k": 3,
+      "m": 40,
+      "tail": [],
+      "duration": 37
+    },
+    {
+      "input_k": 1,
+      "status": "return",
+      "k": 6,
+      "m": 34,
+      "tail": [],
+      "duration": 123
+    },
+    {
+      "input_k": 2,
+      "status": "return",
+      "k": 9,
+      "m": 28,
+      "tail": [],
+      "duration": 263
+    },
+    {
+      "input_k": 3,
+      "status": "return",
+      "k": 12,
+      "m": 22,
+      "tail": [],
+      "duration": 457
+    },
+    {
+      "input_k": 4,
+      "status": "return",
+      "k": 15,
+      "m": 16,
+      "tail": [],
+      "duration": 705
+    },
+    {
+      "input_k": 5,
+      "status": "return",
+      "k": 18,
+      "m": 10,
+      "tail": [],
+      "duration": 1007
+    },
+    {
+      "input_k": 6,
+      "status": "return",
+      "k": 21,
+      "m": 4,
+      "tail": [],
+      "duration": 1363
+    },
+    {
+      "input_k": 7,
+      "status": "return",
+      "k": 2,
+      "m": 64,
+      "tail": [],
+      "duration": 1709
+    },
+    {
+      "input_k": 8,
+      "status": "return",
+      "k": 5,
+      "m": 58,
+      "tail": [],
+      "duration": 1801
+    },
+    {
+      "input_k": 9,
+      "status": "return",
+      "k": 8,
+      "m": 52,
+      "tail": [],
+      "duration": 1947
+    },
+    {
+      "input_k": 10,
+      "status": "return",
+      "k": 11,
+      "m": 46,
+      "tail": [],
+      "duration": 2147
+    },
+    {
+      "input_k": 11,
+      "status": "return",
+      "k": 14,
+      "m": 40,
+      "tail": [],
+      "duration": 2401
+    },
+    {
+      "input_k": 12,
+      "status": "return",
+      "k": 17,
+      "m": 34,
+      "tail": [],
+      "duration": 2709
+    },
+    {
+      "input_k": 13,
+      "status": "return",
+      "k": 20,
+      "m": 28,
+      "tail": [],
+      "duration": 3071
+    },
+    {
+      "input_k": 14,
+      "status": "return",
+      "k": 23,
+      "m": 22,
+      "tail": [],
+      "duration": 3487
+    },
+    {
+      "input_k": 15,
+      "status": "return",
+      "k": 26,
+      "m": 16,
+      "tail": [],
+      "duration": 3957
+    }
+  ],
+  "(1, [26, 2])": [
+    {
+      "input_k": 0,
+      "status": "return",
+      "k": 3,
+      "m": 22,
+      "tail": [
+        2
+      ],
+      "duration": 37
+    },
+    {
+      "input_k": 1,
+      "status": "return",
+      "k": 6,
+      "m": 16,
+      "tail": [
+        2
+      ],
+      "duration": 123
+    },
+    {
+      "input_k": 2,
+      "status": "return",
+      "k": 9,
+      "m": 10,
+      "tail": [
+        2
+      ],
+      "duration": 263
+    },
+    {
+      "input_k": 3,
+      "status": "return",
+      "k": 12,
+      "m": 4,
+      "tail": [
+        2
+      ],
+      "duration": 457
+    },
+    {
+      "input_k": 4,
+      "status": "return",
+      "k": 2,
+      "m": 40,
+      "tail": [],
+      "duration": 685
+    },
+    {
+      "input_k": 5,
+      "status": "return",
+      "k": 5,
+      "m": 34,
+      "tail": [],
+      "duration": 777
+    },
+    {
+      "input_k": 6,
+      "status": "return",
+      "k": 8,
+      "m": 28,
+      "tail": [],
+      "duration": 923
+    },
+    {
+      "input_k": 7,
+      "status": "return",
+      "k": 11,
+      "m": 22,
+      "tail": [],
+      "duration": 1123
+    },
+    {
+      "input_k": 8,
+      "status": "return",
+      "k": 14,
+      "m": 16,
+      "tail": [],
+      "duration": 1377
+    },
+    {
+      "input_k": 9,
+      "status": "return",
+      "k": 17,
+      "m": 10,
+      "tail": [],
+      "duration": 1685
+    },
+    {
+      "input_k": 10,
+      "status": "return",
+      "k": 20,
+      "m": 4,
+      "tail": [],
+      "duration": 2047
+    },
+    {
+      "input_k": 11,
+      "status": "return",
+      "k": 0,
+      "m": 1,
+      "tail": [
+        68
+      ],
+      "duration": 2370
+    },
+    {
+      "input_k": 12,
+      "status": "return",
+      "k": 1,
+      "m": 1,
+      "tail": [
+        68
+      ],
+      "duration": 2382
+    },
+    {
+      "input_k": 13,
+      "status": "return",
+      "k": 2,
+      "m": 1,
+      "tail": [
+        68
+      ],
+      "duration": 2394
+    },
+    {
+      "input_k": 14,
+      "status": "return",
+      "k": 3,
+      "m": 1,
+      "tail": [
+        68
+      ],
+      "duration": 2406
+    },
+    {
+      "input_k": 15,
+      "status": "return",
+      "k": 4,
+      "m": 1,
+      "tail": [
+        68
+      ],
+      "duration": 2418
+    }
+  ]
+}

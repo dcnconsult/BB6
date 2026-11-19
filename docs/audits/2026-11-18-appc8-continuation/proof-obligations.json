@@ -1,0 +1,152 @@
+[
+  {
+    "id": "O1a",
+    "obligation": "AppC 7 gate raw-to-macro refinement",
+    "priority": "Selected and proved",
+    "status": "closed for the full stated gate family",
+    "evidence": "gate_phase_all, gate_sweep_exact_time, appC7_raw_gate_exact_time; all natural a,r,b, without a raw-correspondence assumption.",
+    "limit": "The raw gate family halts; the new adapter proves it is unreachable from blank using the pinned upstream non-halting certificate. No independent upstream classification is claimed."
+  },
+  {
+    "id": "O1b",
+    "obligation": "AppC 8 raw shuttle, repeated rounds, and clean middle stage",
+    "priority": "Previously proved",
+    "status": "proved under the stated guards",
+    "evidence": "appC8_raw_shuttle, appC8_raw_shuttle_rounds, appC8_raw_rounds_closed_form, appC8_clean_middle_raw.",
+    "limit": "Shuttle requires m>=5; r rounds require m>=4r+1. Elapsed execution, not first-return minimality."
+  },
+  {
+    "id": "O1d",
+    "obligation": "AppC 8 clean-macro reset and exit",
+    "status": "proved for the full stated clean sector",
+    "priority": "Previously proved",
+    "evidence": "appC8_raw_reset for all c>=1; appC8_raw_exit for all k>=0; appC8_clean_macro_raw and appC8_clean_macro_survives for all q>=0; appC8_clean_macro_raw_and_ghost.",
+    "limit": "Full clean macro assumes c=4(q+1). Actual blank entry at c=696 is now proved, but the output c=1046 leaves this sector. No first-return or global survival claim."
+  },
+  {
+    "id": "O4a",
+    "obligation": "AppC 8 finite blank-tape reachability into the raw component families",
+    "status": "proved through time 507471992896",
+    "priority": "Completed in this revision",
+    "evidence": "blank_extended_frontier and blank_extended_prefix, exported by upstream_extended_frontier and upstream_extended_prefix.",
+    "limit": "Finite survival only. Endpoint C_tail(306555,1,01^5).",
+    "previous_snapshot_evidence": "appC8_blank_clean_entry, appC8_blank_clean_macro_applied, appC8_blank_prefix_5890701."
+  },
+  {
+    "id": "O4c",
+    "obligation": "AppC 8 odd excursion for k=4a+3 and m=3",
+    "status": "proved for every natural a",
+    "priority": "Previously proved",
+    "evidence": "appC8_odd_excursion_closed: C(4a+3,3) -> C(0,18a+31) after 108a\u00b2+398a+356 defined transitions; appC8_odd_excursion_survives.",
+    "limit": "Other block residues and arbitrary suffix variants of the full law are not asserted. The output is odd at all admissible shuttle endpoints, so the existing m=2 exit is unavailable there."
+  },
+  {
+    "id": "O4d",
+    "obligation": "AppC 8 next odd excursion from C(86,3), and k=2 modulo 4 families",
+    "status": "C(86,3) excursion proved; all k=4a+2 reduced with explicit suffix",
+    "priority": "Concrete target closed; wider branch classification remains",
+    "evidence": "appC8_mod2_reduction_closed for all a; appC8_mod16_branch_closed and appC8_mod16_carry for k=16b+6, covering b=5.",
+    "limit": "The uniform k=4a+2 result is a suffix-bearing reduction, not a complete suffix-free excursion law for all such inputs."
+  },
+  {
+    "id": "O4b",
+    "obligation": "AppC 8 blank entry into the restricted full clean-macro sector",
+    "status": "proved at D(696), time 2600695",
+    "priority": "Closed in this revision",
+    "evidence": "appC8_blank_clean_entry proves the premise of appC8_blank_clean_macro_transfer at q=173; appC8_blank_clean_macro_applied reaches D(1046) at time 5890701.",
+    "limit": "An actual entry is proved, without claiming it is the first. The output 1046 does not satisfy the clean-sector input guard."
+  },
+  {
+    "id": "O1c",
+    "obligation": "Other counter-model raw-to-macro refinements",
+    "priority": "Local targets after selecting a precise machine/sector",
+    "status": "open",
+    "evidence": "Core invariants and aperiodicity proofs exist for encoded models; finite raw bridges vary by suite.",
+    "limit": "Prove encoding, transitions, entry, and coverage before inferring a raw-machine classification."
+  },
+  {
+    "id": "O2",
+    "obligation": "Global A.11 aperiodicity/non-halting and Epoch-4 completion",
+    "priority": "Research-level arithmetic gap",
+    "status": "open",
+    "evidence": "Finite Epoch-3 computation and conditional d=6 successor theorem only; c can decrease.",
+    "limit": "No proved global progress measure or survival argument currently available."
+  },
+  {
+    "id": "O3",
+    "obligation": "All-modulus Antihydra quotient and cycle-mean laws",
+    "priority": "Formalize the parametric graph first",
+    "status": "open",
+    "evidence": "Specific quotient tests and conditional affine identities.",
+    "limit": "Must specify the quotient and unresolved-cylinder semantics, then prove a uniform graph decomposition and cycle bound."
+  },
+  {
+    "id": "O4",
+    "obligation": "Unrestricted AppC 8 blank trajectory",
+    "priority": "Research beyond the certified prefix",
+    "status": "open",
+    "evidence": "Certified blank prefix through time 507471992896; conditional upstream_nonhalting_of_boundary_return proved.",
+    "limit": "BoundaryReturn is not proved or assumed as an axiom. Infinite AppC 8 survival remains open.",
+    "previous_snapshot_evidence": "Certified through D(1046) at time 5890701, now also in upstream semantics. AppC 7 blank non-halting is imported and its gate exclusions are composed and proved."
+  },
+  {
+    "id": "O5",
+    "obligation": "Raw-machine identification for abstract algebraic examples",
+    "priority": "Construction and refinement required",
+    "status": "open",
+    "evidence": "Abstract parabolic, Fibonacci/Pell, word, and odometer theorems.",
+    "limit": "A concrete transition table and encoding must be supplied and proved, rather than inferred from similar formulas."
+  },
+  {
+    "id": "O4e",
+    "obligation": "General continuation after D(1046) and other complete residue branches",
+    "status": "D(1046) continuation closed locally; general invariant remains open",
+    "priority": "Next global/local refinement frontier",
+    "evidence": "even_carry_to_four, four_collapse, one_collapse, zero_block_defect_param, three_with_tail, pure_boundary_progress.",
+    "limit": "Every suffix-free positive C(k,m) returns to the candidate language. Arbitrary suffix-bearing members are not yet covered.",
+    "previous_snapshot_evidence": "The full clean macro from D(696) reaches D(1046); 1046 is 2 modulo 4. The k=4a+1 carry family and k=16b+6 branch are now universal raw theorems."
+  },
+  {
+    "id": "I1",
+    "obligation": "Shared finite-zipper semantic adapter",
+    "status": "proved",
+    "evidence": "BB6Interop.encode_step and transfer_run; machine-specific table_agrees, step_commutes, run_commutes, blank_agrees.",
+    "limit": "For the stated zero-padded binary tapes and exact twelve-entry tables; no injection on list syntax is required."
+  },
+  {
+    "id": "I2",
+    "obligation": "AppC 7 gate unreachability from blank",
+    "status": "proved in upstream and original zipper semantics",
+    "evidence": "gate_unreachable, sweep_gate_unreachable, gate_unreachable_local, sweep_gate_unreachable_local.",
+    "limit": "Depends on the rebuilt pinned DeepMind is_not_halt certificate; not an independent blank non-halting classification."
+  },
+  {
+    "id": "I3",
+    "obligation": "AppC 8 exact-time export into upstream semantics",
+    "status": "proved",
+    "evidence": "Previous exact-time exports plus upstream_extended_frontier, upstream_extended_prefix, and the conditional upstream_nonhalting_of_boundary_return.",
+    "limit": "Preserves existing guards, exact elapsed times and bounded survival. Does not prove a closed all-branch acceleration or global non-halting.",
+    "previous_snapshot_evidence": "reaches_in; shuttle_exact_time, rounds_exact_time, reset_exact_time, exit_exact_time, clean_exact_time, odd_exact_time, mod2_exact_time, mod16_exact_time, mod1_exact_time, blank_clean_entry, blank_clean_applied, blank_prefix_defined."
+  },
+  {
+    "id": "I4",
+    "obligation": "Core counter-model correspondence to upstream accelerations",
+    "status": "open",
+    "evidence": "T3.15 and BMO 8 finite probes and A.11 coordinate relation are documented in the earlier comparison.",
+    "limit": "Not discharged by the raw AppC 7/8 adapter; universal guarded section correspondence remains necessary."
+  },
+  {
+    "id": "O4f",
+    "obligation": "Positive-time closure of the positive-run boundary language",
+    "status": "open",
+    "evidence": "Boundary and BoundaryReturn defined; pure_boundary_progress covers all k and m>0 without a suffix. survives_of_boundary_return and upstream_nonhalting_of_boundary_return are conditional theorems.",
+    "limit": "Need return or a richer phase-aware progress system for arbitrary run lists, including small-k exceptions and variable defect lengths. Bounded searches are not proofs."
+  },
+  {
+    "id": "O4g",
+    "obligation": "Next local suffix family at the certified frontier",
+    "status": "open",
+    "evidence": "C_tail(306555,1,01^5) at time 507471992896.",
+    "limit": "A fixed new suffix lemma can extend the prefix but will not by itself close the language."
+  }
+]

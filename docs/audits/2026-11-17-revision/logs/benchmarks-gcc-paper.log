@@ -1,0 +1,25 @@
+Host Python: 3.11.2 (main, Oct  7 2026, 12:35:07) [GCC 12.2.0]
+Host CPU:     (22 logical cores)
+C Compiler:  gcc (Debian 12.2.0-14+deb12u1) 12.2.0
+
+=== C11 Hardware Benchmark Output (-O3 -march=native) ===
+[VERIFY] 100% bit-exact match across 1232500 test vectors (0 discrepancies).
+ROW|MixedRandom|CTZ-K1_Antihydra_Tneg1_v4|4.51|15.251|2.573|45.68|7.70|5.93x|5.93x
+ROW|MixedRandom|CTZ-K2_Antihydra_OddRun_v1|18.38|24.356|2.221|72.95|6.65|10.96x|10.97x
+ROW|MixedRandom|CTZ-K3_Antihydra_Relay_v3|6.00|16.704|2.112|50.02|6.32|7.91x|7.91x
+ROW|MixedRandom|CLZ-K4_Cousin_A2_A10|24.50|17.728|3.264|53.09|9.77|5.43x|5.43x
+ROW|MixedRandom|CLZ-K5_Cousin_A5_BMO5|24.47|19.073|3.629|57.12|10.87|5.26x|5.26x
+ROW|MixedRandom|CLZ-K6_AppC1_Chained2Loop|24.13|25.089|6.429|75.14|19.25|3.90x|3.90x
+ROW|Geom2Adic|CTZ-K2_Geom_Half|2.00|8.273|1.389|24.77|4.16|5.96x|5.96x
+ROW|ShortEpoch_1_16|CLZ-K5_ShortEpoch|8.51|11.184|3.080|33.49|9.22|3.63x|3.63x
+ROW|DepthSweep|CLZ-K5_Depth_j=1|1.00|1.382|3.689|4.14|11.05|0.37x|0.37x
+ROW|DepthSweep|CLZ-K5_Depth_j=2|2.00|1.914|3.681|5.73|11.02|0.52x|0.52x
+ROW|DepthSweep|CLZ-K5_Depth_j=4|4.00|3.119|3.941|9.34|11.80|0.79x|0.79x
+ROW|DepthSweep|CLZ-K5_Depth_j=8|8.00|5.206|3.774|15.59|11.30|1.38x|1.38x
+ROW|DepthSweep|CLZ-K5_Depth_j=16|16.00|8.425|3.187|25.23|9.54|2.64x|2.64x
+ROW|DepthSweep|CLZ-K5_Depth_j=32|32.00|16.900|3.007|50.61|9.00|5.62x|5.62x
+ROW|DepthSweep|CLZ-K5_Depth_j=48|48.00|24.883|3.548|74.52|10.62|7.01x|7.01x
+
+=== Python 3.11 Arbitrary-Precision BigInt Benchmark ===
+PY|Py3.11 BigInt CTZ (Antihydra Odd-Run, m in 20..139)|mean_steps=79.1|naive=10.713 us|ghost=0.421 us|speedup=25.43x
+PY|Py3.11 BigInt CLZ (Cryptid A.5 Doubler, j in 30..189)|mean_steps=109.5|naive=20.332 us|ghost=1.201 us|speedup=16.93x

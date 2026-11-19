@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: Use this record for the supporting software. The preferred citation identifies
+  the paper.
+title: Supporting proofs and experiments for Following a Six-State Busy Beaver Candidate
+  for 97 Quadrillion Steps
+type: software
+authors:
+- family-names: Novotny
+  given-names: Darryl
+  affiliation: SyncQutrit Research Group, LLC.
+  orcid: https://orcid.org/0009-0001-3525-0638
+preferred-citation:
+  type: unpublished
+  authors:
+  - family-names: Novotny
+    given-names: Darryl
+    affiliation: SyncQutrit Research Group, LLC.
+    orcid: https://orcid.org/0009-0001-3525-0638
+  title: 'Following a Six-State Busy Beaver Candidate for 97 Quadrillion Steps: Certified
+    Tape Rules, Cross-Library Proofs, and Two Open Endings'
+  year: 2026
+  doi: 10.5281/zenodo.24370902
+  url: https://doi.org/10.5281/zenodo.24370902
+  publisher:
+    name: Zenodo
+  date-published: '2026-11-19'
+license: Apache-2.0

@@ -1,0 +1,27 @@
+import CryptidSolvePhase4.AppC8RawOddSector
+open CryptidSolvePhase4.AppC8Raw
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+example : run 36 (shuttleCfg 0 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,false,true,true]⟩ := by decide
+example : run 50 (shuttleCfg 1 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,false,true,true]⟩ := by decide
+example : run 64 (shuttleCfg 2 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,false,true,true]⟩ := by decide
+example : run 78 (shuttleCfg 3 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,true,true]⟩ := by decide
+example : run 92 (shuttleCfg 4 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,true,true]⟩ := by decide
+example : run 106 (shuttleCfg 5 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,true,true]⟩ := by decide
+example : run 120 (shuttleCfg 6 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,true,true]⟩ := by decide
+example : run 134 (shuttleCfg 7 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,true,true]⟩ := by decide
+example : run 148 (shuttleCfg 8 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,true,true]⟩ := by decide
+example : run 44 (shuttleTailCfg 0 4 [false,true,true]) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+example : run 58 (shuttleTailCfg 1 4 [false,true,true]) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+example : run 72 (shuttleTailCfg 2 4 [false,true,true]) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+example : run 86 (shuttleTailCfg 3 4 [false,true,true]) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+example : run 100 (shuttleTailCfg 4 4 [false,true,true]) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+example : run 114 (shuttleTailCfg 5 4 [false,true,true]) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+example : run 128 (shuttleTailCfg 6 4 [false,true,true]) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+example : run 142 (shuttleTailCfg 7 4 [false,true,true]) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+example : run 156 (shuttleTailCfg 8 4 [false,true,true]) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+example : run 356 (shuttleCfg 3 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+example : run 862 (shuttleCfg 7 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+example : run 1584 (shuttleCfg 11 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+example : run 2522 (shuttleCfg 15 3) = some ⟨.A, [], [false,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]⟩ := by decide
+#eval IO.println "[PASS] 22 independent complete-configuration odd-sector fixtures"

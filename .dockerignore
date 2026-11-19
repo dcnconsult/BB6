@@ -1,0 +1,9 @@
+.git
+__pycache__
+*.pyc
+*.pyo
+*.exe
+*.obj
+*.cod
+lean/.lake
+lean/build

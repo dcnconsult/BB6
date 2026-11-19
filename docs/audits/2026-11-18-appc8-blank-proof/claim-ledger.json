@@ -1,0 +1,98 @@
+[
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_entry",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawBlankReachability.lean",
+    "line": 16,
+    "statement": "theorem appC8_blank_entry : run 5 blankCfg = some (shuttleCfg 0 2)",
+    "evidence_class": "raw blank-run reachability or bounded prefix theorem",
+    "limit": "No general odd-sector law, restricted clean-sector entry, first-visit assertion, or global survival conclusion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_carry_one",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawBlankReachability.lean",
+    "line": 18,
+    "statement": "theorem appC8_blank_carry_one : run 11 blankCfg = some (cleanCfg 1)",
+    "evidence_class": "raw blank-run reachability or bounded prefix theorem",
+    "limit": "No general odd-sector law, restricted clean-sector entry, first-visit assertion, or global survival conclusion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_first_reset",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawBlankReachability.lean",
+    "line": 22,
+    "statement": "theorem appC8_blank_first_reset : run 59 blankCfg = some (shuttleCfg 3 1)",
+    "evidence_class": "raw blank-run reachability or bounded prefix theorem",
+    "limit": "No general odd-sector law, restricted clean-sector entry, first-visit assertion, or global survival conclusion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_first_excursion",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawBlankReachability.lean",
+    "line": 28,
+    "statement": "theorem appC8_first_excursion :\n    run 3185 (shuttleCfg 3 1) = some (shuttleCfg 18 10)",
+    "evidence_class": "finite raw execution certificate",
+    "limit": "No general odd-sector law, restricted clean-sector entry, first-visit assertion, or global survival conclusion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_shuttle_entry",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawBlankReachability.lean",
+    "line": 31,
+    "statement": "theorem appC8_blank_shuttle_entry : run 3244 blankCfg = some (shuttleCfg 18 10)",
+    "evidence_class": "raw blank-run reachability or bounded prefix theorem",
+    "limit": "No general odd-sector law, restricted clean-sector entry, first-visit assertion, or global survival conclusion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_two_shuttles",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawBlankReachability.lean",
+    "line": 35,
+    "statement": "theorem appC8_blank_two_shuttles : run 3752 blankCfg = some (shuttleCfg 22 2)",
+    "evidence_class": "raw blank-run reachability or bounded prefix theorem",
+    "limit": "No general odd-sector law, restricted clean-sector entry, first-visit assertion, or global survival conclusion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_carry_twenty_three",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawBlankReachability.lean",
+    "line": 39,
+    "statement": "theorem appC8_blank_carry_twenty_three : run 3824 blankCfg = some (cleanCfg 23)",
+    "evidence_class": "raw blank-run reachability or bounded prefix theorem",
+    "limit": "No general odd-sector law, restricted clean-sector entry, first-visit assertion, or global survival conclusion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_second_reset",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawBlankReachability.lean",
+    "line": 43,
+    "statement": "theorem appC8_blank_second_reset : run 3982 blankCfg = some (shuttleCfg 3 67)",
+    "evidence_class": "raw blank-run reachability or bounded prefix theorem",
+    "limit": "No general odd-sector law, restricted clean-sector entry, first-visit assertion, or global survival conclusion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_odd_frontier",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawBlankReachability.lean",
+    "line": 47,
+    "statement": "theorem appC8_blank_odd_frontier : run 7854 blankCfg = some (shuttleCfg 35 3)",
+    "evidence_class": "raw blank-run reachability or bounded prefix theorem",
+    "limit": "No general odd-sector law, restricted clean-sector entry, first-visit assertion, or global survival conclusion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_prefix_defined",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawBlankReachability.lean",
+    "line": 52,
+    "statement": "theorem appC8_blank_prefix_defined (j : Nat) (hj : j \u2264 7854) :\n    \u2203 e, run j blankCfg = some e",
+    "evidence_class": "raw blank-run reachability or bounded prefix theorem",
+    "limit": "No general odd-sector law, restricted clean-sector entry, first-visit assertion, or global survival conclusion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_clean_macro_transfer",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawBlankReachability.lean",
+    "line": 58,
+    "statement": "theorem appC8_blank_clean_macro_transfer (n q : Nat)\n    (hEntry : run n blankCfg = some (cleanCfg (4*(q+1)))) :\n    run (n+(108*q*q+332*q+238)) blankCfg = some (cleanCfg (6*q+8))",
+    "evidence_class": "conditional composition theorem",
+    "limit": "No general odd-sector law, restricted clean-sector entry, first-visit assertion, or global survival conclusion."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_blank_carry_guards",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawBlankReachability.lean",
+    "line": 65,
+    "statement": "theorem appC8_blank_carry_guards :\n    (\u2200 q : Nat, 1 \u2260 4*(q+1)) \u2227 (\u2200 q : Nat, 23 \u2260 4*(q+1))",
+    "evidence_class": "arithmetic guard exclusion",
+    "limit": "No general odd-sector law, restricted clean-sector entry, first-visit assertion, or global survival conclusion."
+  }
+]

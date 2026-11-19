@@ -1,0 +1,281 @@
+[
+  {
+    "claim_id": "C01",
+    "evidence_class": "Model theorem",
+    "scope": "Invariant and positive drift on defined transitions; excludes cycles, not halting.",
+    "name": "no_periodic_of_strict_lyapunov",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 74,
+    "statement": "theorem no_periodic_of_strict_lyapunov {S : Type} (step : StepFn S) (P : S → Prop)\n    (E : S → Nat) (d : Nat) (hd : d > 0)\n    (hInv : IsInvariant step P)\n    (hDrift : ∀ x x', P x → step x = some x' → E x + d ≤ E x')\n    (x : S) (hx : P x) : ¬ IsPeriodic step x"
+  },
+  {
+    "claim_id": "C02",
+    "evidence_class": "Model theorem",
+    "scope": "Invariant plus lexicographic drift; excludes cycles.",
+    "name": "no_periodic_of_lex_lyapunov",
+    "file": "lean/CryptidSolve/Basic.lean",
+    "line": 132,
+    "statement": "theorem no_periodic_of_lex_lyapunov {S : Type} (step : StepFn S) (P : S → Prop)\n    (E rank : S → Nat)\n    (hInv : IsInvariant step P)\n    (hLex : ∀ x x', P x → step x = some x' → LexProgress E rank x x')\n    (x : S) (hx : P x) : ¬ IsPeriodic step x"
+  },
+  {
+    "claim_id": "C03",
+    "evidence_class": "Model theorem",
+    "scope": "Requires InvA1; finite raw correspondence only.",
+    "name": "a1_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 36,
+    "statement": "theorem a1_no_periodic_orbits (s : StateA1) (hs : InvA1 s) :\n    ¬ IsPeriodic stepA1 s"
+  },
+  {
+    "claim_id": "C04",
+    "evidence_class": "Model theorem",
+    "scope": "All natural states of the A2 epoch model.",
+    "name": "a2_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 75,
+    "statement": "theorem a2_no_periodic_orbits (s : Nat × Nat) :\n    ¬ IsPeriodic stepA2Epoch s"
+  },
+  {
+    "claim_id": "C05",
+    "evidence_class": "Model theorem",
+    "scope": "All natural states of the A10 epoch model.",
+    "name": "a10_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 88,
+    "statement": "theorem a10_no_periodic_orbits (s : Nat × Nat) :\n    ¬ IsPeriodic stepA10Epoch s"
+  },
+  {
+    "claim_id": "C06",
+    "evidence_class": "Model theorem",
+    "scope": "Requires InvA3.",
+    "name": "a3_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 143,
+    "statement": "theorem a3_no_periodic_orbits (s : Nat × Nat × Nat) (hs : InvA3 s) :\n    ¬ IsPeriodic stepA3 s"
+  },
+  {
+    "claim_id": "C07",
+    "evidence_class": "Model theorem",
+    "scope": "All natural counter pairs in the encoded model.",
+    "name": "a4_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 160,
+    "statement": "theorem a4_no_periodic_orbits (s : Nat × Nat) :\n    ¬ IsPeriodic stepA4 s"
+  },
+  {
+    "claim_id": "C08",
+    "evidence_class": "Model theorem",
+    "scope": "Requires InvA5.",
+    "name": "a5_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 181,
+    "statement": "theorem a5_no_periodic_orbits (s : StateA5) (hs : InvA5 s) :\n    ¬ IsPeriodic stepA5 s"
+  },
+  {
+    "claim_id": "C09",
+    "evidence_class": "Model theorem",
+    "scope": "Requires InvA6.",
+    "name": "a6_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 197,
+    "statement": "theorem a6_no_periodic_orbits (s : StateA6) (hs : InvA6 s) :\n    ¬ IsPeriodic stepA6 s"
+  },
+  {
+    "claim_id": "C10",
+    "evidence_class": "Model theorem",
+    "scope": "Requires InvA7.",
+    "name": "a7_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 230,
+    "statement": "theorem a7_no_periodic_orbits (s : Nat × Nat) (hs : InvA7 s) :\n    ¬ IsPeriodic stepA7 s"
+  },
+  {
+    "claim_id": "C11",
+    "evidence_class": "Model theorem",
+    "scope": "Requires InvA8.",
+    "name": "a8_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 248,
+    "statement": "theorem a8_no_periodic_orbits (s : Nat × Nat) (hs : InvA8 s) :\n    ¬ IsPeriodic stepA8 s"
+  },
+  {
+    "claim_id": "C12",
+    "evidence_class": "Model theorem",
+    "scope": "Requires InvA9.",
+    "name": "a9_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 266,
+    "statement": "theorem a9_no_periodic_orbits (s : Nat × Nat) (hs : InvA9 s) :\n    ¬ IsPeriodic stepA9 s"
+  },
+  {
+    "claim_id": "C13",
+    "evidence_class": "Model theorem",
+    "scope": "All natural counter pairs in encoded model.",
+    "name": "b9_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 313,
+    "statement": "theorem b9_no_periodic_orbits (s : Nat × Nat) :\n    ¬ IsPeriodic stepB9 s"
+  },
+  {
+    "claim_id": "C14",
+    "evidence_class": "Model theorem",
+    "scope": "Full InvBMO8 required: a+c>=8, c>=2, a%3=0 or c%3=2.",
+    "name": "bmo8_three_gates_iff",
+    "file": "lean/CryptidSolve/Stage1Invariants.lean",
+    "line": 340,
+    "statement": "theorem bmo8_three_gates_iff (a c : Nat) (hInv : InvBMO8 (a, c)) :\n    stepBMO8 (a, c) = none ↔\n      (∃ k, a = 3 * k + 3 ∧ c = 6 * k + 5) ∨\n      (∃ k, a = 3 * k + 2 ∧ c = 6 * k + 2) ∨\n      (∃ k, k ≥ 1 ∧ a = 3 * k + 3 ∧ c = 6 * k + 4)"
+  },
+  {
+    "claim_id": "C15",
+    "evidence_class": "Model theorem",
+    "scope": "Does not exclude reaching a halt gate.",
+    "name": "bmo8_no_periodic_orbits",
+    "file": "lean/CryptidSolve/Stage3Aperiodic.lean",
+    "line": 338,
+    "statement": "theorem bmo8_no_periodic_orbits (s : Nat × Nat) (hs : InvBMO8 s) :\n    ¬ IsPeriodic stepBMO8 s"
+  },
+  {
+    "claim_id": "C16",
+    "evidence_class": "Model theorem",
+    "scope": "Requires b>=1; not eventual-halting classification.",
+    "name": "t315_no_periodic_orbits",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 76,
+    "statement": "theorem t315_no_periodic_orbits (s : Nat × Nat) (hs : InvT315 s) :\n    ¬ IsPeriodic stepT315 s"
+  },
+  {
+    "claim_id": "C17",
+    "evidence_class": "Arithmetic theorem",
+    "scope": "One-step identity only; paper multi-step proposition has an informal induction and finite regressions.",
+    "name": "t315_3adic_step_identity",
+    "file": "lean/CryptidSolve/FrontierHoldouts.lean",
+    "line": 84,
+    "statement": "theorem t315_3adic_step_identity (k b : Nat) (_ : b ≥ 1) :\n    stepT315 (3 * k + 2, b) = some (k, b + 2 * k + 3) ∧\n      3 * (k + 1) = (3 * k + 2) + 1 ∧\n      k + (b + 2 * k + 3) = (3 * k + 2) + b + 1"
+  },
+  {
+    "claim_id": "C18",
+    "evidence_class": "Finite kernel evaluation",
+    "scope": "One exact epoch evaluation, not Epoch-4 completion.",
+    "name": "a11_epoch3_survives_with_odd_c4",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 136,
+    "statement": "theorem a11_epoch3_survives_with_odd_c4 :\n    epochStepA11 (20, 1138, 3) = some (20, c4_exact, 3) ∧\n    c4_exact % 2 = 1 ∧\n    c4_exact % 16 = 1"
+  },
+  {
+    "claim_id": "C19",
+    "evidence_class": "Conditional model theorem",
+    "scope": "Assumes X0>=14, c odd, and a surviving epoch successor.",
+    "name": "a11_odd_c_activates_d6",
+    "file": "lean/CryptidSolve/CryptidA11.lean",
+    "line": 145,
+    "statement": "theorem a11_odd_c_activates_d6 (X0 c : Nat) (ep' : Nat × Nat × Nat)\n    (hX0 : X0 ≥ 14)\n    (hcOdd : c % 2 = 1)\n    (hSurv : epochStepA11 (X0, c, 3) = some ep') :\n    ep'.2.2 = 6"
+  },
+  {
+    "claim_id": "C20",
+    "evidence_class": "Conditional arithmetic theorem",
+    "scope": "Assumes hDivBound; no derivation from arbitrary periodic execution.",
+    "name": "antihydra_periodic_burst_bound",
+    "file": "lean/CryptidSolve/Stage4GhostAndPortals.lean",
+    "line": 100,
+    "statement": "theorem antihydra_periodic_burst_bound (pow2qW pow2W pow3W Bw z0 : Nat)\n    (_hBpos : 0 < Bw) (hBhi : Bw < pow3W - pow2W) (h3gt2 : pow2W < pow3W)\n    (hDivBound : pow2qW ≤ (pow3W - pow2W) * z0 + Bw) :\n    pow2qW < pow3W * (z0 + 1)"
+  },
+  {
+    "claim_id": "C21",
+    "evidence_class": "Arithmetic theorem",
+    "scope": "Duration and ghost identities; raw refinement finite-tested only.",
+    "name": "appC8_clean_macro_law",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 290,
+    "statement": "theorem appC8_clean_macro_law (q : Nat) :\n    let c"
+  },
+  {
+    "claim_id": "C22",
+    "evidence_class": "Arithmetic theorem",
+    "scope": "Counter conservation identity; no tape relation.",
+    "name": "appC8_shuttle_conserves_2k_plus_m",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 239,
+    "statement": "theorem appC8_shuttle_conserves_2k_plus_m (k m : Nat) (hm : m ≥ 5) :\n    2 * (k + 2) + (m - 4) = 2 * k + m ∧\n      (2 + 3 * (k + 2) + (m - 4)) = (2 + 3 * k + m) + 2"
+  },
+  {
+    "claim_id": "C23",
+    "evidence_class": "Abstract model theorem",
+    "scope": "Specific word/reset model; not AppC7 identification.",
+    "name": "multiDefect_cascade_immortal",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer1MatrixMonoid.lean",
+    "line": 354,
+    "statement": "theorem multiDefect_cascade_immortal :\n    IsImmortalOrbit stepMultiDefect ⟨[], [.D]⟩"
+  },
+  {
+    "claim_id": "C24",
+    "evidence_class": "Abstract model theorem",
+    "scope": "Specified parabolic counter and halt guard.",
+    "name": "parabolic_counter_nonHalting",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer2PutinarSOS.lean",
+    "line": 180,
+    "statement": "theorem parabolic_counter_nonHalting :\n    IsNonHalting stepParabolic (2, 0)"
+  },
+  {
+    "claim_id": "C25",
+    "evidence_class": "Abstract model theorem",
+    "scope": "Specified Fibonacci counter; not a raw BB6 machine.",
+    "name": "fib_pisot_counter_immortal",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 307,
+    "statement": "theorem fib_pisot_counter_immortal :\n    IsImmortalOrbit stepFibPisot (3, 2)"
+  },
+  {
+    "claim_id": "C26",
+    "evidence_class": "Abstract model theorem",
+    "scope": "Specified Pell counter; not a raw BB6 machine.",
+    "name": "pell_pisot_counter_nonHalting",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer3PisotQuadratic.lean",
+    "line": 374,
+    "statement": "theorem pell_pisot_counter_nonHalting :\n    IsNonHalting stepPellPisot (3, 2)"
+  },
+  {
+    "claim_id": "C27",
+    "evidence_class": "Raw-machine theorem",
+    "scope": "Specific six-state transition table, raw blank tape, parity invariant.",
+    "name": "bipartite_parabolic_bouncer_tm_never_halts",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 344,
+    "statement": "theorem bipartite_parabolic_bouncer_tm_never_halts :\n    IsNonHalting stepRawBouncer blankBouncerCfg"
+  },
+  {
+    "claim_id": "C28",
+    "evidence_class": "Conditional theorem",
+    "scope": "Bulk sign and side/initial boundary assumptions are required.",
+    "name": "stokes_cohomological_halting_obstruction",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer5SpaceTimeCohomology.lean",
+    "line": 142,
+    "statement": "theorem stokes_cohomological_halting_obstruction\n    (Jx Jt : Nat → Nat → Int) (W T : Nat)\n    (hBulk : ∀ x t, x < W → t < T → 0 ≤ plaquetteCurl Jx Jt x t)\n    (hLeft : ∀ t, t < T → Jt 0 t = 0)\n    (hRight : ∀ t, t < T → Jt W t = 0)\n    (hInit : sumHoriz Jx 0 W ≤ 0) :\n    ¬ (sumHoriz Jx T W ≥ 1)"
+  },
+  {
+    "claim_id": "C29",
+    "evidence_class": "Arithmetic theorem",
+    "scope": "Order-two coordinate-swap sum, not full Pin(2) averaging.",
+    "name": "reynolds_pin2_swap_linear",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer6MolienAndWalkSeries.lean",
+    "line": 30,
+    "statement": "theorem reynolds_pin2_swap_linear (a b x y : Int) :\n    (a * x + b * y) + (a * y + b * x) = (a + b) * (x + y)"
+  },
+  {
+    "claim_id": "C30",
+    "evidence_class": "Finite kernel evaluation",
+    "scope": "Explicit coset and weight enumeration; no full stabilizer theorem.",
+    "name": "hamming743_gauge_coset_verified",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 102,
+    "statement": "theorem hamming743_gauge_coset_verified :\n    hammingWeightCounts = (16, 1, 7, 7, 1) ∧\n      ((List.range 128).filter isHamming743Codeword).map (fun c => Nat.xor 8 c) =\n        [8, 15, 17, 22, 34, 37, 59, 60, 67, 68, 90, 93, 105, 110, 112, 119]"
+  },
+  {
+    "claim_id": "C31",
+    "evidence_class": "Abstract model theorem",
+    "scope": "Specified width-three odometer; raw identification not supplied.",
+    "name": "wreath_width3_odometer_immortal",
+    "file": "lean_phase4/CryptidSolvePhase4/Transfer4WreathBlockGauge.lean",
+    "line": 222,
+    "statement": "theorem wreath_width3_odometer_immortal :\n    IsImmortalOrbit stepWreathOdometer3 (.Shuttle 0 4)"
+  }
+]

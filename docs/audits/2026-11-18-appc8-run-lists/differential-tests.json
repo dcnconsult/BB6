@@ -1,0 +1,35 @@
+{
+  "family_cases": {
+    "five_turn": 63,
+    "defect_push": 1953,
+    "defect_strip_block": 1953,
+    "five_collapse": 33,
+    "five_zero": 1,
+    "four_long": 2511,
+    "first_long": 2511,
+    "second_long": 2511,
+    "first_one": 33,
+    "first_two": 33,
+    "second_one": 33,
+    "second_two": 33,
+    "second_defect_two": 33,
+    "first_zero_long": 31,
+    "second_zero_long": 31,
+    "one_long_local": 196,
+    "zero_long": 196,
+    "requested_concrete_frontier": 1
+  },
+  "total_cases": 12156,
+  "requested_frontier": {
+    "blocks": 306555,
+    "duration": 2452505,
+    "output_run_lengths": [
+      1,
+      919664,
+      8,
+      2
+    ],
+    "relative_head_shift": -3
+  },
+  "scope": "Finite independent complete-tape tests; full trillion-step certificate is Lean composition. BoundaryReturn remains open."
+}

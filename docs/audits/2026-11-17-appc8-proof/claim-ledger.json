@@ -1,0 +1,50 @@
+[
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.shuttle_with_tail",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawShuttle.lean",
+    "line": 164,
+    "statement": "theorem shuttle_with_tail (k : Nat) (t : List Bool) :\n    run (12*k+26)\n      \u27e8.A, [], false :: true :: false :: blocks k (true :: true :: true :: true :: true :: t)\u27e9 =\n      some \u27e8.A, [], false :: true :: false :: blocks (k+2) (true :: t)\u27e9",
+    "evidence_class": "universal raw-machine theorem",
+    "scope": "Every natural k and arbitrary finite right suffix after five ones; suffix unchanged."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_raw_shuttle",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawShuttle.lean",
+    "line": 185,
+    "statement": "theorem appC8_raw_shuttle (k m : Nat) (hm : m \u2265 5) :\n    run (12*k+26) (shuttleCfg k m) = some (shuttleCfg (k+2) (m-4))",
+    "evidence_class": "universal raw-machine theorem",
+    "scope": "Every k,m with m>=5: full raw zipper configuration after 12k+26 defined transitions."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_shuttle_survives",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawShuttle.lean",
+    "line": 203,
+    "statement": "theorem appC8_shuttle_survives (k m j : Nat) (hm : m \u2265 5) (hj : j \u2264 12*k+26) :\n    \u2203 e, run j (shuttleCfg k m) = some e",
+    "evidence_class": "universal raw-machine theorem",
+    "scope": "Every prefix j<=12k+26 is defined under m>=5."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_raw_shuttle_rounds",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawShuttle.lean",
+    "line": 209,
+    "statement": "theorem appC8_raw_shuttle_rounds (r k m : Nat) (hm : m \u2265 4*r+1) :\n    run (appC8ShuttleRoundsSteps k r) (shuttleCfg k m) =\n      some (shuttleCfg (k+2*r) (m-4*r))",
+    "evidence_class": "universal raw-machine theorem",
+    "scope": "Every r,k,m with m>=4r+1: raw composition of r rounds."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_raw_rounds_closed_form",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawShuttle.lean",
+    "line": 222,
+    "statement": "theorem appC8_raw_rounds_closed_form (r k m : Nat) (hm : m \u2265 4*r+1) :\n    run (12*(r*k) + 12*(r*(r-1)) + 26*r) (shuttleCfg k m) =\n      some (shuttleCfg (k+2*r) (m-4*r))",
+    "evidence_class": "universal raw-machine theorem",
+    "scope": "Raw r-round result at the closed-form duration 12rk+12r(r-1)+26r."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC8Raw.appC8_clean_middle_raw",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC8RawShuttle.lean",
+    "line": 231,
+    "statement": "theorem appC8_clean_middle_raw (q : Nat) :\n    run (appC8ShuttleRoundsSteps 3 (3*q+2)) (shuttleCfg 3 (12*q+10)) =\n      some (shuttleCfg (6*q+7) 2)",
+    "evidence_class": "universal raw-machine theorem",
+    "scope": "All natural q: raw middle stage from C(3,12q+10) to C(6q+7,2). Reset and exit are excluded."
+  }
+]

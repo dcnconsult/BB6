@@ -1,0 +1,1483 @@
+{
+  "machine": "1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---",
+  "cases": {
+    "reset": 128,
+    "exit": 129,
+    "clean_macro": 33
+  },
+  "ranges": {
+    "reset_c": [
+      1,
+      128
+    ],
+    "exit_k": [
+      0,
+      128
+    ],
+    "clean_q": [
+      0,
+      32
+    ]
+  },
+  "elapsed_count": "Defined transitions; no first-return assertion.",
+  "scope": "Positive carry reset, all exit block counts, clean sector c=4(q+1). Blank reachability and odd-sector behavior remain open.",
+  "samples": {
+    "reset": [
+      {
+        "parameter": 1,
+        "duration": 48,
+        "head_displacement": -12
+      },
+      {
+        "parameter": 2,
+        "duration": 53,
+        "head_displacement": -15
+      },
+      {
+        "parameter": 3,
+        "duration": 58,
+        "head_displacement": -18
+      },
+      {
+        "parameter": 4,
+        "duration": 63,
+        "head_displacement": -21
+      },
+      {
+        "parameter": 5,
+        "duration": 68,
+        "head_displacement": -24
+      },
+      {
+        "parameter": 6,
+        "duration": 73,
+        "head_displacement": -27
+      },
+      {
+        "parameter": 7,
+        "duration": 78,
+        "head_displacement": -30
+      },
+      {
+        "parameter": 8,
+        "duration": 83,
+        "head_displacement": -33
+      },
+      {
+        "parameter": 9,
+        "duration": 88,
+        "head_displacement": -36
+      },
+      {
+        "parameter": 10,
+        "duration": 93,
+        "head_displacement": -39
+      },
+      {
+        "parameter": 11,
+        "duration": 98,
+        "head_displacement": -42
+      },
+      {
+        "parameter": 12,
+        "duration": 103,
+        "head_displacement": -45
+      },
+      {
+        "parameter": 13,
+        "duration": 108,
+        "head_displacement": -48
+      },
+      {
+        "parameter": 14,
+        "duration": 113,
+        "head_displacement": -51
+      },
+      {
+        "parameter": 15,
+        "duration": 118,
+        "head_displacement": -54
+      },
+      {
+        "parameter": 16,
+        "duration": 123,
+        "head_displacement": -57
+      },
+      {
+        "parameter": 17,
+        "duration": 128,
+        "head_displacement": -60
+      },
+      {
+        "parameter": 18,
+        "duration": 133,
+        "head_displacement": -63
+      },
+      {
+        "parameter": 19,
+        "duration": 138,
+        "head_displacement": -66
+      },
+      {
+        "parameter": 20,
+        "duration": 143,
+        "head_displacement": -69
+      },
+      {
+        "parameter": 21,
+        "duration": 148,
+        "head_displacement": -72
+      },
+      {
+        "parameter": 22,
+        "duration": 153,
+        "head_displacement": -75
+      },
+      {
+        "parameter": 23,
+        "duration": 158,
+        "head_displacement": -78
+      },
+      {
+        "parameter": 24,
+        "duration": 163,
+        "head_displacement": -81
+      },
+      {
+        "parameter": 25,
+        "duration": 168,
+        "head_displacement": -84
+      },
+      {
+        "parameter": 26,
+        "duration": 173,
+        "head_displacement": -87
+      },
+      {
+        "parameter": 27,
+        "duration": 178,
+        "head_displacement": -90
+      },
+      {
+        "parameter": 28,
+        "duration": 183,
+        "head_displacement": -93
+      },
+      {
+        "parameter": 29,
+        "duration": 188,
+        "head_displacement": -96
+      },
+      {
+        "parameter": 30,
+        "duration": 193,
+        "head_displacement": -99
+      },
+      {
+        "parameter": 31,
+        "duration": 198,
+        "head_displacement": -102
+      },
+      {
+        "parameter": 32,
+        "duration": 203,
+        "head_displacement": -105
+      },
+      {
+        "parameter": 33,
+        "duration": 208,
+        "head_displacement": -108
+      },
+      {
+        "parameter": 34,
+        "duration": 213,
+        "head_displacement": -111
+      },
+      {
+        "parameter": 35,
+        "duration": 218,
+        "head_displacement": -114
+      },
+      {
+        "parameter": 36,
+        "duration": 223,
+        "head_displacement": -117
+      },
+      {
+        "parameter": 37,
+        "duration": 228,
+        "head_displacement": -120
+      },
+      {
+        "parameter": 38,
+        "duration": 233,
+        "head_displacement": -123
+      },
+      {
+        "parameter": 39,
+        "duration": 238,
+        "head_displacement": -126
+      },
+      {
+        "parameter": 40,
+        "duration": 243,
+        "head_displacement": -129
+      },
+      {
+        "parameter": 41,
+        "duration": 248,
+        "head_displacement": -132
+      },
+      {
+        "parameter": 42,
+        "duration": 253,
+        "head_displacement": -135
+      },
+      {
+        "parameter": 43,
+        "duration": 258,
+        "head_displacement": -138
+      },
+      {
+        "parameter": 44,
+        "duration": 263,
+        "head_displacement": -141
+      },
+      {
+        "parameter": 45,
+        "duration": 268,
+        "head_displacement": -144
+      },
+      {
+        "parameter": 46,
+        "duration": 273,
+        "head_displacement": -147
+      },
+      {
+        "parameter": 47,
+        "duration": 278,
+        "head_displacement": -150
+      },
+      {
+        "parameter": 48,
+        "duration": 283,
+        "head_displacement": -153
+      },
+      {
+        "parameter": 49,
+        "duration": 288,
+        "head_displacement": -156
+      },
+      {
+        "parameter": 50,
+        "duration": 293,
+        "head_displacement": -159
+      },
+      {
+        "parameter": 51,
+        "duration": 298,
+        "head_displacement": -162
+      },
+      {
+        "parameter": 52,
+        "duration": 303,
+        "head_displacement": -165
+      },
+      {
+        "parameter": 53,
+        "duration": 308,
+        "head_displacement": -168
+      },
+      {
+        "parameter": 54,
+        "duration": 313,
+        "head_displacement": -171
+      },
+      {
+        "parameter": 55,
+        "duration": 318,
+        "head_displacement": -174
+      },
+      {
+        "parameter": 56,
+        "duration": 323,
+        "head_displacement": -177
+      },
+      {
+        "parameter": 57,
+        "duration": 328,
+        "head_displacement": -180
+      },
+      {
+        "parameter": 58,
+        "duration": 333,
+        "head_displacement": -183
+      },
+      {
+        "parameter": 59,
+        "duration": 338,
+        "head_displacement": -186
+      },
+      {
+        "parameter": 60,
+        "duration": 343,
+        "head_displacement": -189
+      },
+      {
+        "parameter": 61,
+        "duration": 348,
+        "head_displacement": -192
+      },
+      {
+        "parameter": 62,
+        "duration": 353,
+        "head_displacement": -195
+      },
+      {
+        "parameter": 63,
+        "duration": 358,
+        "head_displacement": -198
+      },
+      {
+        "parameter": 64,
+        "duration": 363,
+        "head_displacement": -201
+      },
+      {
+        "parameter": 65,
+        "duration": 368,
+        "head_displacement": -204
+      },
+      {
+        "parameter": 66,
+        "duration": 373,
+        "head_displacement": -207
+      },
+      {
+        "parameter": 67,
+        "duration": 378,
+        "head_displacement": -210
+      },
+      {
+        "parameter": 68,
+        "duration": 383,
+        "head_displacement": -213
+      },
+      {
+        "parameter": 69,
+        "duration": 388,
+        "head_displacement": -216
+      },
+      {
+        "parameter": 70,
+        "duration": 393,
+        "head_displacement": -219
+      },
+      {
+        "parameter": 71,
+        "duration": 398,
+        "head_displacement": -222
+      },
+      {
+        "parameter": 72,
+        "duration": 403,
+        "head_displacement": -225
+      },
+      {
+        "parameter": 73,
+        "duration": 408,
+        "head_displacement": -228
+      },
+      {
+        "parameter": 74,
+        "duration": 413,
+        "head_displacement": -231
+      },
+      {
+        "parameter": 75,
+        "duration": 418,
+        "head_displacement": -234
+      },
+      {
+        "parameter": 76,
+        "duration": 423,
+        "head_displacement": -237
+      },
+      {
+        "parameter": 77,
+        "duration": 428,
+        "head_displacement": -240
+      },
+      {
+        "parameter": 78,
+        "duration": 433,
+        "head_displacement": -243
+      },
+      {
+        "parameter": 79,
+        "duration": 438,
+        "head_displacement": -246
+      },
+      {
+        "parameter": 80,
+        "duration": 443,
+        "head_displacement": -249
+      },
+      {
+        "parameter": 81,
+        "duration": 448,
+        "head_displacement": -252
+      },
+      {
+        "parameter": 82,
+        "duration": 453,
+        "head_displacement": -255
+      },
+      {
+        "parameter": 83,
+        "duration": 458,
+        "head_displacement": -258
+      },
+      {
+        "parameter": 84,
+        "duration": 463,
+        "head_displacement": -261
+      },
+      {
+        "parameter": 85,
+        "duration": 468,
+        "head_displacement": -264
+      },
+      {
+        "parameter": 86,
+        "duration": 473,
+        "head_displacement": -267
+      },
+      {
+        "parameter": 87,
+        "duration": 478,
+        "head_displacement": -270
+      },
+      {
+        "parameter": 88,
+        "duration": 483,
+        "head_displacement": -273
+      },
+      {
+        "parameter": 89,
+        "duration": 488,
+        "head_displacement": -276
+      },
+      {
+        "parameter": 90,
+        "duration": 493,
+        "head_displacement": -279
+      },
+      {
+        "parameter": 91,
+        "duration": 498,
+        "head_displacement": -282
+      },
+      {
+        "parameter": 92,
+        "duration": 503,
+        "head_displacement": -285
+      },
+      {
+        "parameter": 93,
+        "duration": 508,
+        "head_displacement": -288
+      },
+      {
+        "parameter": 94,
+        "duration": 513,
+        "head_displacement": -291
+      },
+      {
+        "parameter": 95,
+        "duration": 518,
+        "head_displacement": -294
+      },
+      {
+        "parameter": 96,
+        "duration": 523,
+        "head_displacement": -297
+      },
+      {
+        "parameter": 97,
+        "duration": 528,
+        "head_displacement": -300
+      },
+      {
+        "parameter": 98,
+        "duration": 533,
+        "head_displacement": -303
+      },
+      {
+        "parameter": 99,
+        "duration": 538,
+        "head_displacement": -306
+      },
+      {
+        "parameter": 100,
+        "duration": 543,
+        "head_displacement": -309
+      },
+      {
+        "parameter": 101,
+        "duration": 548,
+        "head_displacement": -312
+      },
+      {
+        "parameter": 102,
+        "duration": 553,
+        "head_displacement": -315
+      },
+      {
+        "parameter": 103,
+        "duration": 558,
+        "head_displacement": -318
+      },
+      {
+        "parameter": 104,
+        "duration": 563,
+        "head_displacement": -321
+      },
+      {
+        "parameter": 105,
+        "duration": 568,
+        "head_displacement": -324
+      },
+      {
+        "parameter": 106,
+        "duration": 573,
+        "head_displacement": -327
+      },
+      {
+        "parameter": 107,
+        "duration": 578,
+        "head_displacement": -330
+      },
+      {
+        "parameter": 108,
+        "duration": 583,
+        "head_displacement": -333
+      },
+      {
+        "parameter": 109,
+        "duration": 588,
+        "head_displacement": -336
+      },
+      {
+        "parameter": 110,
+        "duration": 593,
+        "head_displacement": -339
+      },
+      {
+        "parameter": 111,
+        "duration": 598,
+        "head_displacement": -342
+      },
+      {
+        "parameter": 112,
+        "duration": 603,
+        "head_displacement": -345
+      },
+      {
+        "parameter": 113,
+        "duration": 608,
+        "head_displacement": -348
+      },
+      {
+        "parameter": 114,
+        "duration": 613,
+        "head_displacement": -351
+      },
+      {
+        "parameter": 115,
+        "duration": 618,
+        "head_displacement": -354
+      },
+      {
+        "parameter": 116,
+        "duration": 623,
+        "head_displacement": -357
+      },
+      {
+        "parameter": 117,
+        "duration": 628,
+        "head_displacement": -360
+      },
+      {
+        "parameter": 118,
+        "duration": 633,
+        "head_displacement": -363
+      },
+      {
+        "parameter": 119,
+        "duration": 638,
+        "head_displacement": -366
+      },
+      {
+        "parameter": 120,
+        "duration": 643,
+        "head_displacement": -369
+      },
+      {
+        "parameter": 121,
+        "duration": 648,
+        "head_displacement": -372
+      },
+      {
+        "parameter": 122,
+        "duration": 653,
+        "head_displacement": -375
+      },
+      {
+        "parameter": 123,
+        "duration": 658,
+        "head_displacement": -378
+      },
+      {
+        "parameter": 124,
+        "duration": 663,
+        "head_displacement": -381
+      },
+      {
+        "parameter": 125,
+        "duration": 668,
+        "head_displacement": -384
+      },
+      {
+        "parameter": 126,
+        "duration": 673,
+        "head_displacement": -387
+      },
+      {
+        "parameter": 127,
+        "duration": 678,
+        "head_displacement": -390
+      },
+      {
+        "parameter": 128,
+        "duration": 683,
+        "head_displacement": -393
+      }
+    ],
+    "exit": [
+      {
+        "parameter": 0,
+        "duration": 6,
+        "head_displacement": 6
+      },
+      {
+        "parameter": 1,
+        "duration": 9,
+        "head_displacement": 9
+      },
+      {
+        "parameter": 2,
+        "duration": 12,
+        "head_displacement": 12
+      },
+      {
+        "parameter": 3,
+        "duration": 15,
+        "head_displacement": 15
+      },
+      {
+        "parameter": 4,
+        "duration": 18,
+        "head_displacement": 18
+      },
+      {
+        "parameter": 5,
+        "duration": 21,
+        "head_displacement": 21
+      },
+      {
+        "parameter": 6,
+        "duration": 24,
+        "head_displacement": 24
+      },
+      {
+        "parameter": 7,
+        "duration": 27,
+        "head_displacement": 27
+      },
+      {
+        "parameter": 8,
+        "duration": 30,
+        "head_displacement": 30
+      },
+      {
+        "parameter": 9,
+        "duration": 33,
+        "head_displacement": 33
+      },
+      {
+        "parameter": 10,
+        "duration": 36,
+        "head_displacement": 36
+      },
+      {
+        "parameter": 11,
+        "duration": 39,
+        "head_displacement": 39
+      },
+      {
+        "parameter": 12,
+        "duration": 42,
+        "head_displacement": 42
+      },
+      {
+        "parameter": 13,
+        "duration": 45,
+        "head_displacement": 45
+      },
+      {
+        "parameter": 14,
+        "duration": 48,
+        "head_displacement": 48
+      },
+      {
+        "parameter": 15,
+        "duration": 51,
+        "head_displacement": 51
+      },
+      {
+        "parameter": 16,
+        "duration": 54,
+        "head_displacement": 54
+      },
+      {
+        "parameter": 17,
+        "duration": 57,
+        "head_displacement": 57
+      },
+      {
+        "parameter": 18,
+        "duration": 60,
+        "head_displacement": 60
+      },
+      {
+        "parameter": 19,
+        "duration": 63,
+        "head_displacement": 63
+      },
+      {
+        "parameter": 20,
+        "duration": 66,
+        "head_displacement": 66
+      },
+      {
+        "parameter": 21,
+        "duration": 69,
+        "head_displacement": 69
+      },
+      {
+        "parameter": 22,
+        "duration": 72,
+        "head_displacement": 72
+      },
+      {
+        "parameter": 23,
+        "duration": 75,
+        "head_displacement": 75
+      },
+      {
+        "parameter": 24,
+        "duration": 78,
+        "head_displacement": 78
+      },
+      {
+        "parameter": 25,
+        "duration": 81,
+        "head_displacement": 81
+      },
+      {
+        "parameter": 26,
+        "duration": 84,
+        "head_displacement": 84
+      },
+      {
+        "parameter": 27,
+        "duration": 87,
+        "head_displacement": 87
+      },
+      {
+        "parameter": 28,
+        "duration": 90,
+        "head_displacement": 90
+      },
+      {
+        "parameter": 29,
+        "duration": 93,
+        "head_displacement": 93
+      },
+      {
+        "parameter": 30,
+        "duration": 96,
+        "head_displacement": 96
+      },
+      {
+        "parameter": 31,
+        "duration": 99,
+        "head_displacement": 99
+      },
+      {
+        "parameter": 32,
+        "duration": 102,
+        "head_displacement": 102
+      },
+      {
+        "parameter": 33,
+        "duration": 105,
+        "head_displacement": 105
+      },
+      {
+        "parameter": 34,
+        "duration": 108,
+        "head_displacement": 108
+      },
+      {
+        "parameter": 35,
+        "duration": 111,
+        "head_displacement": 111
+      },
+      {
+        "parameter": 36,
+        "duration": 114,
+        "head_displacement": 114
+      },
+      {
+        "parameter": 37,
+        "duration": 117,
+        "head_displacement": 117
+      },
+      {
+        "parameter": 38,
+        "duration": 120,
+        "head_displacement": 120
+      },
+      {
+        "parameter": 39,
+        "duration": 123,
+        "head_displacement": 123
+      },
+      {
+        "parameter": 40,
+        "duration": 126,
+        "head_displacement": 126
+      },
+      {
+        "parameter": 41,
+        "duration": 129,
+        "head_displacement": 129
+      },
+      {
+        "parameter": 42,
+        "duration": 132,
+        "head_displacement": 132
+      },
+      {
+        "parameter": 43,
+        "duration": 135,
+        "head_displacement": 135
+      },
+      {
+        "parameter": 44,
+        "duration": 138,
+        "head_displacement": 138
+      },
+      {
+        "parameter": 45,
+        "duration": 141,
+        "head_displacement": 141
+      },
+      {
+        "parameter": 46,
+        "duration": 144,
+        "head_displacement": 144
+      },
+      {
+        "parameter": 47,
+        "duration": 147,
+        "head_displacement": 147
+      },
+      {
+        "parameter": 48,
+        "duration": 150,
+        "head_displacement": 150
+      },
+      {
+        "parameter": 49,
+        "duration": 153,
+        "head_displacement": 153
+      },
+      {
+        "parameter": 50,
+        "duration": 156,
+        "head_displacement": 156
+      },
+      {
+        "parameter": 51,
+        "duration": 159,
+        "head_displacement": 159
+      },
+      {
+        "parameter": 52,
+        "duration": 162,
+        "head_displacement": 162
+      },
+      {
+        "parameter": 53,
+        "duration": 165,
+        "head_displacement": 165
+      },
+      {
+        "parameter": 54,
+        "duration": 168,
+        "head_displacement": 168
+      },
+      {
+        "parameter": 55,
+        "duration": 171,
+        "head_displacement": 171
+      },
+      {
+        "parameter": 56,
+        "duration": 174,
+        "head_displacement": 174
+      },
+      {
+        "parameter": 57,
+        "duration": 177,
+        "head_displacement": 177
+      },
+      {
+        "parameter": 58,
+        "duration": 180,
+        "head_displacement": 180
+      },
+      {
+        "parameter": 59,
+        "duration": 183,
+        "head_displacement": 183
+      },
+      {
+        "parameter": 60,
+        "duration": 186,
+        "head_displacement": 186
+      },
+      {
+        "parameter": 61,
+        "duration": 189,
+        "head_displacement": 189
+      },
+      {
+        "parameter": 62,
+        "duration": 192,
+        "head_displacement": 192
+      },
+      {
+        "parameter": 63,
+        "duration": 195,
+        "head_displacement": 195
+      },
+      {
+        "parameter": 64,
+        "duration": 198,
+        "head_displacement": 198
+      },
+      {
+        "parameter": 65,
+        "duration": 201,
+        "head_displacement": 201
+      },
+      {
+        "parameter": 66,
+        "duration": 204,
+        "head_displacement": 204
+      },
+      {
+        "parameter": 67,
+        "duration": 207,
+        "head_displacement": 207
+      },
+      {
+        "parameter": 68,
+        "duration": 210,
+        "head_displacement": 210
+      },
+      {
+        "parameter": 69,
+        "duration": 213,
+        "head_displacement": 213
+      },
+      {
+        "parameter": 70,
+        "duration": 216,
+        "head_displacement": 216
+      },
+      {
+        "parameter": 71,
+        "duration": 219,
+        "head_displacement": 219
+      },
+      {
+        "parameter": 72,
+        "duration": 222,
+        "head_displacement": 222
+      },
+      {
+        "parameter": 73,
+        "duration": 225,
+        "head_displacement": 225
+      },
+      {
+        "parameter": 74,
+        "duration": 228,
+        "head_displacement": 228
+      },
+      {
+        "parameter": 75,
+        "duration": 231,
+        "head_displacement": 231
+      },
+      {
+        "parameter": 76,
+        "duration": 234,
+        "head_displacement": 234
+      },
+      {
+        "parameter": 77,
+        "duration": 237,
+        "head_displacement": 237
+      },
+      {
+        "parameter": 78,
+        "duration": 240,
+        "head_displacement": 240
+      },
+      {
+        "parameter": 79,
+        "duration": 243,
+        "head_displacement": 243
+      },
+      {
+        "parameter": 80,
+        "duration": 246,
+        "head_displacement": 246
+      },
+      {
+        "parameter": 81,
+        "duration": 249,
+        "head_displacement": 249
+      },
+      {
+        "parameter": 82,
+        "duration": 252,
+        "head_displacement": 252
+      },
+      {
+        "parameter": 83,
+        "duration": 255,
+        "head_displacement": 255
+      },
+      {
+        "parameter": 84,
+        "duration": 258,
+        "head_displacement": 258
+      },
+      {
+        "parameter": 85,
+        "duration": 261,
+        "head_displacement": 261
+      },
+      {
+        "parameter": 86,
+        "duration": 264,
+        "head_displacement": 264
+      },
+      {
+        "parameter": 87,
+        "duration": 267,
+        "head_displacement": 267
+      },
+      {
+        "parameter": 88,
+        "duration": 270,
+        "head_displacement": 270
+      },
+      {
+        "parameter": 89,
+        "duration": 273,
+        "head_displacement": 273
+      },
+      {
+        "parameter": 90,
+        "duration": 276,
+        "head_displacement": 276
+      },
+      {
+        "parameter": 91,
+        "duration": 279,
+        "head_displacement": 279
+      },
+      {
+        "parameter": 92,
+        "duration": 282,
+        "head_displacement": 282
+      },
+      {
+        "parameter": 93,
+        "duration": 285,
+        "head_displacement": 285
+      },
+      {
+        "parameter": 94,
+        "duration": 288,
+        "head_displacement": 288
+      },
+      {
+        "parameter": 95,
+        "duration": 291,
+        "head_displacement": 291
+      },
+      {
+        "parameter": 96,
+        "duration": 294,
+        "head_displacement": 294
+      },
+      {
+        "parameter": 97,
+        "duration": 297,
+        "head_displacement": 297
+      },
+      {
+        "parameter": 98,
+        "duration": 300,
+        "head_displacement": 300
+      },
+      {
+        "parameter": 99,
+        "duration": 303,
+        "head_displacement": 303
+      },
+      {
+        "parameter": 100,
+        "duration": 306,
+        "head_displacement": 306
+      },
+      {
+        "parameter": 101,
+        "duration": 309,
+        "head_displacement": 309
+      },
+      {
+        "parameter": 102,
+        "duration": 312,
+        "head_displacement": 312
+      },
+      {
+        "parameter": 103,
+        "duration": 315,
+        "head_displacement": 315
+      },
+      {
+        "parameter": 104,
+        "duration": 318,
+        "head_displacement": 318
+      },
+      {
+        "parameter": 105,
+        "duration": 321,
+        "head_displacement": 321
+      },
+      {
+        "parameter": 106,
+        "duration": 324,
+        "head_displacement": 324
+      },
+      {
+        "parameter": 107,
+        "duration": 327,
+        "head_displacement": 327
+      },
+      {
+        "parameter": 108,
+        "duration": 330,
+        "head_displacement": 330
+      },
+      {
+        "parameter": 109,
+        "duration": 333,
+        "head_displacement": 333
+      },
+      {
+        "parameter": 110,
+        "duration": 336,
+        "head_displacement": 336
+      },
+      {
+        "parameter": 111,
+        "duration": 339,
+        "head_displacement": 339
+      },
+      {
+        "parameter": 112,
+        "duration": 342,
+        "head_displacement": 342
+      },
+      {
+        "parameter": 113,
+        "duration": 345,
+        "head_displacement": 345
+      },
+      {
+        "parameter": 114,
+        "duration": 348,
+        "head_displacement": 348
+      },
+      {
+        "parameter": 115,
+        "duration": 351,
+        "head_displacement": 351
+      },
+      {
+        "parameter": 116,
+        "duration": 354,
+        "head_displacement": 354
+      },
+      {
+        "parameter": 117,
+        "duration": 357,
+        "head_displacement": 357
+      },
+      {
+        "parameter": 118,
+        "duration": 360,
+        "head_displacement": 360
+      },
+      {
+        "parameter": 119,
+        "duration": 363,
+        "head_displacement": 363
+      },
+      {
+        "parameter": 120,
+        "duration": 366,
+        "head_displacement": 366
+      },
+      {
+        "parameter": 121,
+        "duration": 369,
+        "head_displacement": 369
+      },
+      {
+        "parameter": 122,
+        "duration": 372,
+        "head_displacement": 372
+      },
+      {
+        "parameter": 123,
+        "duration": 375,
+        "head_displacement": 375
+      },
+      {
+        "parameter": 124,
+        "duration": 378,
+        "head_displacement": 378
+      },
+      {
+        "parameter": 125,
+        "duration": 381,
+        "head_displacement": 381
+      },
+      {
+        "parameter": 126,
+        "duration": 384,
+        "head_displacement": 384
+      },
+      {
+        "parameter": 127,
+        "duration": 387,
+        "head_displacement": 387
+      },
+      {
+        "parameter": 128,
+        "duration": 390,
+        "head_displacement": 390
+      }
+    ],
+    "clean_macro": [
+      {
+        "parameter": 0,
+        "duration": 238,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 1,
+        "duration": 678,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 2,
+        "duration": 1334,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 3,
+        "duration": 2206,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 4,
+        "duration": 3294,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 5,
+        "duration": 4598,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 6,
+        "duration": 6118,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 7,
+        "duration": 7854,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 8,
+        "duration": 9806,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 9,
+        "duration": 11974,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 10,
+        "duration": 14358,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 11,
+        "duration": 16958,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 12,
+        "duration": 19774,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 13,
+        "duration": 22806,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 14,
+        "duration": 26054,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 15,
+        "duration": 29518,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 16,
+        "duration": 33198,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 17,
+        "duration": 37094,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 18,
+        "duration": 41206,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 19,
+        "duration": 45534,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 20,
+        "duration": 50078,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 21,
+        "duration": 54838,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 22,
+        "duration": 59814,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 23,
+        "duration": 65006,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 24,
+        "duration": 70414,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 25,
+        "duration": 76038,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 26,
+        "duration": 81878,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 27,
+        "duration": 87934,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 28,
+        "duration": 94206,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 29,
+        "duration": 100694,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 30,
+        "duration": 107398,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 31,
+        "duration": 114318,
+        "head_displacement": 2
+      },
+      {
+        "parameter": 32,
+        "duration": 121454,
+        "head_displacement": 2
+      }
+    ]
+  },
+  "generated_complete_configuration_fixtures": 33
+}

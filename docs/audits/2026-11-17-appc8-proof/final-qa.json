@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "pdf_pages": 12,
+  "pdf_author": "Darryl Novotny",
+  "source_theorem_counts": {
+    "lean": 103,
+    "lean_phase4": 140
+  },
+  "kernel_constants": {
+    "lean": 188,
+    "lean_phase4": 264
+  },
+  "new_source_theorems": 21,
+  "principal_theorem_axioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "bibliography_entries": 23,
+  "bibliography_unchanged": true,
+  "compiler_kernels_unchanged": true,
+  "pdf_overfull_underfull_unresolved": 0,
+  "visual_review": "All 12 pages rendered and inspected.",
+  "validation": "Clean builds of both libraries; both negative axiom tests; all seven mathematical suites; revision regressions; AppC 7 and AppC 8 raw checks and 192 independent Lean execution fixtures each; static paper audit.",
+  "scope": "Raw shuttle, repeated rounds, and clean middle stage under stated guards. Reset, exit, and blank-tape behavior remain open; no first-return claim."
+}

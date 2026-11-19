@@ -1,0 +1,161 @@
+{
+  "cases": 1107,
+  "failures": [
+    {
+      "input": [
+        6,
+        1,
+        [
+          14
+        ]
+      ],
+      "output": {
+        "status": "return",
+        "k": 0,
+        "m": 4,
+        "tail": [
+          35,
+          2
+        ],
+        "duration": 816
+      }
+    },
+    {
+      "input": [
+        7,
+        1,
+        [
+          14
+        ]
+      ],
+      "output": {
+        "status": "return",
+        "k": 0,
+        "m": 7,
+        "tail": [
+          35,
+          2
+        ],
+        "duration": 830
+      }
+    },
+    {
+      "input": [
+        8,
+        1,
+        [
+          14
+        ]
+      ],
+      "output": {
+        "status": "return",
+        "k": 0,
+        "m": 10,
+        "tail": [
+          35,
+          2
+        ],
+        "duration": 844
+      }
+    },
+    {
+      "input": [
+        9,
+        1,
+        [
+          20,
+          2
+        ]
+      ],
+      "output": {
+        "status": "return",
+        "k": 0,
+        "m": 4,
+        "tail": [
+          53,
+          2
+        ],
+        "duration": 1616
+      }
+    },
+    {
+      "input": [
+        9,
+        1,
+        [
+          14
+        ]
+      ],
+      "output": {
+        "status": "return",
+        "k": 0,
+        "m": 13,
+        "tail": [
+          35,
+          2
+        ],
+        "duration": 858
+      }
+    },
+    {
+      "input": [
+        10,
+        1,
+        [
+          20,
+          2
+        ]
+      ],
+      "output": {
+        "status": "return",
+        "k": 0,
+        "m": 7,
+        "tail": [
+          53,
+          2
+        ],
+        "duration": 1630
+      }
+    },
+    {
+      "input": [
+        10,
+        1,
+        [
+          14
+        ]
+      ],
+      "output": {
+        "status": "return",
+        "k": 0,
+        "m": 16,
+        "tail": [
+          35,
+          2
+        ],
+        "duration": 872
+      }
+    },
+    {
+      "input": [
+        11,
+        1,
+        [
+          20,
+          2
+        ]
+      ],
+      "output": {
+        "status": "return",
+        "k": 0,
+        "m": 10,
+        "tail": [
+          53,
+          2
+        ],
+        "duration": 1644
+      }
+    }
+  ],
+  "scope": "Bounded phase-correlated suffix guard probes; not closure."
+}

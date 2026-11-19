@@ -1,0 +1,14 @@
+{
+  "suite": "phase3",
+  "unit": "raw-TM test invocations (not globally deduplicated)",
+  "counts": {
+    "verify_t3_15": 1375,
+    "verify_t3_14": 670,
+    "verify_appc1": 1085,
+    "verify_appc7": 42,
+    "verify_appc6_appc5_bmo7": 118,
+    "verify_t3_12": 961,
+    "verify_bmo1_bmo5_t33": 1020
+  },
+  "total": 5271
+}

@@ -1,0 +1,14 @@
+info: cryptid_solve: no previous manifest, creating one from scratch
+info: toolchain not updated; already up-to-date
+✔ [2/13] Built CryptidSolve.Basic
+✔ [3/13] Built CryptidSolve.Tactic
+✔ [4/13] Built CryptidSolve.CryptidA11
+✔ [5/13] Built CryptidSolve.FrontierHoldouts
+✔ [6/13] Built CryptidSolve.Stage1Invariants
+✔ [7/13] Built CryptidSolve.Stage3Aperiodic
+✔ [8/13] Built CryptidSolve.Stage4GhostAndPortals
+✔ [9/13] Built CryptidSolve.CliffordBridge
+✔ [10/13] Built CryptidSolve
+ℹ [12/13] Built CryptidSolve.KernelAudit
+info: ././././CryptidSolve/KernelAudit.lean:16:0: [KERNEL AUDIT PASS] Verified 188 CryptidSolve theorems in Lean 4 kernel (0 sorryAx, 0 custom axioms). Core axioms used: [propext, Quot.sound, Classical.choice]
+Build completed successfully.

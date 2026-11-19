@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-18",
+  "terminal_44_to_104": "PROVED for every k>=18; duration 12k+5334 in input-block convention",
+  "terminal_104_to_239": "PROVED for every k>=43; duration 12k+27764 in input-block convention",
+  "universal_local_carries": {
+    "even": "6q+2 -> 9q+5, consumes q left blocks, duration 27q^2+44q+19",
+    "odd": "6q+5 -> paired suffix [9q+8,2], consumes q+1 left blocks, duration 27q^2+80q+61"
+  },
+  "complete_terminal_return": "PROVED for every k and terminal length 3r+2, for both markers and at the C boundary; includes short-budget cases",
+  "generated_grammar": "Arithmetic terminal, paired and emitted suffix families; active-phase restrictions retained",
+  "closed_branches": [
+    "pure",
+    "seed [2]",
+    "all single terminal 3r+2",
+    "emitted one-prefix",
+    "emitted paired-prefix",
+    "generated fueled residual",
+    "terminal residual"
+  ],
+  "remaining": [
+    {
+      "name": "PairedOneReturn",
+      "statement": "For every k,q, C_tail(k,1,0 1^(9q+8) 0 1^2) makes positive-time return to GeneratedBoundary.",
+      "status": "OPEN"
+    },
+    {
+      "name": "PairedThreeReturn",
+      "statement": "For every k,q, C_tail(k,3,0 1^(9q+8) 0 1^2) makes positive-time return to GeneratedBoundary.",
+      "status": "OPEN"
+    }
+  ],
+  "closure_reduction": "Both remaining predicates imply MacroClosed GeneratedCandidate, raw blank survival, and upstream IsNotHalt. The predicates are premises, not axioms.",
+  "blank_defined_prefix": 97311884181777598,
+  "actual_frontier": {
+    "k": 134241197,
+    "m": 3,
+    "tail": [
+      359,
+      2
+    ],
+    "paired_parameter_q": 39
+  },
+  "tests": {
+    "exact_time_complete_tape_checks": 2220,
+    "terminal_bounded_return_probes": 1025,
+    "paired_bounded_return_probes": 2050,
+    "all_probes_returned_to_grammar": true,
+    "limits": "200000 transitions per raw segment; at most 20 boundary visits per input"
+  },
+  "blank_global_nonhalting": "OPEN",
+  "first_return_minimality": "NOT CLAIMED",
+  "counterexample_exclusion": "Prior halting boundary and residual tapes remain excluded from GeneratedCandidate by Lean theorems."
+}

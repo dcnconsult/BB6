@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "pdf_pages": 17,
+  "pdf_author": "Darryl Novotny",
+  "source_theorem_counts": {
+    "lean": 103,
+    "lean_phase4": 213
+  },
+  "kernel_constants": {
+    "lean": 188,
+    "lean_phase4": 339
+  },
+  "new_source_theorems": 31,
+  "principal_raw_theorem_axioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "parity_lemma_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "bibliography_entries": 23,
+  "bibliography_unchanged": true,
+  "compiler_kernels_unchanged": true,
+  "pdf_overfull_underfull_unresolved": 0,
+  "visual_review": "All 17 pages rendered and inspected.",
+  "validation": "Clean builds of both libraries; both negative axiom tests; all seven mathematical suites; revision regressions; AppC 7 and AppC 8 raw checks and 192 independent Lean execution fixtures each; 128 resets, 129 exits, 33 full macros and 33 complete-configuration clean-macro Lean fixtures; 10 independent direct blank-run Lean fixtures; 65 first collapses, 65 terminal collapses, 33 full excursions, 900 tailed repeated-shuttle cases and 22 independent odd-sector Lean fixtures; 134 new residue-branch checks, six new complete blank checkpoints, and 22 independent residue-branch Lean fixtures (471 total fixtures); static paper audit.",
+  "scope": "Uniform k=4a+2 suffix-bearing reduction; complete k=16b+6 excursion and k=4a+1 carry branch. Actual blank clean entry D(696) at 2600695 and full clean-macro output D(1046) at 5890701, with all earlier prefixes defined. Other complete residue branches and global survival remain open; no first-entry minimality claim."
+}

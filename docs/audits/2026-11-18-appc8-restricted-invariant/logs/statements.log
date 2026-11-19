@@ -1,0 +1,88 @@
+BB6Interop.AppC8Restricted.residual_cycle (l t : List Bool) (b n : ℕ) :
+  CryptidSolvePhase4.AppC8Raw.run (18 * b + 47) (phase (CryptidSolvePhase4.AppC8Raw.back 1 l) b (n + 7) t) =
+    some (phase l (b + 3) (n + 1) t)
+'BB6Interop.AppC8Restricted.residual_cycle' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.residual_drain (a b n : ℕ) (l t : List Bool) :
+  CryptidSolvePhase4.AppC8Raw.run (27 * a * a + 20 * a + 18 * a * b)
+      (phase (CryptidSolvePhase4.AppC8Raw.back a l) b (6 * a + n + 7) t) =
+    some (phase l (b + 3 * a) (n + 7) t)
+'BB6Interop.AppC8Restricted.residual_drain' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.fueled_cycle (a b n : ℕ) (marker t : List Bool)
+  (hm : marker = BB6Interop.AppC8RunLists.firstMarker ∨ marker = BB6Interop.AppC8RunLists.secondMarker)
+  (ht : BB6Interop.AppC8RunLists.GoodTail t) :
+  ∃ d,
+    CryptidSolvePhase4.AppC8Raw.run (18 * b + 47)
+          (phase (CryptidSolvePhase4.AppC8Raw.back (a + 1) marker) b (6 * (a + 1) + n + 7) t) =
+        some d ∧
+      Fueled d
+'BB6Interop.AppC8Restricted.fueled_cycle' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.guarded_defect_progress (marker : List Bool)
+  (hm : marker = BB6Interop.AppC8RunLists.firstMarker ∨ marker = BB6Interop.AppC8RunLists.secondMarker) (k n : ℕ)
+  (t : List Bool) (ht : BB6Interop.AppC8RunLists.GoodTail t) :
+  BB6Interop.AppC8RunLists.Progress
+    { st := CryptidSolvePhase4.AppC8Raw.State.E, left := CryptidSolvePhase4.AppC8Raw.back k marker,
+      right := true :: false :: CryptidSolvePhase4.AppC8Raw.ones (6 * k + n + 5) t }
+'BB6Interop.AppC8Restricted.guarded_defect_progress' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.first_bad_excluded :
+  ¬GuardedDefect BB6Interop.AppC8RunLists.firstMarker BB6Interop.AppC8ResidualTape.badFirst
+'BB6Interop.AppC8Restricted.first_bad_excluded' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.second_bad_excluded :
+  ¬GuardedDefect BB6Interop.AppC8RunLists.secondMarker BB6Interop.AppC8ResidualTape.badSecond
+'BB6Interop.AppC8Restricted.second_bad_excluded' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.blank_fueled_entry :
+  CryptidSolvePhase4.AppC8Raw.run 2286 CryptidSolvePhase4.AppC8Raw.blankCfg =
+    some (phase (CryptidSolvePhase4.AppC8Raw.back 4 BB6Interop.AppC8RunLists.firstMarker) 2 40 [])
+'BB6Interop.AppC8Restricted.blank_fueled_entry' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.blank_fueled_member :
+  Fueled (phase (CryptidSolvePhase4.AppC8Raw.back 4 BB6Interop.AppC8RunLists.firstMarker) 2 40 [])
+'BB6Interop.AppC8Restricted.blank_fueled_member' does not depend on any axioms
+BB6Interop.AppC8Restricted.restricted_fuel_return {c : CryptidSolvePhase4.AppC8Raw.Cfg} (hc : RestrictedFuel c) :
+  ∃ t d, 0 < t ∧ CryptidSolvePhase4.AppC8Raw.run t c = some d ∧ CoreBoundary d
+'BB6Interop.AppC8Restricted.restricted_fuel_return' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.restricted_fuel_cycle (a b n : ℕ) (marker : List Bool) (ns : List ℕ)
+  (hm : marker = BB6Interop.AppC8RunLists.firstMarker ∨ marker = BB6Interop.AppC8RunLists.secondMarker)
+  (hs : CoreSuffix ns) :
+  ∃ d,
+    CryptidSolvePhase4.AppC8Raw.run (18 * b + 47)
+          (phase (CryptidSolvePhase4.AppC8Raw.back (a + 1) marker) b (6 * (a + 1) + n + 7)
+            (BB6Interop.AppC8RunLists.suffix ns)) =
+        some d ∧
+      RestrictedFuel d
+'BB6Interop.AppC8Restricted.restricted_fuel_cycle' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.short_bad_not_candidate : ¬Candidate BB6Interop.AppC8ResidualTape.shortBadBoundary
+'BB6Interop.AppC8Restricted.short_bad_not_candidate' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.bad_residual_not_candidate :
+  ¬Candidate (BB6Interop.AppC8ResidualTape.residual BB6Interop.AppC8RunLists.firstMarker 0 0 [4, 4, 1])
+'BB6Interop.AppC8Restricted.bad_residual_not_candidate' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.terminal_return_candidate {c : CryptidSolvePhase4.AppC8Raw.Cfg} (hc : TerminalResidual c) :
+  ∃ t d, 0 < t ∧ CryptidSolvePhase4.AppC8Raw.run t c = some d ∧ Candidate d
+'BB6Interop.AppC8Restricted.terminal_return_candidate' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.three_eight (k : ℕ) :
+  CryptidSolvePhase4.AppC8Raw.run (12 * (k + 2) + 116)
+      (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg (k + 2) 3 (CryptidSolvePhase4.AppC8Raw.defectTail 8)) =
+    some (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg (k + 2) 1 (false :: CryptidSolvePhase4.AppC8Raw.ones 17 []))
+'BB6Interop.AppC8Restricted.three_eight' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.seventeen_collapse (k : ℕ) :
+  CryptidSolvePhase4.AppC8Raw.run (8 * (k + 4) + 323)
+      (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg (k + 4) 1 (false :: CryptidSolvePhase4.AppC8Raw.ones 17 [])) =
+    some (BB6Interop.AppC8RunLists.runListCfg 0 0 [3 * k + 4, 25, 1])
+'BB6Interop.AppC8Restricted.seventeen_collapse' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.three_twenty_six (k : ℕ) :
+  CryptidSolvePhase4.AppC8Raw.run (12 * (k + 5) + 644)
+      (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg (k + 5) 3 (CryptidSolvePhase4.AppC8Raw.defectTail 26)) =
+    some (CryptidSolvePhase4.AppC8Raw.shuttleTailCfg (k + 2) 1 (false :: CryptidSolvePhase4.AppC8Raw.ones 44 []))
+'BB6Interop.AppC8Restricted.three_twenty_six' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.blank_restricted_frontier :
+  CryptidSolvePhase4.AppC8Raw.run 43249783462218928 CryptidSolvePhase4.AppC8Raw.blankCfg =
+    some (BB6Interop.AppC8RunLists.runListCfg 89494232 0 [43])
+'BB6Interop.AppC8Restricted.blank_restricted_frontier' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.blank_restricted_prefix (j : ℕ) (hj : j ≤ 43249783462218928) :
+  ∃ d, CryptidSolvePhase4.AppC8Raw.run j CryptidSolvePhase4.AppC8Raw.blankCfg = some d
+'BB6Interop.AppC8Restricted.blank_restricted_prefix' depends on axioms: [propext, Quot.sound]
+BB6Interop.AppC8Restricted.upstream_restricted_frontier :
+  BusyBeaver.ReachesIn BB6Interop.AppC8.machine 43249783462218928 (BusyBeaver.init [])
+    (BB6Interop.AppC8.encode (BB6Interop.AppC8RunLists.runListCfg 89494232 0 [43]))
+'BB6Interop.AppC8Restricted.upstream_restricted_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+BB6Interop.AppC8Restricted.blank_survives_of_candidate_closure (hc : CandidateClosure) (j : ℕ) :
+  ∃ d, CryptidSolvePhase4.AppC8Raw.run j CryptidSolvePhase4.AppC8Raw.blankCfg = some d
+'BB6Interop.AppC8Restricted.blank_survives_of_candidate_closure' depends on axioms: [propext, Quot.sound]

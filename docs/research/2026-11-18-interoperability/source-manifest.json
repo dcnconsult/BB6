@@ -1,0 +1,760 @@
+{
+  "date": "2026-11-18",
+  "arxiv": "2610.22603v2",
+  "commit": "3647718b5df22e1a61462dec0376bd204526285a",
+  "commit_date": "2026-11-12T15:39:49Z",
+  "tree_truncated": false,
+  "indexed_machine_filename_count": 308,
+  "identity_method": "Exact transition tables; 120 state permutations fixing initial A, each with and without global L/R reflection. HHH normalized to ---; blank 0 preserved. No symbol complement, arbitrary simulation equivalence, content-wide search or worldwide novelty claim.",
+  "upstream_build_run": false,
+  "local_toolchain": "leanprover/lean4:v4.16.0",
+  "upstream_toolchain": "leanprover/lean4:v4.35.0-rc4",
+  "machines": [
+    {
+      "label": "AppC7",
+      "machine": "1RB1RC_1LC0LE_0RA1RD_1RF1LB_1LD0LA_---0RC",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/NonHalt/M_1RB1RC_1LC0LE_0RA1RD_1RF1LB_1LD0LA_HHH0RC.lean",
+          "blob_sha": "eb046553c2c5972882d79ae431b0e2c1535c20a9",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 70,
+          "text": "theorem is_does_not_halt : IsNotHalt target_tm := by"
+        },
+        {
+          "line": 75,
+          "text": "theorem is_not_halt : IsNotHalt target := is_does_not_halt"
+        }
+      ]
+    },
+    {
+      "label": "AppC8",
+      "machine": "1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---",
+      "matches": [],
+      "source_read": false,
+      "theorems": []
+    },
+    {
+      "label": "Bouncer",
+      "machine": "1RB0RF_0RE0RE_1RF1LD_0LC0LA_0LD1RF_0LA---",
+      "matches": [],
+      "source_read": false,
+      "theorems": []
+    },
+    {
+      "label": "A2",
+      "machine": "1RB1RD_0LC1RA_0RA1LC_1RA1LE_1RF0LD_---0RE",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB1RD_0LC1RA_0RA1LC_1RA1LE_1RF0LD_HHH0RE.lean",
+          "blob_sha": "746fe1280cab2ec2aa69e7f9ba9c9a626beaffbd",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 797,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 807,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 907,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 920,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        },
+        {
+          "line": 1230,
+          "text": "theorem is_valid_highLevel_acceleration :"
+        },
+        {
+          "line": 1278,
+          "text": "theorem isHalt_iff_highLevel_acceleration :"
+        },
+        {
+          "line": 1284,
+          "text": "theorem acceleration_iff_highLevel_acceleration :"
+        }
+      ]
+    },
+    {
+      "label": "A10",
+      "machine": "1RB1LE_1RC1RA_0LD1RB_1LE1LD_1RF0LA_---0RE",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB1LE_1RC1RA_0LD1RB_1LE1LD_1RF0LA_HHH0RE.lean",
+          "blob_sha": "2ecddd35a9625a429738ba16af15c7e8d7001fe6",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 1408,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 1419,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 1662,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 1792,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        },
+        {
+          "line": 2037,
+          "text": "theorem is_valid_highLevel_acceleration :"
+        },
+        {
+          "line": 2089,
+          "text": "theorem isHalt_iff_highLevel_acceleration :"
+        },
+        {
+          "line": 2095,
+          "text": "theorem acceleration_iff_highLevel_acceleration :"
+        }
+      ]
+    },
+    {
+      "label": "A11",
+      "machine": "1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_---0LA",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_HHH0LA.lean",
+          "blob_sha": "913c1ba99c5e7401abee9c8c5cb571b94a399340",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 908,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 920,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 1030,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 1151,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        },
+        {
+          "line": 1526,
+          "text": "theorem is_valid_highLevel_acceleration :"
+        },
+        {
+          "line": 1541,
+          "text": "theorem isHalt_iff_highLevel_acceleration :"
+        },
+        {
+          "line": 1547,
+          "text": "theorem acceleration_iff_highLevel_acceleration :"
+        }
+      ]
+    },
+    {
+      "label": "A1",
+      "machine": "1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_HHH1RD.lean",
+          "blob_sha": "46c00e527fc3db1380d774020f6d3e10cca15c5c",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 1152,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 1161,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 1203,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 1275,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        },
+        {
+          "line": 1549,
+          "text": "theorem is_valid_highLevel_acceleration :"
+        },
+        {
+          "line": 1588,
+          "text": "theorem isHalt_iff_highLevel_acceleration :"
+        },
+        {
+          "line": 1594,
+          "text": "theorem acceleration_iff_highLevel_acceleration :"
+        }
+      ]
+    },
+    {
+      "label": "A3",
+      "machine": "1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB1RB_1LC0RE_HHH1LD_0RA1LB_1RA1LF_0LE1LE.lean",
+          "blob_sha": "a97e482c08289161c030f03ec05379778f375bc2",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 645,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 655,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 720,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 863,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        },
+        {
+          "line": 908,
+          "text": "theorem is_valid_highLevel_acceleration :"
+        },
+        {
+          "line": 964,
+          "text": "theorem isHalt_iff_highLevel_acceleration :"
+        },
+        {
+          "line": 970,
+          "text": "theorem acceleration_iff_highLevel_acceleration :"
+        }
+      ]
+    },
+    {
+      "label": "A4",
+      "machine": "1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB0LF_1LC1RA_0RE0RD_HHH1LE_1LF1RC_1LC1LA.lean",
+          "blob_sha": "6955c0d454833fb188620475f6f72aa7244f09da",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 537,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 547,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 590,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 634,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        },
+        {
+          "line": 733,
+          "text": "theorem is_valid_highLevel_acceleration :"
+        },
+        {
+          "line": 746,
+          "text": "theorem isHalt_iff_highLevel_acceleration :"
+        },
+        {
+          "line": 752,
+          "text": "theorem acceleration_iff_highLevel_acceleration :"
+        }
+      ]
+    },
+    {
+      "label": "A5",
+      "machine": "1RB1RD_0LC1RA_1RA1LC_0RB1LE_1RF0LD_---0RE",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB1RD_0LC1RA_1RA1LC_0RB1LE_1RF0LD_HHH0RE.lean",
+          "blob_sha": "c93d25f4ad3ff1d95fe13078bbfeb7c67568db04",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 815,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 825,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 929,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 942,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        },
+        {
+          "line": 1303,
+          "text": "theorem is_valid_highLevel_acceleration :"
+        },
+        {
+          "line": 1359,
+          "text": "theorem isHalt_iff_highLevel_acceleration :"
+        },
+        {
+          "line": 1365,
+          "text": "theorem acceleration_iff_highLevel_acceleration :"
+        }
+      ]
+    },
+    {
+      "label": "A6",
+      "machine": "1RB0LF_1RC1RA_0RD0RB_1LE---_0LA1LE_1RD1LA",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB0LF_1RC1RA_0RD0RB_1LEHHH_0LA1LE_1RD1LA.lean",
+          "blob_sha": "1ce1cc5d15c943cc9766e0780a859de64d2e9873",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 1202,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 1214,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 1218,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 1231,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        },
+        {
+          "line": 1599,
+          "text": "theorem is_valid_highLevel_acceleration :"
+        },
+        {
+          "line": 1663,
+          "text": "theorem isHalt_iff_highLevel_acceleration :"
+        },
+        {
+          "line": 1669,
+          "text": "theorem acceleration_iff_highLevel_acceleration :"
+        }
+      ]
+    },
+    {
+      "label": "A7",
+      "machine": "1RB0LC_0LC1RF_1LE1RD_0RC1RC_0LA1LA_---1RA",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB0LC_0LC1RF_1LE1RD_0RC1RC_0LA1LA_HHH1RA.lean",
+          "blob_sha": "f68d44069388d0137b86853cea0cfc0f3a32dcbc",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 788,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 797,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 863,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 983,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        },
+        {
+          "line": 1468,
+          "text": "theorem is_valid_highLevel_acceleration :"
+        },
+        {
+          "line": 1489,
+          "text": "theorem isHalt_iff_highLevel_acceleration :"
+        },
+        {
+          "line": 1495,
+          "text": "theorem acceleration_iff_highLevel_acceleration :"
+        }
+      ]
+    },
+    {
+      "label": "A8",
+      "machine": "1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB1LF_0RC1RD_1LA1LD_1LE0RA_HHH1LC_0LA1LA.lean",
+          "blob_sha": "5645700d5b778305e630af2c861b33620fa60842",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 978,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 988,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 1079,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 1249,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        },
+        {
+          "line": 1337,
+          "text": "theorem is_valid_highLevel_acceleration :"
+        },
+        {
+          "line": 1424,
+          "text": "theorem isHalt_iff_highLevel_acceleration :"
+        },
+        {
+          "line": 1430,
+          "text": "theorem acceleration_iff_highLevel_acceleration :"
+        }
+      ]
+    },
+    {
+      "label": "A9",
+      "machine": "1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB1RC_1LC1LC_1RE0LD_1LB1RF_HHH1RA_0RD1RD.lean",
+          "blob_sha": "8a007f4cdd4a26bb241789930bf830197d0a34ee",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 805,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 815,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 865,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 922,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        },
+        {
+          "line": 1120,
+          "text": "theorem is_valid_highLevel_acceleration :"
+        },
+        {
+          "line": 1175,
+          "text": "theorem isHalt_iff_highLevel_acceleration :"
+        },
+        {
+          "line": 1181,
+          "text": "theorem acceleration_iff_highLevel_acceleration :"
+        }
+      ]
+    },
+    {
+      "label": "T314",
+      "machine": "1RB0LE_1LC1RA_1RA1LD_0LC0LA_0RE1RF_0RC---",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB0LE_1LC1RA_1RA1LD_0LC0LA_0RE1RF_0RCHHH.lean",
+          "blob_sha": "8c95614df7e6b962e2de0b9472c6b0a0fb4e80aa",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 672,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 682,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 719,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 785,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        }
+      ]
+    },
+    {
+      "label": "T315",
+      "machine": "1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_HHH1LB.lean",
+          "blob_sha": "f8a23ba2e92884d3695a34553c06bce44ed62436",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 583,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 593,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 633,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 710,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        }
+      ]
+    },
+    {
+      "label": "B9",
+      "machine": "1RB1RF_0LC0RF_1RD1LC_---0LE_0RC1LF_1RA0LE",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB1RF_0LC0RF_1RD1LC_HHH0LE_0RC1LF_1RA0LE.lean",
+          "blob_sha": "d50102803e49656a50ac3e111d5d288552d75eb7",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 895,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 905,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 909,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 918,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        }
+      ]
+    },
+    {
+      "label": "BMO8",
+      "machine": "1RB0LD_0RC1RB_0RD0RA_1LE0RD_1LF---_0LA1LA",
+      "matches": [
+        {
+          "path": "BusyBeaver/BB6/M_1RB0LD_0RC1RB_0RD0RA_1LE0RD_1LFHHH_0LA1LA.lean",
+          "blob_sha": "6a90f30a7d0dd3f1bbbf62797a134f1656a73d43",
+          "state_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "mirror": false
+        }
+      ],
+      "source_read": true,
+      "theorems": [
+        {
+          "line": 972,
+          "text": "theorem is_closed_pattern_set : IsClosedPatternSet target ps := by"
+        },
+        {
+          "line": 1015,
+          "text": "theorem has_collatz_reduction : HasCollatzReduction target :="
+        },
+        {
+          "line": 1083,
+          "text": "theorem is_valid_acceleration : IsValidAcceleration target start encode next where"
+        },
+        {
+          "line": 1098,
+          "text": "theorem isHalt_iff_acceleration : IsHalt target \u2194 CollatzHalts next start :="
+        }
+      ]
+    }
+  ]
+}

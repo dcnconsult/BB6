@@ -1,0 +1,1 @@
+NegativeAxiomFixture.lean:21:0: error: FATAL KERNEL AUDIT: Theorem 'CryptidSolve.auditExternalFixture' depends on non-allowlisted foundational constant 'ForeignFixture.untrusted'!

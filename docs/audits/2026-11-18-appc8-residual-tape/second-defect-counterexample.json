@@ -1,0 +1,19 @@
+{
+  "k": 1,
+  "marker": [
+    1,
+    0
+  ],
+  "run_lengths": [
+    2,
+    2,
+    5,
+    3,
+    1,
+    2
+  ],
+  "defined_steps": 680,
+  "undefined_attempt": 681,
+  "scope": "No state-A configuration with blank left tape (including explicit zero padding) occurs before the halt. Nonblank witness; no blank reachability claim.",
+  "formal_evidence": "AppC8ResidualTape: checked finite trace and independent negated DefectReturn theorem; see final build-result.json"
+}

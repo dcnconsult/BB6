@@ -1,0 +1,72 @@
+{
+  "counterexamples": [
+    {
+      "name": "boundary_original",
+      "defined_steps": 1199,
+      "undefined_attempt": 1200,
+      "possible_blank_left_boundary_heads": [
+        0
+      ],
+      "halting_state": "F",
+      "read_symbol": 1
+    },
+    {
+      "name": "boundary_short",
+      "defined_steps": 748,
+      "undefined_attempt": 749,
+      "possible_blank_left_boundary_heads": [
+        0
+      ],
+      "halting_state": "F",
+      "read_symbol": 1
+    },
+    {
+      "name": "first_defect",
+      "defined_steps": 742,
+      "undefined_attempt": 743,
+      "possible_blank_left_boundary_heads": [],
+      "halting_state": "F",
+      "read_symbol": 1
+    },
+    {
+      "name": "second_defect",
+      "defined_steps": 680,
+      "undefined_attempt": 681,
+      "possible_blank_left_boundary_heads": [],
+      "halting_state": "F",
+      "read_symbol": 1
+    },
+    {
+      "name": "residual_first",
+      "defined_steps": 711,
+      "undefined_attempt": 712,
+      "possible_blank_left_boundary_heads": [],
+      "halting_state": "F",
+      "read_symbol": 1
+    }
+  ],
+  "local_arbitrary_left_checks": 511,
+  "guarded_residual_checks": 130,
+  "extra_guard_probe": {
+    "input": {
+      "k": 8,
+      "m": 3,
+      "tail": [
+        41,
+        35
+      ]
+    },
+    "duration": 2716,
+    "output": {
+      "k": 0,
+      "runs": [
+        10,
+        44,
+        53,
+        2
+      ]
+    },
+    "result": "strictly descending inactive-tail guard not preserved"
+  },
+  "scope": "Nonblank refutations and finite guarded tests. Blank global nonhalting remains open."
+}

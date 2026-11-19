@@ -1,0 +1,26 @@
+[
+  {
+    "name": "CryptidSolvePhase4.AppC7Raw.gate_phase_all",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 200,
+    "statement": "theorem gate_phase_all (a : Nat) (t : List Bool) :\n    run (8*a+20) ⟨.D, [], false :: pairs a (true :: true :: true :: false :: t)⟩ =\n      some ⟨.D, [], false :: pairs (a+4) t⟩",
+    "evidence_class": "universal raw-machine theorem",
+    "scope": "Every natural a and arbitrary finite right tail: raw execution consumes one 1110 block and adds four 10 blocks in 8a+20 defined transitions; zero left half-tape."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC7Raw.gate_sweep_exact_time",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 275,
+    "statement": "theorem gate_sweep_exact_time (a r : Nat) :\n    (∀ t, t < appC7GateSweep a r → ∃ c, run t (gateCfg a r) = some c) ∧\n      run (appC7GateSweep a r) (gateCfg a r) = none",
+    "evidence_class": "universal raw-machine theorem",
+    "scope": "Every natural a,r: all prefixes before the recurrence time are defined, and the next attempted instruction halts."
+  },
+  {
+    "name": "CryptidSolvePhase4.AppC7Raw.appC7_raw_gate_exact_time",
+    "file": "lean_phase4/CryptidSolvePhase4/AppC7RawGate.lean",
+    "line": 291,
+    "statement": "theorem appC7_raw_gate_exact_time (b : Nat) :\n    (∀ t, t < 16*b*b + 28*b + 15 → ∃ c, run t (initial b) = some c) ∧\n      run (16*b*b + 28*b + 15) (initial b) = none",
+    "evidence_class": "universal raw-machine theorem",
+    "scope": "Every natural b for the prefixed A-state family: exact first halting-attempt count 16b²+28b+15; not a blank-tape initial input."
+  }
+]
