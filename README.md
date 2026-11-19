@@ -1,5 +1,7 @@
 # Following a Six-State Busy Beaver Candidate for 97 Quadrillion Steps
 
+[![Zenodo DOI for software v1.0.0](https://zenodo.org/badge/DOI/10.5281/zenodo.24371839.svg)](https://doi.org/10.5281/zenodo.24371839)
+
 **Darryl Novotny · SyncQutrit Research Group, LLC.**
 
 Read the [published preprint](https://doi.org/10.5281/zenodo.24370902) or the [included PDF](paper/pass1.pdf). Its subtitle is *Certified Tape Rules, Cross-Library Proofs, and Two Open Endings*. The paper follows AppC 8 through **97,311,884,181,777,598 completed steps** from a blank tape. Two families of tape endings still lack a general return proof. For AppC 7, the paper combines exact halting times on prepared tapes with an existing upstream proof to show that the blank run can never reach those tapes.
@@ -17,7 +19,11 @@ Read the [published preprint](https://doi.org/10.5281/zenodo.24370902) or the [i
 
 The six-state machine labels follow Dos Santos et al. The interoperability build fetches the pinned Google DeepMind **cryptids** repository. The bibliography gives the original papers and credits. [Upstream proof sources](https://github.com/google-deepmind/cryptids/tree/3647718b5df22e1a61462dec0376bd204526285a)
 
-**Manuscript citation.** Novotny, D. (2026). *Following a Six-State Busy Beaver Candidate for 97 Quadrillion Steps: Certified Tape Rules, Cross-Library Proofs, and Two Open Endings* [Preprint]. Zenodo. [Published edition](https://doi.org/10.5281/zenodo.24370902) · [All versions](https://doi.org/10.5281/zenodo.24370901)
+## Cite the paper or software
+
+**Paper.** Novotny, D. (2026). *Following a Six-State Busy Beaver Candidate for 97 Quadrillion Steps: Certified Tape Rules, Cross-Library Proofs, and Two Open Endings* [Preprint]. Zenodo. [Published edition](https://doi.org/10.5281/zenodo.24370902) · [All versions](https://doi.org/10.5281/zenodo.24370901)
+
+**Software.** Novotny, D. (2026). *Supporting proofs and experiments for Following a Six-State Busy Beaver Candidate for 97 Quadrillion Steps* (v1.0.0) [Software]. Zenodo. [10.5281/zenodo.24371839](https://doi.org/10.5281/zenodo.24371839)
 
 ## Licensing
 

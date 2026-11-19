@@ -1,9 +1,12 @@
 cff-version: 1.2.0
-message: Use this record for the supporting software. The preferred citation identifies
-  the paper.
+message: Cite the preferred citation for the paper or the top-level record for software release v1.0.0.
 title: Supporting proofs and experiments for Following a Six-State Busy Beaver Candidate
   for 97 Quadrillion Steps
 type: software
+version: v1.0.0
+doi: 10.5281/zenodo.24371839
+date-released: '2026-11-19'
+repository-code: https://github.com/dcnconsult/BB6
 authors:
 - family-names: Novotny
   given-names: Darryl
